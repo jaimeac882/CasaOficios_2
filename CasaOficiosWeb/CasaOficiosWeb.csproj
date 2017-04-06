@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{92226541-5190-4CEE-BBF6-1B8ED4B86128}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CasaOficiosWeb</RootNamespace>
+    <AssemblyName>CasaOficiosWeb</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="contactus.aspx" />
+    <Content Include="css\animate.min.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\Css.css" />
+    <Content Include="css\Estilos.css" />
+    <Content Include="css\font-awesome.css" />
+    <Content Include="css\font-awesome.min.css" />
+    <Content Include="css\login.css" />
+    <Content Include="css\main.css" />
+    <Content Include="css\MenuPrisma.css" />
+    <Content Include="css\prettyPhoto.css" />
+    <Content Include="css\responsive.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="Imagen\0focus2.png" />
+    <Content Include="Imagen\0focus2AConfirmacion.png" />
+    <Content Include="Imagen\0focus2AConfirmacionCambiarLocal.png" />
+    <Content Include="Imagen\0focus2AConfirmacionCambiarPais.png" />
+    <Content Include="Imagen\0focus2AConfirmacionCambiarRol.png" />
+    <Content Include="Imagen\0focus2Advertencia.png" />
+    <Content Include="Imagen\0focus2AError.png" />
+    <Content Include="Imagen\0focus2Exito.png" />
+    <Content Include="Imagen\1289578885_27-Edit Text.png" />
+    <Content Include="Imagen\1289578915_Edit.png" />
+    <Content Include="Imagen\1289578964_stop.png" />
+    <Content Include="Imagen\1292428844_document-save-as.png" />
+    <Content Include="Imagen\1292507430_contact-new.png" />
+    <Content Include="Imagen\1292510948_Floppy-64.png" />
+    <Content Include="Imagen\1300486049_Upload.png" />
+    <Content Include="Imagen\Advertencia.jpg" />
+    <Content Include="Imagen\ajax.gif" />
+    <Content Include="Imagen\Barra.png" />
+    <Content Include="Imagen\BarraII.png" />
+    <Content Include="Imagen\BarraIII.png" />
+    <Content Include="Imagen\Broker.png" />
+    <Content Include="Imagen\CerrarSesion.JPG" />
+    <Content Include="Imagen\close.gif" />
+    <Content Include="Imagen\delete.png" />
+    <Content Include="Imagen\document_delete.png" />
+    <Content Include="Imagen\eraser.png" />
+    <Content Include="Imagen\Error.JPG" />
+    <Content Include="Imagen\excel.jpg" />
+    <Content Include="Imagen\Exito.png" />
+    <Content Include="Imagen\flecha_abajo_50.jpg" />
+    <Content Include="Imagen\fondo.jpg" />
+    <Content Include="Imagen\Fondo.png" />
+    <Content Include="Imagen\fondo2.png" />
+    <Content Include="Imagen\FondoAzul.jpg" />
+    <Content Include="Imagen\Fondo_.png" />
+    <Content Include="Imagen\fondo_azul.gif" />
+    <Content Include="Imagen\Help.png" />
+    <Content Include="Imagen\Home.png" />
+    <Content Include="Imagen\icon_textbox_search.gif" />
+    <Content Include="Imagen\Informativo.png" />
+    <Content Include="Imagen\IngresarMontos.png" />
+    <Content Include="Imagen\Interrogante.jpg" />
+    <Content Include="Imagen\Local.png" />
+    <Content Include="Imagen\Login1.png" />
+    <Content Include="Imagen\Login1_1.png" />
+    <Content Include="Imagen\Login2.png" />
+    <Content Include="Imagen\Login2_2.png" />
+    <Content Include="Imagen\Login3.png" />
+    <Content Include="Imagen\LogoPrincipal_bak.png" />
+    <Content Include="Imagen\members.png" />
+    <Content Include="Imagen\Modalidad.png" />
+    <Content Include="Imagen\new.png" />
+    <Content Include="Imagen\pro_seven_1b.png" />
+    <Content Include="Imagen\pro_seven_2b.png" />
+    <Content Include="Imagen\search_b.png" />
+    <Content Include="Imagen\search_bx25.png" />
+    <Content Include="Imagen\zoom.png" />
+    <Content Include="images\accordion1.png" />
+    <Content Include="images\accordion2.png" />
+    <Content Include="images\accordion3.png" />
+    <Content Include="images\accordion4.png" />
+    <Content Include="images\Amarillo.png" />
+    <Content Include="images\arrow.gif" />
+    <Content Include="images\back.png" />
+    <Content Include="images\client1.png" />
+    <Content Include="images\client2.png" />
+    <Content Include="images\client3.png" />
+    <Content Include="images\contact.png" />
+    <Content Include="images\cross.jpg" />
+    <Content Include="images\favicon.ico" />
+    <Content Include="images\FlechaRoja.png" />
+    <Content Include="images\fondo.jpg" />
+    <Content Include="images\fondo.png" />
+    <Content Include="images\header.gif" />
+    <Content Include="images\header_active.gif" />
+    <Content Include="images\header_bg.gif" />
+    <Content Include="images\image_bg.png" />
+    <Content Include="images\logo-1.png" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\map.jpg" />
+    <Content Include="images\Naranja.png" />
+    <Content Include="images\Neutro.png" />
+    <Content Include="images\pix.gif" />
+    <Content Include="images\pointer.gif" />
+    <Content Include="images\Rojo.png" />
+    <Content Include="images\search_icon.png" />
+    <Content Include="images\Verde.png" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\dom-drag.js" />
+    <Content Include="js\html5shiv.js" />
+    <Content Include="js\jquery.isotope.min.js" />
+    <Content Include="js\jquery.js" />
+    <Content Include="js\jquery.prettyPhoto.js" />
+    <Content Include="js\main.js" />
+    <Content Include="js\menu.js" />
+    <Content Include="js\respond.min.js" />
+    <Content Include="js\Tooltip.js" />
+    <Content Include="js\Util.js" />
+    <Content Include="js\wow.min.js" />
+    <Content Include="portfolio.aspx" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Seguridad\Acceso.aspx" />
+    <Content Include="services.aspx" />
+    <Content Include="trabajadores.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="contactus.aspx.cs">
+      <DependentUpon>contactus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="contactus.aspx.designer.cs">
+      <DependentUpon>contactus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="portfolio.aspx.cs">
+      <DependentUpon>portfolio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="portfolio.aspx.designer.cs">
+      <DependentUpon>portfolio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\Acceso.aspx.cs">
+      <DependentUpon>Acceso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Seguridad\Acceso.aspx.designer.cs">
+      <DependentUpon>Acceso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Principal.Master.cs">
+      <DependentUpon>Principal.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Principal.Master.designer.cs">
+      <DependentUpon>Principal.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="services.aspx.cs">
+      <DependentUpon>services.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="services.aspx.designer.cs">
+      <DependentUpon>services.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="trabajadores.aspx.cs">
+      <DependentUpon>trabajadores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="trabajadores.aspx.designer.cs">
+      <DependentUpon>trabajadores.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MapeadorSeguridad.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Principal.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\C.Data.Global\C.Data.Global.csproj">
+      <Project>{65761765-86F6-4B49-8DC6-2BD94DCEDCB5}</Project>
+      <Name>C.Data.Global</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\C.User.Code\C.User.Code.csproj">
+      <Project>{4335A713-BDEA-44C4-800A-2D2B18E1C40F}</Project>
+      <Name>C.User.Code</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CasaOficios.BusinessLogic\CasaOficios.BusinessLogic.csproj">
+      <Project>{58CC422F-AB6C-4E40-B30E-7F22D6216466}</Project>
+      <Name>CasaOficios.BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CasaOficios.Entities\CasaOficios.Entities.csproj">
+      <Project>{C11AA6B4-E4FA-47E5-95DB-016A09BEFF20}</Project>
+      <Name>CasaOficios.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Code\" />
+    <Folder Include="fonts\" />
+    <Folder Include="images\portfolio\" />
+    <Folder Include="images\prettyPhoto\" />
+    <Folder Include="images\services\" />
+    <Folder Include="images\service\" />
+    <Folder Include="images\slider\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="images\404.xcf" />
+    <Content Include="images\IS.S3.C4.D1-Introducción a Lumira V1.0.pdf" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1546</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

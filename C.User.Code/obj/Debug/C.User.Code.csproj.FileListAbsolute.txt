@@ -1,0 +1,4 @@
+E:\CasaOficio\CasaOficio\C.User.Code\bin\Debug\C.User.Code.dll
+E:\CasaOficio\CasaOficio\C.User.Code\bin\Debug\C.User.Code.pdb
+E:\CasaOficio\CasaOficio\C.User.Code\obj\Debug\C.User.Code.dll
+E:\CasaOficio\CasaOficio\C.User.Code\obj\Debug\C.User.Code.pdb

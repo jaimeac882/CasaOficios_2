@@ -1,0 +1,100 @@
+
+ /*************************************************************************************************************
+                                                    CSS TABLE
+ **************************************************************************************************************/
+ table.tbempleado tr td
+{
+	/*border: solid 1px #C53B1C;*/
+	border: solid 1px #507CD1;
+	padding-left:3px;
+	padding-right:3px;
+	font-family:Arial;
+	font-size:13px;
+}
+
+
+/*
+table.tbempleado tbody tr:hover
+{
+ 
+ background-color:#c0deff;
+ color:#fc1301;
+ 
+  /*background-color:#BFFFBF;background-color:#fdfe93;*/
+
+/*}*/
+
+
+table.tbempleado tr.footer {
+	font-weight:bold;   
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	text-align: center;
+	padding: 6px 6px 6px 12px;	
+    background-color :#eff ! important;
+    border:1px solid #B4AA9D;
+    color:#339 ! important;	
+	background: #CAE8EA url(../images/bg_header.jpg) no-repeat;
+}
+
+.link1 a
+{
+	
+	font-size: 5px;
+	background-color:#F7F6F3;
+	}
+
+.rowStyle
+{
+    background-color:#F7F6F3;
+    color:#333333;
+       /*cursor: pointer;	*/
+       
+}
+
+
+.pagerStyle table 
+{
+	 background-color:White;
+	 border:solid 1px #FFFFFF;
+	}
+
+.pagerStyle table tbody tr:hover
+{
+	 background-color:White;
+	 border:solid 1px #FFFFFF;
+	}
+	
+.pagerStyle	 table.tbempleado tr td
+	{
+	 background-color:White;
+	 border:solid 1px #FFFFFF;
+	}
+	
+.pagerStyle a:link { color: #0066CC; text-decoration: none; font-size:20px;} 
+.pagerStyle a:active { color: #00B0F0;  text-decoration: none;  }
+
+
+.alternativeRow
+{    background-color:White;
+    color:#284775;
+       /*cursor: pointer;*/
+    }
+    
+      a.clickable{
+       cursor: pointer;
+       cursor: hand;
+   }
+   
+   .textolbl
+   {
+   	
+   	color:Black;
+   	text-align:center;
+   	
+   	}
+  .ocultar
+  {
+  	
+  display:none;
+  	}

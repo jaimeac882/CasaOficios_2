@@ -1,0 +1,7 @@
+E:\CasaOficio\CasaOficio\C.Data.Global\bin\Debug\C.Data.Global.dll
+E:\CasaOficio\CasaOficio\C.Data.Global\bin\Debug\C.Data.Global.pdb
+E:\CasaOficio\CasaOficio\C.Data.Global\bin\Debug\C.User.Code.dll
+E:\CasaOficio\CasaOficio\C.Data.Global\bin\Debug\C.User.Code.pdb
+E:\CasaOficio\CasaOficio\C.Data.Global\obj\Debug\C.Data.Global.csprojResolveAssemblyReference.cache
+E:\CasaOficio\CasaOficio\C.Data.Global\obj\Debug\C.Data.Global.dll
+E:\CasaOficio\CasaOficio\C.Data.Global\obj\Debug\C.Data.Global.pdb
