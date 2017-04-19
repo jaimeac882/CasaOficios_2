@@ -22,6 +22,13 @@
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->
+    <script>
+
+
+
+
+    </script>
+
     <link rel="shortcut icon" href="images/favicon.ico" />
 </head>
 <body>
@@ -91,7 +98,7 @@
 
 <div class="container">
 	<div class="row">
-		    <div class="col-md-12">
+		    <div class="col-md-8">
                                     <!-- Nav tabs -->
                     <div class="card">
                                     <ul class="nav nav-tabs" role="tablist">
@@ -125,21 +132,20 @@
                                     </ul>
 
                                     <!-- Tab panes -->
-                                    <div class="tab-content">
+                                    <div class="tab-content" class="col-md-8 inputGroupContainer">
                                         <div role="tabpanel" class="tab-pane active" id="home">
 <!--inicio: Tab panes01 -->
 
 
 <div class="form-group">
 
-  <div class="col-md-11 inputGroupContainer">
-        <label for="Nombres">Nombres : </label>
-    <div class="input-group">
 
+    <label for="Nombres">Nombres : </label>
+    <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
         <asp:TextBox type="text" runat="server" id="Nombres" CssClass="form-control" PlaceHolder="Nombres"></asp:TextBox>
     </div>
-  </div>
+
 
 </div>
 
@@ -148,14 +154,13 @@
 
 <div class="form-group">
 
-  <div class="col-md-11 inputGroupContainer">
+
     <label for="Apellidos">Apellidos : </label>
     <div class="input-group">
-
       <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
       <asp:TextBox type="text" runat="server" id="Apellidos" CssClass="form-control" PlaceHolder="Apellidos"></asp:TextBox>
     </div>
-  </div>
+
 
 </div>
 
@@ -164,8 +169,6 @@
    
 <div class="form-group"> 
 
-
-    <div class="col-md-11 selectContainer">
         <label for="TipoDocumento">Tipo Documento : </label>
         <div class="input-group">
 
@@ -175,39 +178,42 @@
                 <asp:ListItem value="value" >DNI </asp:ListItem>
                 <asp:ListItem value="value" >Carnet de Extranjería</asp:ListItem>
             </asp:DropDownList>
-        <!--/select-->
+           <!--/select-->
         </div>
-    </div>
+
 
 </div>
 
 <!-- Text input-->
 
-<div class="form-group">
+<div class="form-group ">
 
-  <div class="col-md-11 inputGroupContainer">
-        <label for="NroDocumento">Nro. Documento : </label>  
-    <div class="input-group">
+    <label for="NroDocumento">Nro. Documento : </label>  
+    <div class="input-group col-md-5">
 
             <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
             <asp:TextBox type="text" runat="server" id="NroDocumento" CssClass="form-control" PlaceHolder="Nro. Documento"></asp:TextBox>
+
     </div>
-  </div>
 
 </div>
 
 
 
-<!-- Text input-->
-       
 
+
+
+
+<!-- Text input-->   
 <div class="form-group">
-     <div class="col-md-5 inputGroupContainer">
+
+
+     <!--div class="col-md-7 inputGroupContainer"-->
            <label  for="FechaNacimiento">Fecha Nacimiento : </label>  
            <div class="input-group">
 
 				<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
-                <div class="input-group date form_date col-md-8" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                <div class="input-group date form_date col-md-5" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
 
                     <asp:TextBox type="text"  runat="server" id="FechaNacimiento" CssClass="form-control" PlaceHolder="Fecha Nacimiento" ReadOnly="true"></asp:TextBox>
 
@@ -215,25 +221,20 @@
                 </div>
 				<input type="hidden" id="dtp_input2" value="" />
           </div>
-     </div>
+     <!--/!--div-->
+
 </div>
 
 <!-- Text input-->
       
 <div class="form-group">
 
-  <div class="col-md-8 inputGroupContainer">
     <label for="FotoCarnet">Foto Carnet : </label>  
 
     <div class="input-group">
-
-
         <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i></span>
-
         <asp:FileUpload ID="FotoCarnet" runat="server" CssClass="form-control" placeholder="Foto"></asp:FileUpload>
-
     </div>
-  </div>
 
 </div>
                                         
@@ -249,110 +250,83 @@
 <!-- Select Basic -->
    
 <div class="form-group"> 
-
-    <div class="col-md-11 selectContainer">
-            <label class="control-label col-sm-6"  for="Distrito">Tipo Documento : </label>
+        <label for="Distrito">Distrito Dirección : </label>
         <div class="input-group">
+            <span class="input-group-addon" ><i class="glyphicon glyphicon-list"></i></span>
 
-            <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-
-        <asp:DropDownList ID="Distrito" runat="server" CssClass="form-control selectpicker">
-
-            <asp:ListItem value="value" selected="True">- Seleccione Distrito de Lima -</asp:ListItem>
+            <asp:DropDownList ID="Distrito" runat="server" CssClass="form-control">
+                <asp:ListItem value="value" selected="True">- Seleccione Distrito de Lima -</asp:ListItem>
                 <asp:ListItem value="value" >Ate </asp:ListItem>
                 <asp:ListItem value="value" >Carabayllo</asp:ListItem>
                 <asp:ListItem value="value" >Miraflores</asp:ListItem>
                 <asp:ListItem value="value" >San Isidro</asp:ListItem>
+            </asp:DropDownList>
 
-        </asp:DropDownList>
-
-   </div>
-   </div>
+        </div>  
 </div>
 
-
-<!-- Text input-->
-      
+<!-- Text input-->      
 <div class="form-group">
 
-    <div class="col-md-11 inputGroupContainer">
-            <label class="control-label col-sm-6"  for="Direccion">Dirección : </label>
+    <label  for="Direccion">Dirección : </label>
     <div class="input-group">
-
-        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-           <!--input name="address" placeholder="Dirección" class="form-control" type="text"-->
+           <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
            <asp:TextBox type="text" runat="server" id="Direccion" CssClass="form-control" PlaceHolder="Dirección"></asp:TextBox>
     </div>
-  </div>
+
 </div>
+
 
 <!-- Text input-->
-       <div class="form-group">
+<div class="form-group">
 
-    <div class="col-md-11 inputGroupContainer">
-                <label class="control-label col-sm-6" for="Email">Correo Electrónico : </label>
+    <label for="Email">Correo Electrónico : </label>
     <div class="input-group">
-
         <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-
         <asp:TextBox type="text" runat="server" id="Email" CssClass="form-control" PlaceHolder="Correo Electrónico"></asp:TextBox>
     </div>
-  </div>
+
 </div>
+
 
 <!-- Text input-->
 
 <div class="form-group">
 
-    <div class="col-md-8 inputGroupContainer">
-
-        <label class="control-label col-sm-6" for="telefono">Telefono : </label>
-
+    <label for="telefono">Telefono : </label>
     <div class="input-group">
+
+        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+        <asp:DropDownList ID="DropDownList1" runat="server" CssClass="form-control selectpicker">
+            <asp:ListItem value="value" selected="True">- Seleccione Compañía Telefónica -</asp:ListItem>
+            <asp:ListItem value="value" >Claro</asp:ListItem>
+            <asp:ListItem value="value" >Entel</asp:ListItem>
+            <asp:ListItem value="value" >Movistar </asp:ListItem>
+            <asp:ListItem value="value" >Bittel</asp:ListItem>
+            <asp:ListItem value="value" >Otros</asp:ListItem>
+        </asp:DropDownList>
 
         <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-
         <asp:TextBox type="text" runat="server" id="Telefono" CssClass="form-control" PlaceHolder="Teléfono"></asp:TextBox>
+
+
+
+
+
     </div>
-    
-    </div>
+    <input type="button" class="col-md-6" id="btnEliminar" value="Eliminar">
+    <input type="button" class="col-md-6" id="btnAgregar" value="Agregar">  
+  
+
+    <asp:ListBox ID="ListaTelefono" SelectionMode="Multiple"  runat="server" CssClass="form-control selectpicker" >
+    </asp:ListBox>
+
+
 </div>
 
-<!-- Select Basic -->
-   
-<div class="form-group"> 
-
-    <div class="col-md-4 selectContainer">
-    <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-    <!-- select name="state" class="form-control selectpicker" -->
-    <asp:DropDownList ID="DropDownList3" runat="server" CssClass="form-control selectpicker">
-
-        <asp:ListItem value="value" selected="True">- Elija Comp. Telef. -</asp:ListItem>
-        <asp:ListItem value="value" >Claro</asp:ListItem>
-        <asp:ListItem value="value" >Entel</asp:ListItem>
-        <asp:ListItem value="value" >Movistar </asp:ListItem>
-        <asp:ListItem value="value" >Bittel</asp:ListItem>
-        <asp:ListItem value="value" >Otros</asp:ListItem>
-
-    </asp:DropDownList>
-    <!--/select-->
-
-  </div>
-</div>
-</div>
-
-<!-- Text input-->
 
 
-
-
-
-
-
-
-
-                                        
+                                       
 <!--Fin : Tab panes02-->
                                         </div>
                                         <div role="tabpanel" class="tab-pane" id="messages">
@@ -380,9 +354,9 @@
 <!-- Text input-->                         
 <div class="form-group">
 
-    <div class="col-md-11 inputGroupContainer">
+    <label for="ReciboResidencia">Recibo Luz o Agua : </label>
     <div class="input-group">
-        <label for="ReciboResidencia">Recibo Luz o Agua : </label>
+
         <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i></span>
         <!--input  name="file" placeholder="Fotos" class="form-control" type="file"-->
 
@@ -390,55 +364,51 @@
         <asp:FileUpload ID="ReciboResidencia" runat="server" CssClass="form-control" placeholder="Foto"></asp:FileUpload>
 
     </div>
-  </div>
+
 </div>
 
 <!-- Text input-->
 <div class="form-group">
 
-    <div class="col-md-11 inputGroupContainer">
+    <label for="AntecedentePenales">Antecendentes Penales Escaneado : </label>
     <div class="input-group">
 
-        <label for="AntecedentePenales">Antecendentes Penales Escaneado : </label>
-        <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i></span>
-        <!--input  name="file" placeholder="Fotos" class="form-control" type="file"-->
 
+        <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i></span>
 
         <asp:FileUpload ID="AntecedentePenales" runat="server" CssClass="form-control" placeholder="Foto"></asp:FileUpload>
 
     </div>
-  </div>
+
 </div>
 
 <!-- Text input-->                         
 <div class="form-group">
 
-    <div class="col-md-11 inputGroupContainer">
+     <label for="AntecendentesPoliciales">Antecedentes Policiales Escaneado : </label>
     <div class="input-group">
 
-        <label for="AntecendentesPoliciales">Antecedentes Policiales Escaneado : </label>
-        <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i></span>
 
+        <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i></span>
         <asp:FileUpload ID="AntecendentesPoliciales" runat="server" CssClass="form-control" placeholder="Foto"></asp:FileUpload>
 
     </div>
-  </div>
+
 </div>
 
 <!-- Text input-->
 <div class="form-group">
 
-    <div class="col-md-11 inputGroupContainer">
-    <div class="input-group">
-        <label for="DocumentoIdentidad">Documento Escaneado : </label>
-        <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i></span>
-        <!--input  name="file" placeholder="Fotos" class="form-control" type="file"-->
 
+    <label for="DocumentoIdentidad">Documento Escaneado : </label>
+    <div class="input-group">
+
+        <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i></span>
 
         <asp:FileUpload ID="DocumentoIdentidad" runat="server" CssClass="form-control" placeholder="Foto"></asp:FileUpload>
 
     </div>
-  </div>
+
 </div>
 
 <!--Fin: Tab panes05-->
@@ -474,45 +444,7 @@
 
 
 
-    <div class="clients-area center wow fadeInDown">
-        <h2>
-            What our client says</h2>
-        <p class="lead">
-            We pride ourselves on providing superior service but you don't just have to take
-            our word for it.
-            <br>
-            Read what employers in the UK have to say about working with Robert Half in the
-            client testimonials below.</p>
-    </div>
-    <div class="container">
-        <div class="col-md-4 wow fadeInDown">
-            <div class="clients-comments text-center">
-                <img src="images/client1.png" class="img-circle" alt="">
-                <h3>
-                    Marketers, including Unilever, reveal </h3>
-                <h4>
-                    <span>- Will Smith /</span> Director of strap.com</h4>
-            </div>
-        </div>
-        <div class="col-md-4 wow fadeInDown">
-            <div class="clients-comments text-center">
-                <img src="images/client2.png" class="img-circle" alt="">
-                <h3>
-                    Executives from BBH, Euro RSCG.</h3>
-                <h4>
-                    <span>- Will Smith /</span> Director of strap.com</h4>
-            </div>
-        </div>
-        <div class="col-md-4 wow fadeInDown">
-            <div class="clients-comments text-center">
-                <img src="images/client3.png" class="img-circle" alt="">
-                <h3>
-                    Professors from the Kellogg.</h3>
-                <h4>
-                    <span>- Will Smith /</span> Director of strap.com</h4>
-            </div>
-        </div>
-    </div>
+
     <section id="bottom">
         <div class="container wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
             <div class="row">

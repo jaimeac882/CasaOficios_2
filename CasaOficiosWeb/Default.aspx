@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Home | CasaOficios</title>
+    <title>Inicio | CasaOficios</title>
     <%-- ------ CSS ------ --%>
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
@@ -64,7 +64,7 @@
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="Default.aspx">Inicio</a></li>
-                       <li><a href="portfolio.aspx">Portfolio</a></li>
+                       <li><a href="trabajadores.aspx">Trabaja con Nosotros</a></li>
                         <li><a href="services.aspx">Servicios</a></li>                        
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down"></i></a>
@@ -368,7 +368,7 @@
   <div class="col-md-8" >
     <p >
     
-    <asp:Button type="submit" runat="server" CssClass="btn btn-primary center-block" id="Button1" Text="Enviar"> 
+    <asp:Button type="submit" runat="server" CssClass="btn btn-primary center-block" id="btnEnviar" Text="Enviar"> 
 
     </asp:Button>
     <!--span  class="glyphicon glyphicon-send"></!--span-->
@@ -389,7 +389,7 @@
 <!--hasta aquí no más-->
                 <div class="col-sm-6 wow fadeInDown">
                     <div class="accordion">
-                        <h2>Fases De Tu Atención</h2>
+                        <h2 style="font-weight: 600;font-family: 'Open Sans', sans-serif;color: #4e4e4e;">Fases De Tu Atención</h2>
                         <div class="panel-group" id="accordion1">
                           <div class="panel panel-default">
                             <div class="panel-heading active">
