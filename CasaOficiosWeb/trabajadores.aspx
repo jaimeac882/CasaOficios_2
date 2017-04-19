@@ -22,12 +22,11 @@
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->
-    <script>
 
+    <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
 
+<script type="text/javascript" src="js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
 
-
-    </script>
 
     <link rel="shortcut icon" href="images/favicon.ico" />
 </head>
@@ -560,5 +559,54 @@
     <script src="js/main.js" type="text/javascript"></script>
     <script src="js/wow.min.js" type="text/javascript"></script>
 </form>
+
+
+
+
+
+
+<script type="text/javascript" src="jquery/jquery-1.8.3.min.js" charset="UTF-8"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+<script type="text/javascript" src="js/locales/bootstrap-datetimepicker.es.js" charset="UTF-8"></script>
+
+<script type="text/javascript">
+//in this line of code, to display the datetimepicker,  we used â€˜form_datetimeâ€™ as an argument to be 
+//passed in javascript. This is for Date and Time.
+    $('.form_datetime').datetimepicker({
+        language:  'en',
+        weekStart: 1,
+        todayBtn:  1,
+		autoclose: 1,
+		todayHighlight: 1,
+		startView: 2,
+		forceParse: 0,
+        showMeridian: 1
+    });
+//this is for Date only	
+ 	$('.form_date').datetimepicker({
+        language:  'en',
+        weekStart: 1,
+        todayBtn:  1,
+		autoclose: 1,
+		todayHighlight: 1,
+		startView: 2,
+		minView: 2,
+		forceParse: 0
+    });
+//this is for Time Only	
+	$('.form_time').datetimepicker({
+        language:  'en',
+        weekStart: 1,
+        todayBtn:  1,
+		autoclose: 1,
+		todayHighlight: 1,
+		startView: 1,
+		minView: 0,
+		maxView: 1,
+		forceParse: 0
+    });
+</script>
+
 </body>
 </html>
