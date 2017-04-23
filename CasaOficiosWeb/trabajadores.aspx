@@ -23,9 +23,12 @@
     <script src="js/respond.min.js"></script>
     <![endif]-->
 
+
+
+
     <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
 
-<script type="text/javascript" src="js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
 
 
     <link rel="shortcut icon" href="images/favicon.ico" />
@@ -204,25 +207,26 @@
 
 
 <!-- Text input-->   
+
+
+
+
+
 <div class="form-group">
-
-
-     <!--div class="col-md-7 inputGroupContainer"-->
-           <label  for="FechaNacimiento">Fecha Nacimiento : </label>  
-           <div class="input-group">
-
-				<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
-                <div class="input-group date form_date col-md-5" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
-
-                    <asp:TextBox type="text"  runat="server" id="FechaNacimiento" CssClass="form-control" PlaceHolder="Fecha Nacimiento" ReadOnly="true"></asp:TextBox>
-
+                <label for="dtp_input2" >Fecha Nacimiento :</label>
+                <div class="input-group">
+                <div class="input-group date form_date col-md-12" data-date="" data-date-format="yyyy-mm-dd" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                    <input class="form-control" size="16" type="text" value="" readonly>
                     <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+					<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
                 </div>
 				<input type="hidden" id="dtp_input2" value="" />
-          </div>
-     <!--/!--div-->
-
+                </div>
 </div>
+
+
+
+
 
 <!-- Text input-->
       
@@ -565,7 +569,7 @@
 
 
 
-<script type="text/javascript" src="jquery/jquery-1.8.3.min.js" charset="UTF-8"></script>
+<script type="text/javascript" src="js/jquery-1.8.3.min.js" charset="UTF-8"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
 <script type="text/javascript" src="js/locales/bootstrap-datetimepicker.es.js" charset="UTF-8"></script>
@@ -574,7 +578,7 @@
 //in this line of code, to display the datetimepicker,  we used â€˜form_datetimeâ€™ as an argument to be 
 //passed in javascript. This is for Date and Time.
     $('.form_datetime').datetimepicker({
-        language:  'en',
+        language:  'es',
         weekStart: 1,
         todayBtn:  1,
 		autoclose: 1,
@@ -585,7 +589,7 @@
     });
 //this is for Date only	
  	$('.form_date').datetimepicker({
-        language:  'en',
+        language:  'es',
         weekStart: 1,
         todayBtn:  1,
 		autoclose: 1,
@@ -596,7 +600,7 @@
     });
 //this is for Time Only	
 	$('.form_time').datetimepicker({
-        language:  'en',
+        language:  'es',
         weekStart: 1,
         todayBtn:  1,
 		autoclose: 1,
