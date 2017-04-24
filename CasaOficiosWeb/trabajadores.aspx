@@ -137,6 +137,85 @@
         }
 
 
+
+        /////////////////////////
+
+        var arrayOficios = [];
+        function agregarItemOficio() {
+
+            //declaración de variables
+
+            //telefono = $.trim($('#txtTelefono').val());
+            codigoPerfilLaboral = $.trim($('#lstPerfilLaboral option:selected').val());
+            codigoPeriodolLaboral = $.trim($('#listPeriodoExperiencia option:selected').val());
+
+            descripPerfilLaboral = $.trim($('#lstPerfilLaboral option:selected').text());
+            descripPeriodoLaboral = $.trim($('#listPeriodoExperiencia option:selected').text());
+
+            nuevoCodigo = codigoPerfilLaboral + '-' + codigoPeriodolLaboral;
+            activarSalida = false;
+
+
+
+            //Seleccionar al menos un Perfil Laboral
+            if (codigoPerfilLaboral == '00') {
+                alert("Debe seleciconar un perfil laboral.");
+                return;
+            }
+
+            //Seleccionar al menos un Perfil Laboral
+            if (codigoPeriodolLaboral == '00') {
+                alert("Debe seleciconar un periodo laboral.");
+                return;
+            }
+
+
+
+            //Validacion Existencia de teléfono
+            for (var i = 0; i < arrayOficios.length; i++) {
+
+                if (arrayOficios[i] == codigoPerfilLaboral) {
+                    alert("Ya existe el oficio '" + descripPerfilLaboral + "' registrado.");
+                    return;
+                }
+
+            }
+            arrayOficios.push(codigoPerfilLaboral);
+
+
+            //AgregarItem de Lista
+            $('#lstOficioExperienciAgregados').append($('<option>', {
+                value: nuevoCodigo,
+                text: descripPerfilLaboral + ': ' + descripPeriodoLaboral
+            }));
+
+
+            //Preparar los controles para la siguientes inserción.
+            $("#lstPerfilLaboral ").get(0).selectedIndex
+            $("#listPeriodoExperiencia ").get(0).selectedIndex
+
+        }
+
+
+        function borrarItemOficio() {
+
+            if (confirm("¿Está seguro que desea eliminar el item seleccionado?") == true) {
+
+                $('#lstOficioExperienciAgregados :selected').each(function (i, selected) {
+                    if (arrayOficios[i] == codigoPerfilLaboral) {
+                        $("#lstOficioExperienciAgregados option:selected").remove();
+                        arrayOficios.splice(i);
+                    }
+                });
+
+
+
+            }
+        }
+
+
+
+
     </script>
 
 
@@ -230,6 +309,8 @@
                                         Experiencia
                                         </a>
                                         </li>
+
+
                                         <li role="presentation">
                                         <a href="#settings" aria-controls="settings" role="tab" data-toggle="tab"> 
                                         <i class="glyphicon glyphicon-file"></i>      
@@ -239,6 +320,20 @@
                                         </a>
 
                                         </li>
+
+
+                                        <li role="Enviar">
+                                        <a href="#enviar" aria-controls="enviar" role="tab" data-toggle="tab"> 
+                                        <i class="glyphicon glyphicon-send"></i>      
+                                        
+                                        Enviar
+
+                                        </a>
+
+                                        </li>
+
+
+
                                     </ul>
 
                                     <!-- Tab panes -->
@@ -357,7 +452,6 @@
 
 
 
-
 <!-- Select Basic -->
    
 <div class="form-group"> 
@@ -365,7 +459,7 @@
         <div class="input-group">
             <span class="input-group-addon" ><i class="glyphicon glyphicon-list"></i></span>
 
-            <asp:DropDownList ID="Distrito" runat="server" CssClass="form-control">
+            <asp:DropDownList ID="DropDownList1" runat="server" CssClass="form-control">
                 <asp:ListItem value="value" selected="True">- Seleccione Distrito de Lima -</asp:ListItem>
                 <asp:ListItem value="value" >Ate </asp:ListItem>
                 <asp:ListItem value="value" >Carabayllo</asp:ListItem>
@@ -382,7 +476,7 @@
     <label  for="Direccion">Dirección : </label>
     <div class="input-group">
            <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-           <asp:TextBox type="text" runat="server" id="Direccion" CssClass="form-control" PlaceHolder="Dirección"></asp:TextBox>
+           <asp:TextBox type="text" runat="server" id="TextBox1" CssClass="form-control" PlaceHolder="Dirección"></asp:TextBox>
     </div>
 
 </div>
@@ -394,7 +488,7 @@
     <label for="Email">Correo Electrónico : </label>
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-        <asp:TextBox type="text" runat="server" id="Email" CssClass="form-control" PlaceHolder="Correo Electrónico"></asp:TextBox>
+        <asp:TextBox type="text" runat="server" id="TextBox2" CssClass="form-control" PlaceHolder="Correo Electrónico"></asp:TextBox>
     </div>
 
 </div>
@@ -408,7 +502,7 @@
     <div class="input-group">
 
         <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-        <asp:DropDownList ID="lstProveedorFono" runat="server" CssClass="form-control selectpicker">
+        <asp:DropDownList ID="DropDownList2" runat="server" CssClass="form-control selectpicker">
             <asp:ListItem value="00" selected="True">- Seleccione Compañía Telefónica -</asp:ListItem>
             <asp:ListItem value="01">Claro</asp:ListItem>
             <asp:ListItem value="02">Entel</asp:ListItem>
@@ -418,7 +512,7 @@
         </asp:DropDownList>
 
         <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-        <asp:TextBox type="text" runat="server" id="txtTelefono" CssClass="form-control" PlaceHolder="Teléfono"></asp:TextBox>
+        <asp:TextBox type="text" runat="server" id="TextBox3" CssClass="form-control" PlaceHolder="Teléfono"></asp:TextBox>
 
 
 
@@ -429,7 +523,7 @@
     <input type="button" class="col-md-6" id="btnAgregar" value="Agregar" onclick="agregarItemTelefono()">  
   
 
-    <asp:ListBox ID="lstTelefonoAgregados" SelectionMode="Multiple"  runat="server" CssClass="form-control selectpicker" >
+    <asp:ListBox ID="ListBox1" SelectionMode="Multiple"  runat="server" CssClass="form-control selectpicker" >
     </asp:ListBox>
 
 
@@ -437,13 +531,58 @@
 
 
 
+
+
+
+
+
+
                                        
 <!--Fin : Tab panes02-->
                                         </div>
-                                        <div role="tabpanel" class="tab-pane" id="messages">
+  <div role="tabpanel" class="tab-pane" id="messages">
 
 <!--inicio: Tab panes03 -->
 
+
+
+<!-- Text input-->
+
+<div class="form-group">
+
+    <label for="txtTelefono">Experiencia Laboral: </label>
+    <div class="input-group">
+
+        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+        <asp:DropDownList ID="lstPerfilLaboral" runat="server" CssClass="form-control selectpicker">
+            <asp:ListItem value="00" selected="True">- Seleccione el Oficio -</asp:ListItem>
+            <asp:ListItem value="01">Gasfitero</asp:ListItem>
+            <asp:ListItem value="02">Carpintero</asp:ListItem>
+            <asp:ListItem value="03">Cerrajero </asp:ListItem>
+            <asp:ListItem value="04">Alabañil</asp:ListItem>
+            <asp:ListItem value="05">Vidriero</asp:ListItem>
+        </asp:DropDownList>
+
+        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+        <asp:DropDownList ID="listPeriodoExperiencia" runat="server" CssClass="form-control selectpicker">
+            <asp:ListItem value="00" selected="True">- Seleccione Período de Experiencia -</asp:ListItem>
+            <asp:ListItem value="01">Aprox. 01 año de Experiencia</asp:ListItem>
+            <asp:ListItem value="02">Aprox. 03 años de Experiencia</asp:ListItem>
+            <asp:ListItem value="03">Aprox. 05 años de Experiencia </asp:ListItem>
+            <asp:ListItem value="04">Más de 05 años de Experiencia</asp:ListItem>
+        </asp:DropDownList>
+
+
+    </div>
+    <input type="button" class="col-md-6" id="btnEliminarOficio" value="Eliminar" onclick="borrarItemOficio()">
+    <input type="button" class="col-md-6" id="btnAgregarOficio" value="Agregar" onclick="agregarItemOficio()">  
+  
+
+    <asp:ListBox ID="lstOficioExperienciAgregados" SelectionMode="Multiple"  runat="server" CssClass="form-control selectpicker" >
+    </asp:ListBox>
+
+
+</div>
 
 
 
@@ -456,6 +595,25 @@
 
 <!--Fin : Tab panes03-->
                                         </div>
+
+
+ <div role="tabpanel" class="tab-pane" id="enviar">
+
+    <p>
+   DECLARO BAJO JURAMENTO:
+
+   <ul>
+<li> No haber sido condenado por los delitos consignados en la Ley Nº 29988.</li>
+<li> No haber sido condenado por delito doloso, ni encontrarme inhabilitado judicialmente o con
+cese temporal. </li>
+
+   </ul>
+
+    </p>
+    <asp:Button type="submit" runat="server" CssClass="btn btn-primary center-block" id="btnEnviar" Text="Guardar Formulario"> </asp:Button>
+
+ </div>
+
                                         <div role="tabpanel" class="tab-pane" id="settings">
 
 
@@ -511,7 +669,7 @@
 <div class="form-group">
 
 
-    <label for="DocumentoIdentidad">Documento Escaneado : </label>
+    <label for="DocumentoIdentidad">Documento de Identidad Escaneado : </label>
     <div class="input-group">
 
         <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i></span>
