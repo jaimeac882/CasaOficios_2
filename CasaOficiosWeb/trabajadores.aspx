@@ -27,11 +27,119 @@
 
 
     <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
-
     <script type="text/javascript" src="js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
-
-
     <link rel="shortcut icon" href="images/favicon.ico" />
+
+
+    <script language="javascript">
+
+
+        //variable global para fx AgregarItem
+        var arrayFonos = [];
+        function agregarItemTelefono()
+        {
+
+        //declaración de variables
+
+        telefono = $.trim($('#txtTelefono').val());
+        codigonItem = $.trim($('#lstProveedorFono option:selected').val());
+        descripcionItem = $.trim($('#lstProveedorFono option:selected').text());
+
+        nuevoCodigo = codigonItem + '-' + telefono;
+        activarSalida = false;
+
+
+
+        //Seleccionar al menos un proveedor
+        if (codigonItem == '00') {
+            alert("Debe seleciconar un proveedor telefónico.");
+            return;
+        }
+
+
+        
+        //Validación de Número de Telefono
+        if ($.isNumeric(telefono) == false) {
+            alert("El teléfono '" + telefono + "' no es númerico: .");
+            return;
+        }
+
+        //Validación de Longitud de Telefono
+        if (telefono.length == 9 && telefono.substring(0, 1) == 9) {
+            //alert("El número descrito es celular correcto.");
+        } else {            
+            if (telefono.length == 7 && (telefono.substring(0, 1) != 9 || telefono.substring(0, 1) != 0)) {
+                //alert("El número descrito es fono domicilio correcto.");
+            } else {                                
+                alert("El número telefónico '" + telefono + "' no es correcto.");
+                return;
+            }            
+        }
+
+
+        
+        //Validacion Existencia de teléfono
+        for (var i = 0; i < arrayFonos.length; i++)
+        {
+            if (arrayFonos[i] == telefono)
+            {
+                alert("Ya existe este teléfono registrado.");
+                return;
+            }            
+        }
+        arrayFonos.push(telefono);
+
+
+
+        //Validacion Existencia Con Proveedor de teléfono
+        $("#lstTelefonoAgregados option").each(function () {
+
+            if (nuevoCodigo == $(this).attr('value'))
+            {
+                alert('Ya existe registrado el ' + telefono );
+                activarSalida=true;
+             }
+
+        });
+           
+           
+        if(activarSalida==true){
+            return;
+        }
+
+
+        //AgregarItem de Lista
+        $('#lstTelefonoAgregados').append($('<option>', {
+            value: nuevoCodigo,
+            text: descripcionItem +' : ' + telefono
+        }));
+
+
+        //Preparar los controles para la siguientes inserción.
+        $('#txtTelefono').val() = "";
+        $("#lstProveedorFono ").get(0).selectedIndex
+
+        }
+
+
+        function borrarItemTelefono()
+        {
+
+            if( confirm("¿Está seguro que desea eliminar el item seleccionado?") == true)
+            {                
+                $('#lstTelefonoAgregados :selected').each(function (i, selected) {
+                    if (arrayFonos[i] == telefono) {                        
+                        $("#lstTelefonoAgregados option:selected").remove();
+                        arrayFonos.splice(i);
+                    }                    
+                });
+            }
+        }
+
+
+    </script>
+
+
 </head>
 <body>
     <header id="header">
@@ -296,32 +404,32 @@
 
 <div class="form-group">
 
-    <label for="telefono">Telefono : </label>
+    <label for="txtTelefono">Telefono : </label>
     <div class="input-group">
 
         <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-        <asp:DropDownList ID="DropDownList1" runat="server" CssClass="form-control selectpicker">
-            <asp:ListItem value="value" selected="True">- Seleccione Compañía Telefónica -</asp:ListItem>
-            <asp:ListItem value="value" >Claro</asp:ListItem>
-            <asp:ListItem value="value" >Entel</asp:ListItem>
-            <asp:ListItem value="value" >Movistar </asp:ListItem>
-            <asp:ListItem value="value" >Bittel</asp:ListItem>
-            <asp:ListItem value="value" >Otros</asp:ListItem>
+        <asp:DropDownList ID="lstProveedorFono" runat="server" CssClass="form-control selectpicker">
+            <asp:ListItem value="00" selected="True">- Seleccione Compañía Telefónica -</asp:ListItem>
+            <asp:ListItem value="01">Claro</asp:ListItem>
+            <asp:ListItem value="02">Entel</asp:ListItem>
+            <asp:ListItem value="03">Movistar </asp:ListItem>
+            <asp:ListItem value="04">Bittel</asp:ListItem>
+            <asp:ListItem value="05">Otros</asp:ListItem>
         </asp:DropDownList>
 
         <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-        <asp:TextBox type="text" runat="server" id="Telefono" CssClass="form-control" PlaceHolder="Teléfono"></asp:TextBox>
+        <asp:TextBox type="text" runat="server" id="txtTelefono" CssClass="form-control" PlaceHolder="Teléfono"></asp:TextBox>
 
 
 
 
 
     </div>
-    <input type="button" class="col-md-6" id="btnEliminar" value="Eliminar">
-    <input type="button" class="col-md-6" id="btnAgregar" value="Agregar">  
+    <input type="button" class="col-md-6" id="btnEliminar" value="Eliminar" onclick="borrarItemTelefono()">
+    <input type="button" class="col-md-6" id="btnAgregar" value="Agregar" onclick="agregarItemTelefono()">  
   
 
-    <asp:ListBox ID="ListaTelefono" SelectionMode="Multiple"  runat="server" CssClass="form-control selectpicker" >
+    <asp:ListBox ID="lstTelefonoAgregados" SelectionMode="Multiple"  runat="server" CssClass="form-control selectpicker" >
     </asp:ListBox>
 
 

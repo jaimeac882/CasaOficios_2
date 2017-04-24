@@ -94,31 +94,31 @@ namespace CasaOficiosWeb {
         protected global::System.Web.UI.WebControls.TextBox Email;
         
         /// <summary>
-        /// Control DropDownList1.
+        /// Control lstProveedorFono.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList lstProveedorFono;
         
         /// <summary>
-        /// Control Telefono.
+        /// Control txtTelefono.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Telefono;
+        protected global::System.Web.UI.WebControls.TextBox txtTelefono;
         
         /// <summary>
-        /// Control ListaTelefono.
+        /// Control lstTelefonoAgregados.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox ListaTelefono;
+        protected global::System.Web.UI.WebControls.ListBox lstTelefonoAgregados;
         
         /// <summary>
         /// Control ReciboResidencia.
