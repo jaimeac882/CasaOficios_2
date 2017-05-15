@@ -52,7 +52,7 @@
 
         //Seleccionar al menos un proveedor
         if (codigonItem == '00') {
-            alert("Debe seleciconar un proveedor telefónico.");
+            alert("Debe seleccionar un proveedor telefónico.");
             return;
         }
 
@@ -117,7 +117,7 @@
 
         //Preparar los controles para la siguientes inserción.
         $('#txtTelefono').val() = "";
-        $("#lstProveedorFono ").get(0).selectedIndex
+        $("#lstProveedorFono").get(0).selectedIndex
 
         }
 
@@ -257,7 +257,7 @@
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li><a href="Default.aspx">Inicio</a></li>
-                       <li><a href="portfolio.aspx">Portfolio</a></li>
+                       <li><a href="portfolio.aspx">Trabaje con nosotros</a></li>
                         <li class="active"><a href="services.aspx">Servicios</a></li>                        
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down"></i></a>
@@ -498,11 +498,11 @@
 
 <div class="form-group">
 
-    <label for="txtTelefono">Telefono : </label>
+    <label for="txtTelefono">Teléfono : </label>
     <div class="input-group">
 
         <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-        <asp:DropDownList ID="DropDownList2" runat="server" CssClass="form-control selectpicker">
+        <asp:DropDownList ID="lstProveedorFono" runat="server" CssClass="form-control selectpicker">
             <asp:ListItem value="00" selected="True">- Seleccione Compañía Telefónica -</asp:ListItem>
             <asp:ListItem value="01">Claro</asp:ListItem>
             <asp:ListItem value="02">Entel</asp:ListItem>
@@ -512,7 +512,7 @@
         </asp:DropDownList>
 
         <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-        <asp:TextBox type="text" runat="server" id="TextBox3" CssClass="form-control" PlaceHolder="Teléfono"></asp:TextBox>
+        <asp:TextBox type="text" runat="server" id="txtTelefono" CssClass="form-control" PlaceHolder="Teléfono"></asp:TextBox>
 
 
 
@@ -523,7 +523,7 @@
     <input type="button" class="col-md-6" id="btnAgregar" value="Agregar" onclick="agregarItemTelefono()">  
   
 
-    <asp:ListBox ID="ListBox1" SelectionMode="Multiple"  runat="server" CssClass="form-control selectpicker" >
+    <asp:ListBox ID="lstTelefonoAgregados" SelectionMode="Multiple"  runat="server" CssClass="form-control selectpicker" >
     </asp:ListBox>
 
 
@@ -550,7 +550,7 @@
 
 <div class="form-group">
 
-    <label for="txtTelefono">Experiencia Laboral: </label>
+    <label>Experiencia Laboral: </label>
     <div class="input-group">
 
         <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
