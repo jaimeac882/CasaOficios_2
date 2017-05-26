@@ -341,7 +341,9 @@ namespace C.Data.Global
                         }
                         else
                         {
-                            return cmd.Parameters[PrefijoParametros_SQL + ParamOutPut].Value;
+                            string P_out_2;
+                            P_out_2 = Convert.ToString(cmd.Parameters[PrefijoParametros_SQL + ParamOutPut].Value);
+                            return (P_out_2);
                         }
                     }
                     else

@@ -2,8 +2,3 @@ E:\CasaOficio\CasaOficio\C.User.Code\bin\Debug\C.User.Code.dll
 E:\CasaOficio\CasaOficio\C.User.Code\bin\Debug\C.User.Code.pdb
 E:\CasaOficio\CasaOficio\C.User.Code\obj\Debug\C.User.Code.dll
 E:\CasaOficio\CasaOficio\C.User.Code\obj\Debug\C.User.Code.pdb
-F:\CasaOficiosPyto\CasaOficios_2\C.User.Code\bin\Debug\C.User.Code.dll
-F:\CasaOficiosPyto\CasaOficios_2\C.User.Code\bin\Debug\C.User.Code.pdb
-F:\CasaOficiosPyto\CasaOficios_2\C.User.Code\obj\Debug\C.User.Code.csprojResolveAssemblyReference.cache
-F:\CasaOficiosPyto\CasaOficios_2\C.User.Code\obj\Debug\C.User.Code.dll
-F:\CasaOficiosPyto\CasaOficios_2\C.User.Code\obj\Debug\C.User.Code.pdb
