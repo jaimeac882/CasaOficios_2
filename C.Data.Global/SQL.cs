@@ -186,6 +186,8 @@ namespace C.Data.Global
                     cmd.Parameters.Add("@P_FEC_REGISTRO", SqlDbType.DateTime).Value = _BETMRH.FEC_REGISTRO;
                     cmd.Parameters.Add("@P_FEC_MODIFICACION", SqlDbType.DateTime).Value = _BETMRH.FEC_MODIFICACION;
                     cmd.Parameters.Add("@P_COD_USUARIO_REGISTRO", SqlDbType.Char).Value = _BETMRH.COD_USUARIO_REGISTRO;
+                    cmd.Parameters.Add("@P_NUM_CELU", SqlDbType.VarChar).Value = _BETMRH.NUM_CELU;
+                    cmd.Parameters.Add("@P_COD_TIPO_OPERADORA", SqlDbType.Char).Value = _BETMRH.COD_TIPO_OPERADORA;
 
                     n = cmd.ExecuteNonQuery();
                     

@@ -284,6 +284,7 @@
     <Folder Include="images\services\" />
     <Folder Include="images\service\" />
     <Folder Include="images\slider\" />
+    <Folder Include="ULTIMABD\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="images\404.xcf" />

@@ -28,7 +28,9 @@ namespace CasaOficios.Entities
 
 
 
+        public string NUM_CELU { get; set; }
 
+        public string COD_TIPO_OPERADORA { get; set; }
 
 
 

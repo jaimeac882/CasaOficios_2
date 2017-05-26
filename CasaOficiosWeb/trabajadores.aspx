@@ -520,10 +520,21 @@
 
                                              <div class="form-group">
 
-                                                        <label for="txtTelefono">Celular de Contacto : </label>
+                                                              <label for="txtTelefono">Celular Principal de Contacto : </label>
                                                         <div class="input-group">
+
+                                                            <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                                                            <asp:DropDownList ID="cboCompaniaPrincipal" runat="server" CssClass="form-control selectpicker">
+                                                                <%--<asp:ListItem value="00" selected="True">- Seleccione Compañía Telefónica -</asp:ListItem>--%>
+
+                                                            </asp:DropDownList>
+
                                                             <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-                                                            <asp:TextBox  runat="server" id="txtTelefonoPrincipal" CssClass="form-control" Text="987379413" PlaceHolder="Celular"></asp:TextBox>
+                                                            <asp:TextBox  runat="server" id="txtTelfPrinci" CssClass="form-control" PlaceHolder="Teléfono" Text="987379413" ></asp:TextBox>
+
+
+
+
 
                                                         </div>
 

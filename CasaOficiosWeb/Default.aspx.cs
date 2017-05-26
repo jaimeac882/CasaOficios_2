@@ -103,6 +103,8 @@ namespace CasaOficiosWeb
             be_sp.FEC_MODIFICACION = DateTime.Now;
             be_sp.COD_USUARIO_REGISTRO = "";
 
+            
+
 
             if (FileUpload1.HasFile)
             {

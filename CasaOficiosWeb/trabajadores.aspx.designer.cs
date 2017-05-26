@@ -121,13 +121,22 @@ namespace CasaOficiosWeb {
         protected global::System.Web.UI.WebControls.TextBox txtEmail;
         
         /// <summary>
-        /// Control txtTelefonoPrincipal.
+        /// Control cboCompaniaPrincipal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTelefonoPrincipal;
+        protected global::System.Web.UI.WebControls.DropDownList cboCompaniaPrincipal;
+        
+        /// <summary>
+        /// Control txtTelfPrinci.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtTelfPrinci;
         
         /// <summary>
         /// Control cboProveedorTelf.

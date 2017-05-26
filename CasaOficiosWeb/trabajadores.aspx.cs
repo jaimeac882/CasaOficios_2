@@ -56,6 +56,11 @@ namespace CasaOficiosWeb
             betmrh.FEC_MODIFICACION = DateTime.Now;
             betmrh.COD_USUARIO_REGISTRO = "0000000002";
 
+
+            betmrh.NUM_CELU = txtTelfPrinci.Text;
+            betmrh.COD_TIPO_OPERADORA = cboCompaniaPrincipal.SelectedValue.ToString();
+
+
             int d = blprueba.insertTMRH(betmrh, _BETMRH_Contacto, _BETMRH_DOCUMENTOS_ADJUNTOS, _BETMRH_Oficios_Extra);
             if (d == 0)
             {
@@ -110,6 +115,14 @@ namespace CasaOficiosWeb
 
             cboProveedorTelf.DataBind();
 
+
+
+            /*Para compania principal*/
+            cboCompaniaPrincipal.DataTextField = "DES_TIPO_MAESTRO";
+            cboCompaniaPrincipal.DataValueField = "COD_TIPO_MAESTRO";
+            cboCompaniaPrincipal.DataSource = be;
+
+            cboCompaniaPrincipal.DataBind();
 
 
 
