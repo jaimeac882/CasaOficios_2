@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Data.SqlClient;
 using System.Reflection;
-
+using CasaOficios.Entities;
 using System.Data;
 using C.User.Code;
 using System.Runtime.InteropServices;
+using casaoficios.entities;
+
 namespace C.Data.Global
 {
     public class SQL
@@ -119,19 +121,167 @@ namespace C.Data.Global
             return (null);
             throw new Exception(ex.Message);
         }
-    }  
- 
-    /// <summary>
-    /// Realiza operaciones Insert, Update, Delete, recibiendo parámetros a través de una Entidad, y devolviendo un valor de retorno
-    /// </summary>
-    /// <param name="vCon">Conección</param>
-    /// <param name="vTrx">Transacción</param>
-    /// <param name="vSP">Procedimiento Almacenado</param>
-    /// <param name="vObj">Entidad</param>
-    /// <param name="_out">Devuelve valor de retorno</param>
-    /// <param name="ParamOutPut">Nombre parámetro de valor de retorno</param>
-    /// <returns>Valor de retorno como Object</returns>
-    public object InsertaActualizaElimina(SqlConnection vCon, SqlTransaction vTrx, string vSP, object vObj, int _out, string ParamOutPut, bool PermiteCadenasVacias)
+    }
+
+        /// <summary>
+        /// Realiza operaciones Insert, Update, Delete, recibiendo parámetros a través de una Entidad, y devolviendo un valor de retorno
+        /// </summary>
+        /// <param name="vCon">Conección</param>
+        /// <param name="vTrx">Transacción</param>
+        /// <param name="vSP">Procedimiento Almacenado</param>
+        /// <param name="vObj">Entidad</param>
+        /// <param name="_out">Devuelve valor de retorno</param>
+        /// <param name="ParamOutPut">Nombre parámetro de valor de retorno</param>
+        /// <returns>Valor de retorno como Object</returns>
+        /// 
+
+        
+
+
+    public int insertTHMR(SqlConnection vCon, SqlTransaction vTrx, string vSP, BETMRH _BETMRH, List<BETMRH_Contacto> _BETMRH_Contacto, List<BETMRH_DOCUMENTOS_ADJUNTOS> _BETMRH_DOCUMENTOS_ADJUNTOS, List<BETMRH_Oficios_Extra> _BETMRH_Oficios_Extra, int _out, string ParamOutPut, bool PermiteCadenasVacias)
+        {
+            using (SqlCommand cmd = new SqlCommand(vSP, vCon))
+            {
+                int n;
+                String codigo;
+                try
+                {
+                    if (vTrx != null)
+                    {
+                        cmd.Transaction = vTrx;
+                    }
+                   
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                    //[Parámetro de salida del Procedimiento Almacenado]
+                    //SqlParameter COD_TMRH = new SqlParameter("@P_COD_TMRH", SqlDbType.VarChar);
+                    //COD_TMRH.Direction = ParameterDirection.Output;
+
+                  
+
+                    //GenerarParametrosObjetosRetornaValor(cmd, vObj, _out, ParamOutPut, PermiteCadenasVacias);
+                    //cmd.Parameters.Add("@P_COD_TMRH", SqlDbType.VarChar).Value = _BETMRH.COD_TMRH;
+
+                    //cmd.Parameters.Add("@P_COD_TMRH", SqlDbType.Char).Direction = ParameterDirection.Output;
+                    //SqlParameter code = new SqlParameter("@P_COD_TMRH", SqlDbType.Char);
+                    //code.Direction = ParameterDirection.Output;
+
+
+                    //cmd.Parameters.Add("@P_COD_TMRH", SqlDbType.Char).Value = "0000000002";
+                    cmd.Parameters.Add("@P_COD_TMRH", SqlDbType.Char, 10);
+                    cmd.Parameters["@P_COD_TMRH"].Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("@P_NOM_TMRH", SqlDbType.VarChar).Value = _BETMRH.NOM_TMRH;
+                    cmd.Parameters.Add("@P_APE_PATERNO", SqlDbType.VarChar).Value = _BETMRH.APE_PATERNO;
+                    cmd.Parameters.Add("@P_APE_MATERNO", SqlDbType.VarChar).Value = _BETMRH.APE_MATERNO;
+                    cmd.Parameters.Add("@P_EMAIL", SqlDbType.VarChar).Value = _BETMRH.EMAIL;
+                    cmd.Parameters.Add("@P_COD_TIPO_DOCUMENTO", SqlDbType.Char).Value = _BETMRH.COD_TIPO_DOCUMENTO;
+                    cmd.Parameters.Add("@P_NUM_DOCUMENTO", SqlDbType.Char).Value = _BETMRH.NUM_DOCUMENTO;
+                    cmd.Parameters.Add("@P_COD_TIPO_GENERO", SqlDbType.Char).Value = _BETMRH.COD_TIPO_GENERO;
+                    cmd.Parameters.Add("@P_COD_UBIGEO", SqlDbType.Char).Value = _BETMRH.COD_UBIGEO;
+                    cmd.Parameters.Add("@P_DIRECCION", SqlDbType.VarChar).Value = _BETMRH.DIRECCION;
+                    cmd.Parameters.Add("@P_FEC_NACIMIENTO", SqlDbType.Date).Value = _BETMRH.FEC_NACIMIENTO;
+                    cmd.Parameters.Add("@P_COD_OFICIO_PRINCIPAL", SqlDbType.Char).Value = _BETMRH.COD_OFICIO_PRINCIPAL;
+                    cmd.Parameters.Add("@P_COD_TIEMPO_EXPERIENCIA", SqlDbType.Char).Value = _BETMRH.COD_TIEMPO_EXPERIENCIA;
+
+                    cmd.Parameters.Add("@P_FEC_REGISTRO", SqlDbType.DateTime).Value = _BETMRH.FEC_REGISTRO;
+                    cmd.Parameters.Add("@P_FEC_MODIFICACION", SqlDbType.DateTime).Value = _BETMRH.FEC_MODIFICACION;
+                    cmd.Parameters.Add("@P_COD_USUARIO_REGISTRO", SqlDbType.Char).Value = _BETMRH.COD_USUARIO_REGISTRO;
+
+                    n = cmd.ExecuteNonQuery();
+                    
+
+                    
+                    if (n > 0)
+                    {
+
+                       
+                        codigo = Convert.ToString(cmd.Parameters["@P_COD_TMRH"].Value);
+                        
+                    }
+
+                    return 1;
+
+
+                }
+                catch (SqlException ex)
+                {
+                    
+                    return (-1);
+                    throw new Exception(ex.Message);
+                }
+            }
+          
+        }
+
+
+
+        public int insertarSolicitudTrabajo_DOC(SqlConnection vCon, SqlTransaction vTrx, string vSP, BESolicitud_Trabajo_Documento BE, int _out, string ParamOutPut, bool PermiteCadenasVacias)
+        {
+            using (SqlCommand cmd = new SqlCommand(vSP, vCon))
+            {
+                int n;
+                String codigo;
+                try
+                {
+                    if (vTrx != null)
+                    {
+                        cmd.Transaction = vTrx;
+                    }
+
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                    //[Parámetro de salida del Procedimiento Almacenado]
+                    //SqlParameter COD_TMRH = new SqlParameter("@P_COD_TMRH", SqlDbType.VarChar);
+                    //COD_TMRH.Direction = ParameterDirection.Output;
+
+
+
+                    //GenerarParametrosObjetosRetornaValor(cmd, vObj, _out, ParamOutPut, PermiteCadenasVacias);
+                    //cmd.Parameters.Add("@P_COD_TMRH", SqlDbType.VarChar).Value = _BETMRH.COD_TMRH;
+
+                    //cmd.Parameters.Add("@P_COD_TMRH", SqlDbType.Char).Direction = ParameterDirection.Output;
+                    //SqlParameter code = new SqlParameter("@P_COD_TMRH", SqlDbType.Char);
+                    //code.Direction = ParameterDirection.Output;
+
+
+                    //cmd.Parameters.Add("@P_COD_TMRH", SqlDbType.Char).Value = "0000000002";
+                    //cmd.Parameters.Add("@P_COD_SOLICITUD_TRABAJO_DOCUMENTOS", SqlDbType.Char, 10);
+                    //cmd.Parameters["@P_COD_TMRH"].Direction = ParameterDirection.Output;
+                    //cmd.Parameters.Add("@P_COD_SOLICITUD_TRABAJO_DOCUMENTOS", SqlDbType.Char).Value = BE.cod_solicitud_trabajo_documentos;
+                    cmd.Parameters.Add("@P_COD_SOLICITUD", SqlDbType.Char).Value = BE.cod_solicitud;
+                    cmd.Parameters.Add("@P_DESCRIPCION", SqlDbType.Text).Value = BE.descripcion;
+                    cmd.Parameters.Add("@P_RUTA", SqlDbType.VarChar).Value = BE.ruta;
+                    cmd.Parameters.Add("@P_IMAGEN", SqlDbType.Image).Value = BE.imagen;
+                    cmd.Parameters.Add("@P_LENGTH_D", SqlDbType.Int).Value = BE.length_D;
+
+
+                    n = cmd.ExecuteNonQuery();
+
+
+
+                    if (n > 0)
+                    {
+
+
+                        //codigo = Convert.ToString(cmd.Parameters["@P_COD_TMRH"].Value);
+
+                    }
+
+                    return 1;
+
+
+                }
+                catch (SqlException ex)
+                {
+
+                    return (-1);
+                    throw new Exception(ex.Message);
+                }
+            }
+
+        }
+
+        public object InsertaActualizaElimina(SqlConnection vCon, SqlTransaction vTrx, string vSP, object vObj, int _out, string ParamOutPut, bool PermiteCadenasVacias)
     {
         using(SqlCommand cmd = new SqlCommand(vSP, vCon)){
             int n;
@@ -163,17 +313,115 @@ namespace C.Data.Global
                 throw new Exception(ex.Message);
             }    
         }
-    }  
- 
-    /// <summary>
-    /// Devuelve un data reader con varios registros, recibiendo parámetros a través de un Array
-    /// </summary>
-    /// <param name="vCon">Conección</param>
-    /// <param name="vTrx">Transacción</param>
-    /// <param name="vSP">Procedimiento Almacenado</param>
-    /// <param name="vArray">Array de parámetros</param>
-    /// <returns>DataReader</returns>
-    public SqlDataReader ObtenerVariosRegistrosDataReaderArrayParametros(SqlConnection vCon, SqlTransaction vTrx, string vSP, List<ParametroGenerico> vArray) {
+    }
+
+        public object insertarSolicitudTrabajo(SqlConnection vCon, SqlTransaction vTrx, string vSP, object vObj, int _out, string ParamOutPut, bool PermiteCadenasVacias)
+        {
+            using (SqlCommand cmd = new SqlCommand(vSP, vCon))
+            {
+                int n;
+                try
+                {
+                    if (vTrx != null)
+                    {
+                        cmd.Transaction = vTrx;
+                    }
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    GenerarParametrosObjetosRetornaValor(cmd, vObj, _out, ParamOutPut, PermiteCadenasVacias);
+                    n = cmd.ExecuteNonQuery();
+                    if (_out == 1)
+                    {
+                        if (ParamOutPut == "")
+                        {
+                            string P_out;
+                            P_out = Convert.ToString(cmd.Parameters["@P_COD_SOLICITUD"].Value);
+                            return (P_out);
+                        }
+                        else
+                        {
+                            return cmd.Parameters[PrefijoParametros_SQL + ParamOutPut].Value;
+                        }
+                    }
+                    else
+                    {
+                        if (n <= 0)
+                        {
+                            return (-1);
+                        }
+                        else
+                        {
+                            return cmd.Parameters[0].Value;
+                        }
+                    }
+
+                }
+                catch (SqlException ex)
+                {
+                    return (-1);
+                    throw new Exception(ex.Message);
+                }
+            }
+        }
+
+
+
+        public object insertarTMRH(SqlConnection vCon, SqlTransaction vTrx, string vSP, object vObj, int _out, string ParamOutPut, bool PermiteCadenasVacias)
+        {
+            using (SqlCommand cmd = new SqlCommand(vSP, vCon))
+            {
+                int n;
+                try
+                {
+                    if (vTrx != null)
+                    {
+                        cmd.Transaction = vTrx;
+                    }
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    GenerarParametrosObjetosRetornaValor(cmd, vObj, _out, ParamOutPut, PermiteCadenasVacias);
+                    n = cmd.ExecuteNonQuery();
+                    if (_out == 1)
+                    {
+                        if (ParamOutPut == "")
+                        {
+                            string P_out;
+                            P_out = Convert.ToString(cmd.Parameters["@COD_SOLICITUD"].Value);
+                            return (P_out);
+                        }
+                        else
+                        {
+                            return cmd.Parameters[PrefijoParametros_SQL + ParamOutPut].Value;
+                        }
+                    }
+                    else
+                    {
+                        if (n <= 0)
+                        {
+                            return (-1);
+                        }
+                        else
+                        {
+                            return cmd.Parameters[0].Value;
+                        }
+                    }
+
+                }
+                catch (SqlException ex)
+                {
+                    return (-1);
+                    throw new Exception(ex.Message);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Devuelve un data reader con varios registros, recibiendo parámetros a través de un Array
+        /// </summary>
+        /// <param name="vCon">Conección</param>
+        /// <param name="vTrx">Transacción</param>
+        /// <param name="vSP">Procedimiento Almacenado</param>
+        /// <param name="vArray">Array de parámetros</param>
+        /// <returns>DataReader</returns>
+        public SqlDataReader ObtenerVariosRegistrosDataReaderArrayParametros(SqlConnection vCon, SqlTransaction vTrx, string vSP, List<ParametroGenerico> vArray) {
         try{
             using(SqlCommand cmd = new SqlCommand(vSP, vCon)){
                 SqlDataReader drd;

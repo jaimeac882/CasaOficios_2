@@ -13,49 +13,76 @@ namespace CasaOficiosWeb {
     public partial class trabajadores {
         
         /// <summary>
-        /// Control form2.
+        /// Control form1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form2;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Control Nombres.
+        /// Control TxtNombres.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Nombres;
+        protected global::System.Web.UI.WebControls.TextBox TxtNombres;
         
         /// <summary>
-        /// Control Apellidos.
+        /// Control txtApePa.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Apellidos;
+        protected global::System.Web.UI.WebControls.TextBox txtApePa;
         
         /// <summary>
-        /// Control TipoDocumento.
+        /// Control txtApeMa.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList TipoDocumento;
+        protected global::System.Web.UI.WebControls.TextBox txtApeMa;
         
         /// <summary>
-        /// Control NroDocumento.
+        /// Control cboTipoGenero.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox NroDocumento;
+        protected global::System.Web.UI.WebControls.DropDownList cboTipoGenero;
+        
+        /// <summary>
+        /// Control CboTipoDocumento.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList CboTipoDocumento;
+        
+        /// <summary>
+        /// Control txtNroDocumento.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNroDocumento;
+        
+        /// <summary>
+        /// Control txtFecNaci.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtFecNaci;
         
         /// <summary>
         /// Control FotoCarnet.
@@ -67,40 +94,49 @@ namespace CasaOficiosWeb {
         protected global::System.Web.UI.WebControls.FileUpload FotoCarnet;
         
         /// <summary>
-        /// Control DropDownList1.
+        /// Control cboDistrito.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList cboDistrito;
         
         /// <summary>
-        /// Control TextBox1.
+        /// Control txtDireccion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox txtDireccion;
         
         /// <summary>
-        /// Control TextBox2.
+        /// Control txtEmail.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox txtEmail;
         
         /// <summary>
-        /// Control lstProveedorFono.
+        /// Control txtTelefonoPrincipal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList lstProveedorFono;
+        protected global::System.Web.UI.WebControls.TextBox txtTelefonoPrincipal;
+        
+        /// <summary>
+        /// Control cboProveedorTelf.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList cboProveedorTelf;
         
         /// <summary>
         /// Control txtTelefono.
@@ -121,22 +157,40 @@ namespace CasaOficiosWeb {
         protected global::System.Web.UI.WebControls.ListBox lstTelefonoAgregados;
         
         /// <summary>
-        /// Control lstPerfilLaboral.
+        /// Control cboOficiDomin.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList lstPerfilLaboral;
+        protected global::System.Web.UI.WebControls.DropDownList cboOficiDomin;
         
         /// <summary>
-        /// Control listPeriodoExperiencia.
+        /// Control cboPerioDomin.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList listPeriodoExperiencia;
+        protected global::System.Web.UI.WebControls.DropDownList cboPerioDomin;
+        
+        /// <summary>
+        /// Control cboOficiosOtros.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList cboOficiosOtros;
+        
+        /// <summary>
+        /// Control cboPeriodoExpeOtros.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList cboPeriodoExpeOtros;
         
         /// <summary>
         /// Control lstOficioExperienciAgregados.

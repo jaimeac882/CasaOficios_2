@@ -27,8 +27,9 @@
 </head>
 <body>
 
-    <header id="header">
-        <form id="form3" runat="server">
+<form id="form1" runat="server">
+    <header id="header" >
+    
     <div class="top-bar">
     <div class="container">
     <div class="row">
@@ -81,8 +82,8 @@
                 </div>
             </div><!--/.container-->
         </nav><!--/nav-->
+         
  
-    </header>
    
    <!-- Fin de Cabecera HEADER-->
     <section id="main-slider" class="no-margin">
@@ -225,19 +226,17 @@
 
 <!-- Select Basic -->
    
-<div class="form-group"> 
+<div class="form-group" >
 
     <div class="col-md-11 selectContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
     <!-- select name="state" class="form-control selectpicker" -->
-    <asp:DropDownList ID="DropDownList2" runat="server" CssClass="form-control selectpicker">
 
-        <asp:ListItem value="value" selected="True">- Elija Avería -</asp:ListItem>
-        <asp:ListItem value="value" >Albañil </asp:ListItem>
-        <asp:ListItem value="value" >Carpintero Avería</asp:ListItem>
-        <asp:ListItem value="value" >Jardinero</asp:ListItem>
-        <asp:ListItem value="value" >Soldador</asp:ListItem>
+
+    <asp:DropDownList ID="cboTipAveria" runat="server" CssClass="form-control selectpicker" EnableViewState="true">
+
+
 
 
     </asp:DropDownList>
@@ -251,13 +250,13 @@
 
 <!-- Text input-->
 
-<div class="form-group">
+<div class="form-group"  style="padding-top:35px   "> 
 
   <div class="col-md-11 inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
   <!--input  name="first_name" placeholder="Contacto" class="form-control"  type="text"-->
-  <asp:TextBox type="text" runat="server" id="TextBox1" CssClass="form-control" PlaceHolder="Contacto"></asp:TextBox>
+  <asp:TextBox type="text" runat="server" id="txtNombreApellidos" Text="Jaime Jose Aguilar Cabezas" CssClass="form-control" PlaceHolder="Contacto"></asp:TextBox>
     </div>
   </div>
 
@@ -265,26 +264,26 @@
 
 <!-- Text input-->
        
-<div class="form-group">
+<div class="form-group" style="padding-top:25px   "> 
 
     <div class="col-md-11 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
         <!--input name="phone" placeholder="Teléfono" class="form-control" type="text"-->
-        <asp:TextBox type="text" runat="server" id="TextBox2" CssClass="form-control" PlaceHolder="Teléfono"></asp:TextBox>
+        <asp:TextBox type="text" runat="server" id="txtCelular" Text="987379413" CssClass="form-control" PlaceHolder="Teléfono"></asp:TextBox>
     </div>
   </div>
 </div>
 
 <!-- Text input-->
-       <div class="form-group">
+       <div class="form-group" style="padding-top:25px   "> 
 
     <div class="col-md-11 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
 
         <!--input name="email" placeholder="Correo Electrónico" class="form-control"  type="text"-->
-        <asp:TextBox type="text" runat="server" id="TextBox3" CssClass="form-control" PlaceHolder="Correo Electrónico"></asp:TextBox>
+        <asp:TextBox type="text" runat="server" id="txtEmail" Text="jaime.ac8866@gmail.com" CssClass="form-control" PlaceHolder="Correo Electrónico"></asp:TextBox>
     </div>
   </div>
 </div>
@@ -293,13 +292,13 @@
 
 <!-- Text input-->
       
-<div class="form-group">
+<div class="form-group" style="padding-top:25px   "> 
 
     <div class="col-md-11 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
            <!--input name="address" placeholder="Dirección" class="form-control" type="text"-->
-           <asp:TextBox type="text" runat="server" id="TextBox4" CssClass="form-control" PlaceHolder="Dirección"></asp:TextBox>
+           <asp:TextBox type="text" runat="server" id="txtDireccion" Text="Sector 3 Grupo 25 Manzana A Lote 14" CssClass="form-control" PlaceHolder="Dirección"></asp:TextBox>
     </div>
   </div>
 </div>
@@ -308,19 +307,15 @@
 
 <!-- Select Basic -->
    
-<div class="form-group"> 
+<div class="form-group" style="padding-top:25px   "> 
 
     <div class="col-md-11 selectContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
 
-    <asp:DropDownList ID="DropDownList3" runat="server" CssClass="form-control selectpicker">
+    <asp:DropDownList ID="cboDistrito" runat="server" CssClass="form-control selectpicker" EnableViewState="true">
 
-        <asp:ListItem value="value" selected="True">- Seleccione Distrito de Lima -</asp:ListItem>
-        <asp:ListItem value="value" >Ate </asp:ListItem>
-        <asp:ListItem value="value" >Carabayllo</asp:ListItem>
-        <asp:ListItem value="value" >Miraflores</asp:ListItem>
-        <asp:ListItem value="value" >San Isidro</asp:ListItem>
+
 
     </asp:DropDownList>
 
@@ -331,13 +326,14 @@
 
 <!-- Text area -->
   
-<div class="form-group">
+<div class="form-group" style="padding-top:25px   "> 
 
     <div class="col-md-11 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
         	<!--textarea class="form-control" name="comment" placeholder="Describenos su urgencia"></!textarea-->
-           <asp:TextBox type="text" TextMode="multiline" runat="server" id="TextBox5" CssClass="form-control" PlaceHolder="Describenos su urgencia"></asp:TextBox>
+           <asp:TextBox type="text"  Rows="5" TextMode="multiline" runat="server" id="txtUrgencia" Text="Averia presentada en el 2do piso por fuga de agua dentro de los
+                                                                                                    los baños , la fuga se presenta a partir de las 2 am cuando se abre la cañeria" CssClass="form-control" PlaceHolder="Describenos su urgencia"></asp:TextBox>
 
   </div>
   </div>
@@ -346,7 +342,7 @@
 
 <!-- Text input-->
       
-<div class="form-group">
+<div class="form-group" style="padding-top:110px   "> 
 
     <div class="col-md-11 inputGroupContainer">
     <div class="input-group">
@@ -364,11 +360,11 @@
 <!--div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Thanks for contacting us, we will get back to you shortly.</!--div-->
 
 <!-- Button -->
-<div class="form-group">
+<div class="form-group" style="padding-top:35px   "> 
   <div class="col-md-8" >
     <p >
     
-    <asp:Button type="submit" runat="server" CssClass="btn btn-primary center-block" id="btnEnviar" Text="Enviar"> 
+    <asp:Button type="submit" runat="server" CssClass="btn btn-primary center-block" id="btnEnviar" Text="Enviar" OnClick="btnEnviar_Click"> 
 
     </asp:Button>
     <!--span  class="glyphicon glyphicon-send"></!--span-->
@@ -693,6 +689,7 @@
     <script src="js/jquery.isotope.min.js" type="text/javascript"></script>
     <script src="js/main.js" type="text/javascript"></script>
     <script src="js/wow.min.js" type="text/javascript"></script>
-</form>
+           </header>
+    </form>
 </body>
 </html>

@@ -42,8 +42,8 @@
         //declaración de variables
 
         telefono = $.trim($('#txtTelefono').val());
-        codigonItem = $.trim($('#lstProveedorFono option:selected').val());
-        descripcionItem = $.trim($('#lstProveedorFono option:selected').text());
+        codigonItem = $.trim($('#cboProveedorTelf option:selected').val());
+        descripcionItem = $.trim($('#cboProveedorTelf option:selected').text());
 
         nuevoCodigo = codigonItem + '-' + telefono;
         activarSalida = false;
@@ -116,8 +116,10 @@
 
 
         //Preparar los controles para la siguientes inserción.
-        $('#txtTelefono').val() = "";
-        $("#lstProveedorFono").get(0).selectedIndex
+        //$('#txtTelefono').val() = "";
+
+        document.getElementById('txtTelefono').value = '';
+        //$("#lstProveedorFono").get(0).selectedIndex
 
         }
 
@@ -221,6 +223,9 @@
 
 </head>
 <body>
+    
+<form id="form1" runat="server">
+
     <header id="header">
     <div class="top-bar">
     <div class="container">
@@ -283,7 +288,6 @@
            <div class="fadeInDown">
 
 
-<form id="form2" runat="server">
 
 <div class="container">
 	<div class="row">
@@ -338,355 +342,388 @@
 
                                     <!-- Tab panes -->
                                     <div class="tab-content" class="col-md-8 inputGroupContainer">
-                                        <div role="tabpanel" class="tab-pane active" id="home">
-<!--inicio: Tab panes01 -->
-
-
-<div class="form-group">
-
-
-    <label for="Nombres">Nombres : </label>
-    <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-        <asp:TextBox type="text" runat="server" id="Nombres" CssClass="form-control" PlaceHolder="Nombres"></asp:TextBox>
-    </div>
-
-
-</div>
-
-
-<!-- Text input-->
-
-<div class="form-group">
-
-
-    <label for="Apellidos">Apellidos : </label>
-    <div class="input-group">
-      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-      <asp:TextBox type="text" runat="server" id="Apellidos" CssClass="form-control" PlaceHolder="Apellidos"></asp:TextBox>
-    </div>
-
-
-</div>
-
-
-<!-- Select Basic -->
-   
-<div class="form-group"> 
-
-        <label for="TipoDocumento">Tipo Documento : </label>
-        <div class="input-group">
-
-            <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-            <asp:DropDownList ID="TipoDocumento" runat="server" CssClass="form-control selectpicker">
-                <asp:ListItem value="value" selected="True">- Elija Documento -</asp:ListItem>
-                <asp:ListItem value="value" >DNI </asp:ListItem>
-                <asp:ListItem value="value" >Carnet de Extranjería</asp:ListItem>
-            </asp:DropDownList>
-           <!--/select-->
-        </div>
-
-
-</div>
-
-<!-- Text input-->
-
-<div class="form-group ">
-
-    <label for="NroDocumento">Nro. Documento : </label>  
-    <div class="input-group col-md-5">
-
-            <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-            <asp:TextBox type="text" runat="server" id="NroDocumento" CssClass="form-control" PlaceHolder="Nro. Documento"></asp:TextBox>
-
-    </div>
-
-</div>
-
-
-
-
-
-
-
-<!-- Text input-->   
-
-
-
-
-
-<div class="form-group">
-                <label for="dtp_input2" >Fecha Nacimiento :</label>
-                <div class="input-group">
-                <div class="input-group date form_date col-md-12" data-date="" data-date-format="yyyy-mm-dd" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
-                    <input class="form-control" size="16" type="text" value="" readonly>
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
-					<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
-                </div>
-				<input type="hidden" id="dtp_input2" value="" />
-                </div>
-</div>
-
-
-
-
-
-<!-- Text input-->
-      
-<div class="form-group">
-
-    <label for="FotoCarnet">Foto Carnet : </label>  
-
-    <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i></span>
-        <asp:FileUpload ID="FotoCarnet" runat="server" CssClass="form-control" placeholder="Foto"></asp:FileUpload>
-    </div>
-
-</div>
+                        
                                         
-<!--fin: Tab panes01 -->                                      
                                         
-                                        </div>
-                                        <div role="tabpanel" class="tab-pane" id="profile">
-<!--Inicio: Tab panes02-->
+                                <div role="tabpanel" class="tab-pane active" id="home">
+                                    <!--inicio: Tab panes01 -->
 
 
-
-<!-- Select Basic -->
-   
-<div class="form-group"> 
-        <label for="Distrito">Distrito Dirección : </label>
-        <div class="input-group">
-            <span class="input-group-addon" ><i class="glyphicon glyphicon-list"></i></span>
-
-            <asp:DropDownList ID="DropDownList1" runat="server" CssClass="form-control">
-                <asp:ListItem value="value" selected="True">- Seleccione Distrito de Lima -</asp:ListItem>
-                <asp:ListItem value="value" >Ate </asp:ListItem>
-                <asp:ListItem value="value" >Carabayllo</asp:ListItem>
-                <asp:ListItem value="value" >Miraflores</asp:ListItem>
-                <asp:ListItem value="value" >San Isidro</asp:ListItem>
-            </asp:DropDownList>
-
-        </div>  
-</div>
-
-<!-- Text input-->      
-<div class="form-group">
-
-    <label  for="Direccion">Dirección : </label>
-    <div class="input-group">
-           <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-           <asp:TextBox type="text" runat="server" id="TextBox1" CssClass="form-control" PlaceHolder="Dirección"></asp:TextBox>
-    </div>
-
-</div>
+                                    <div class="form-group">
 
 
-<!-- Text input-->
-<div class="form-group">
-
-    <label for="Email">Correo Electrónico : </label>
-    <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-        <asp:TextBox type="text" runat="server" id="TextBox2" CssClass="form-control" PlaceHolder="Correo Electrónico"></asp:TextBox>
-    </div>
-
-</div>
-
-
-<!-- Text input-->
-
-<div class="form-group">
-
-    <label for="txtTelefono">Teléfono : </label>
-    <div class="input-group">
-
-        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-        <asp:DropDownList ID="lstProveedorFono" runat="server" CssClass="form-control selectpicker">
-            <asp:ListItem value="00" selected="True">- Seleccione Compañía Telefónica -</asp:ListItem>
-            <asp:ListItem value="01">Claro</asp:ListItem>
-            <asp:ListItem value="02">Entel</asp:ListItem>
-            <asp:ListItem value="03">Movistar </asp:ListItem>
-            <asp:ListItem value="04">Bittel</asp:ListItem>
-            <asp:ListItem value="05">Otros</asp:ListItem>
-        </asp:DropDownList>
-
-        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-        <asp:TextBox type="text" runat="server" id="txtTelefono" CssClass="form-control" PlaceHolder="Teléfono"></asp:TextBox>
-
-
-
-
-
-    </div>
-    <input type="button" class="col-md-6" id="btnEliminar" value="Eliminar" onclick="borrarItemTelefono()">
-    <input type="button" class="col-md-6" id="btnAgregar" value="Agregar" onclick="agregarItemTelefono()">  
-  
-
-    <asp:ListBox ID="lstTelefonoAgregados" SelectionMode="Multiple"  runat="server" CssClass="form-control selectpicker" >
-    </asp:ListBox>
-
-
-</div>
-
-
-
-
-
-
-
-
-
-                                       
-<!--Fin : Tab panes02-->
-                                        </div>
-  <div role="tabpanel" class="tab-pane" id="messages">
-
-<!--inicio: Tab panes03 -->
-
-
-
-<!-- Text input-->
-
-<div class="form-group">
-
-    <label>Experiencia Laboral: </label>
-    <div class="input-group">
-
-        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-        <asp:DropDownList ID="lstPerfilLaboral" runat="server" CssClass="form-control selectpicker">
-            <asp:ListItem value="00" selected="True">- Seleccione el Oficio -</asp:ListItem>
-            <asp:ListItem value="01">Gasfitero</asp:ListItem>
-            <asp:ListItem value="02">Carpintero</asp:ListItem>
-            <asp:ListItem value="03">Cerrajero </asp:ListItem>
-            <asp:ListItem value="04">Alabañil</asp:ListItem>
-            <asp:ListItem value="05">Vidriero</asp:ListItem>
-        </asp:DropDownList>
-
-        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-        <asp:DropDownList ID="listPeriodoExperiencia" runat="server" CssClass="form-control selectpicker">
-            <asp:ListItem value="00" selected="True">- Seleccione Período de Experiencia -</asp:ListItem>
-            <asp:ListItem value="01">Aprox. 01 año de Experiencia</asp:ListItem>
-            <asp:ListItem value="02">Aprox. 03 años de Experiencia</asp:ListItem>
-            <asp:ListItem value="03">Aprox. 05 años de Experiencia </asp:ListItem>
-            <asp:ListItem value="04">Más de 05 años de Experiencia</asp:ListItem>
-        </asp:DropDownList>
-
-
-    </div>
-    <input type="button" class="col-md-6" id="btnEliminarOficio" value="Eliminar" onclick="borrarItemOficio()">
-    <input type="button" class="col-md-6" id="btnAgregarOficio" value="Agregar" onclick="agregarItemOficio()">  
-  
-
-    <asp:ListBox ID="lstOficioExperienciAgregados" SelectionMode="Multiple"  runat="server" CssClass="form-control selectpicker" >
-    </asp:ListBox>
-
-
-</div>
-
-
-
-
-
-
-
-
-
-
-<!--Fin : Tab panes03-->
+                                        <label for="Nombres">Nombres : </label>
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                            <asp:TextBox type="text" runat="server" id="TxtNombres" Text="Edgar" CssClass="form-control" PlaceHolder="Nombres"></asp:TextBox>
                                         </div>
 
 
- <div role="tabpanel" class="tab-pane" id="enviar">
-
-    <p>
-   DECLARO BAJO JURAMENTO:
-
-   <ul>
-<li> No haber sido condenado por los delitos consignados en la Ley Nº 29988.</li>
-<li> No haber sido condenado por delito doloso, ni encontrarme inhabilitado judicialmente o con
-cese temporal. </li>
-
-   </ul>
-
-    </p>
-    <asp:Button type="submit" runat="server" CssClass="btn btn-primary center-block" id="btnEnviar" Text="Guardar Formulario"> </asp:Button>
-
- </div>
-
-                                        <div role="tabpanel" class="tab-pane" id="settings">
-
-
-<!--Inicio: Tab panes04-->
-
-
-<!-- Text input-->                         
-<div class="form-group">
-
-    <label for="ReciboResidencia">Recibo Luz o Agua : </label>
-    <div class="input-group">
-
-        <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i></span>
-        <!--input  name="file" placeholder="Fotos" class="form-control" type="file"-->
-
-
-        <asp:FileUpload ID="ReciboResidencia" runat="server" CssClass="form-control" placeholder="Foto"></asp:FileUpload>
-
-    </div>
-
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-
-    <label for="AntecedentePenales">Antecendentes Penales Escaneado : </label>
-    <div class="input-group">
-
-
-        <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i></span>
-
-        <asp:FileUpload ID="AntecedentePenales" runat="server" CssClass="form-control" placeholder="Foto"></asp:FileUpload>
-
-    </div>
-
-</div>
-
-<!-- Text input-->                         
-<div class="form-group">
-
-     <label for="AntecendentesPoliciales">Antecedentes Policiales Escaneado : </label>
-    <div class="input-group">
-
-
-        <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i></span>
-        <asp:FileUpload ID="AntecendentesPoliciales" runat="server" CssClass="form-control" placeholder="Foto"></asp:FileUpload>
-
-    </div>
-
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-
-
-    <label for="DocumentoIdentidad">Documento de Identidad Escaneado : </label>
-    <div class="input-group">
-
-        <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i></span>
-
-        <asp:FileUpload ID="DocumentoIdentidad" runat="server" CssClass="form-control" placeholder="Foto"></asp:FileUpload>
-
-    </div>
-
-</div>
-
-<!--Fin: Tab panes05-->
-
-                                        
-
-
-                                        </div>
                                     </div>
+
+
+                                    <!-- Text input-->
+
+                                    <div class="form-group">
+
+
+                                        <label for="Apellidos">Apellidos  Paterno: </label>
+                                        <div class="input-group">
+                                          <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                          <asp:TextBox type="text" runat="server" id="txtApePa" Text="Ligarda Estrada" CssClass="form-control" PlaceHolder="Apellidos"></asp:TextBox>
+                                        </div>
+
+                                                  <label for="Apellidos">Apellidos Materno: </label>
+                                        <div class="input-group">
+                                          <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                          <asp:TextBox type="text" runat="server" id="txtApeMa" Text="Ligarda Estrada" CssClass="form-control" PlaceHolder="Apellidos"></asp:TextBox>
+                                        </div>
+
+
+                                                                 <label for="Apellidos">Genero: </label>
+                                        <div class="input-group">
+                                          <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                                                     <asp:DropDownList ID="cboTipoGenero" runat="server" CssClass="form-control selectpicker">
+
+                                                </asp:DropDownList>
+                                                 </div>
+
+
+                                    </div>
+
+
+                                    <!-- Select Basic -->
+   
+                                    <div class="form-group"> 
+
+                                            <label for="TipoDocumento">Tipo Documento : </label>
+                                            <div class="input-group">
+
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                                                <asp:DropDownList ID="CboTipoDocumento" runat="server" CssClass="form-control selectpicker">
+
+                                                </asp:DropDownList>
+                                               <!--/select-->
+                                            </div>
+
+
+                                    </div>
+
+                                    <!-- Text input-->
+
+                                    <div class="form-group ">
+
+                                        <label for="NroDocumento">Nro. Documento : </label>  
+                                        <div class="input-group col-md-5">
+
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                                                <asp:TextBox type="text" runat="server" id="txtNroDocumento" Text="44953781" CssClass="form-control" PlaceHolder="Nro. Documento"></asp:TextBox>
+
+                                        </div>
+
+                                    </div>
+
+
+
+
+
+
+
+                                    <!-- Text input-->   
+
+
+
+
+
+                                    <div class="form-group">
+                                                    <label for="dtp_input2" >Fecha Nacimiento :</label>
+                                                    <div class="input-group">
+                                                    <div class="input-group date form_date col-md-12" data-date="" data-date-format="yyyy-mm-dd" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                    
+                                                        <asp:TextBox  class="form-control"  size="16"  ID="txtFecNaci" Text="2017-05-20" runat="server" ReadOnly="true"></asp:TextBox>
+                                                   <%--     <input class="form-control" size="16" type="text" value="ss" readonly>--%>
+                                                        <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+					                                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                                                    </div>
+          
+				                                     <input type="hidden" id="dtp_input2" value="" />
+                                                    </div>
+                                    </div>
+
+
+
+
+
+                                    <!-- Text input-->
+      
+                                    <div class="form-group">
+
+                                        <label for="FotoCarnet">Foto Carnet : </label>  
+
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i></span>
+                                            <asp:FileUpload ID="FotoCarnet" runat="server" CssClass="form-control" placeholder="Foto"></asp:FileUpload>
+                                        </div>
+
+                                 
+
+                                    </div>
+                                        
+                                    <!--fin: Tab panes01 -->                                      
+                                        
+                          </div>
+                           
+                                        
+                                        
+                          <div role="tabpanel" class="tab-pane" id="profile">
+                                        <!--Inicio: Tab panes02-->
+
+
+
+                                                    <!-- Select Basic -->
+   
+                                                    <div class="form-group"> 
+                                                            <label for="Distrito">Distrito Dirección : </label>
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon" ><i class="glyphicon glyphicon-list"></i></span>
+
+                                                                <asp:DropDownList ID="cboDistrito" runat="server" CssClass="form-control">
+                                                                    <asp:ListItem value="value" selected="True">- Seleccione Distrito de Lima -</asp:ListItem>
+
+                                                                </asp:DropDownList>
+
+                                                            </div>  
+                                                    </div>
+
+                                                    <!-- Text input-->      
+                                                    <div class="form-group">
+
+                                                        <label  for="Direccion">Dirección : </label>
+                                                        <div class="input-group">
+                                                               <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                                                               <asp:TextBox  runat="server" Text="Calle Monterrey 341 - Chacarrilla - Santiago de Surco" id="txtDireccion" CssClass="form-control" PlaceHolder="Dirección"></asp:TextBox>
+                                                        </div>
+
+                                                    </div>
+
+
+                                                    <!-- Text input-->
+                                                    <div class="form-group">
+
+                                                        <label for="Email">Correo Electrónico : </label>
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                                                            <asp:TextBox type="txtEmail" runat="server" id="txtEmail" Text="atencion@directv.com.pe"  CssClass="form-control" PlaceHolder="Correo Electrónico"></asp:TextBox>
+                                                        </div>
+
+                                                    </div>
+
+                                             <div class="form-group">
+
+                                                        <label for="txtTelefono">Celular de Contacto : </label>
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                                                            <asp:TextBox  runat="server" id="txtTelefonoPrincipal" CssClass="form-control" Text="987379413" PlaceHolder="Celular"></asp:TextBox>
+
+                                                        </div>
+
+                                                    </div>
+
+
+                                                    <!-- Text input-->
+
+                                                    <div class="form-group">
+
+                                                        <label for="txtTelefono">Otros Numeros Teléfonicos de Contacto : </label>
+                                                        <div class="input-group">
+
+                                                            <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                                                            <asp:DropDownList ID="cboProveedorTelf" runat="server" CssClass="form-control selectpicker">
+                                                                <asp:ListItem value="00" selected="True">- Seleccione Compañía Telefónica -</asp:ListItem>
+
+                                                            </asp:DropDownList>
+
+                                                            <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                                                            <asp:TextBox  runat="server" id="txtTelefono" CssClass="form-control" PlaceHolder="Teléfono"></asp:TextBox>
+
+
+
+
+
+                                                        </div>
+                                                        <input type="button" class="col-md-6" id="btnEliminar" value="Eliminar" onclick="borrarItemTelefono()">
+                                                        <input type="button" class="col-md-6" id="btnAgregar" value="Agregar" onclick="agregarItemTelefono()">  
+  
+
+                                                        <asp:ListBox ID="lstTelefonoAgregados" SelectionMode="Multiple"  runat="server" CssClass="form-control selectpicker" >
+                                                        </asp:ListBox>
+
+
+                                                    </div>
+
+                                      
+                                <!--Fin : Tab panes02-->
+                                </div>
+                                     
+                                        
+                                   <div role="tabpanel" class="tab-pane" id="messages">
+
+                                                    <!--inicio: Tab panes03 -->
+
+
+
+                                                    <!-- Text input-->
+
+                                                    <div class="form-group">
+
+                                                           <label>Selecciona el Oficio en que se especializa y su Experiencia: </label>
+                                                        <div class="input-group" style="padding-bottom:50px">
+
+                                                            <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                                                            <asp:DropDownList ID="cboOficiDomin" runat="server" CssClass="form-control selectpicker">
+
+                                                            </asp:DropDownList>
+
+                                                            <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                                                            <asp:DropDownList ID="cboPerioDomin" runat="server" CssClass="form-control selectpicker">
+
+                                                            </asp:DropDownList>
+
+
+                                                        </div>
+
+
+
+                                                        <label>Agregue Otros Oficios que domina: </label>
+                                                        <div class="input-group">
+
+                                                            <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                                                            <asp:DropDownList ID="cboOficiosOtros" runat="server" CssClass="form-control selectpicker">
+
+                                                            </asp:DropDownList>
+
+                                                            <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                                                            <asp:DropDownList ID="cboPeriodoExpeOtros" runat="server" CssClass="form-control selectpicker">
+
+                                                            </asp:DropDownList>
+
+
+                                                        </div>
+                                                        <input type="button" class="col-md-6" id="btnEliminarOficio" value="Eliminar" onclick="borrarItemOficio()">
+                                                        <input type="button" class="col-md-6" id="btnAgregarOficio" value="Agregar" onclick="agregarItemOficio()">  
+  
+
+                                                        <asp:ListBox ID="lstOficioExperienciAgregados" SelectionMode="Multiple"  runat="server" CssClass="form-control selectpicker" >
+                                                        </asp:ListBox>
+
+
+                                                    </div>
+
+
+
+
+
+
+
+
+
+
+                                                    <!--Fin : Tab panes03-->
+                               </div>
+
+
+                               <div role="tabpanel" class="tab-pane" id="enviar">
+
+
+
+                                            <p>
+                                           DECLARO BAJO JURAMENTO:
+
+                                           <ul>
+                                        <li> No haber sido condenado por los delitos consignados en la Ley Nº 29988.</li>
+                                        <li> No haber sido condenado por delito doloso, ni encontrarme inhabilitado judicialmente o con
+                                        cese temporal. </li>
+
+                                           </ul>
+
+                                            </p>
+                                            <asp:Button  OnClick="btnEnviar_Click" runat="server" CssClass="btn btn-primary center-block" id="btnEnviar" Text="Guardar Formulario"> </asp:Button>
+
+                              </div>
+
+                              <div role="tabpanel" class="tab-pane" id="settings">
+
+
+                                            <!--Inicio: Tab panes05-->
+
+
+                                            <!-- Text input-->                         
+                                            <div class="form-group">
+
+                                                <label for="ReciboResidencia">Recibo Luz o Agua : </label>
+                                                <div class="input-group">
+
+                                                    <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i></span>
+                                                    <!--input  name="file" placeholder="Fotos" class="form-control" type="file"-->
+
+
+                                                    <asp:FileUpload ID="ReciboResidencia" runat="server" CssClass="form-control" placeholder="Foto"></asp:FileUpload>
+
+                                                </div>
+
+                                            </div>
+
+                                            <!-- Text input-->
+                                            <div class="form-group">
+
+                                                <label for="AntecedentePenales">Antecendentes Penales Escaneado : </label>
+                                                <div class="input-group">
+
+
+                                                    <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i></span>
+
+                                                    <asp:FileUpload ID="AntecedentePenales" runat="server" CssClass="form-control" placeholder="Foto"></asp:FileUpload>
+
+                                                </div>
+
+                                            </div>
+
+                                            <!-- Text input-->                         
+                                            <div class="form-group">
+
+                                                 <label for="AntecendentesPoliciales">Antecedentes Policiales Escaneado : </label>
+                                                <div class="input-group">
+
+
+                                                    <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i></span>
+                                                    <asp:FileUpload ID="AntecendentesPoliciales" runat="server" CssClass="form-control" placeholder="Foto"></asp:FileUpload>
+
+                                                </div>
+
+                                            </div>
+
+                                            <!-- Text input-->
+                                            <div class="form-group">
+
+
+                                                <label for="DocumentoIdentidad">Documento de Identidad Escaneado : </label>
+                                                <div class="input-group">
+
+                                                    <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i></span>
+
+                                                    <asp:FileUpload ID="DocumentoIdentidad" runat="server" CssClass="form-control" placeholder="Foto"></asp:FileUpload>
+
+                                                </div>
+
+                                            </div>
+
+                                            <!--Fin: Tab panes05-->
+
+                                        
+
+
+                                  </div>
+                             </div>
                      </div>
           </div>
 	</div>

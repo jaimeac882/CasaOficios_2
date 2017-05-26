@@ -58,6 +58,11 @@
     <Reference Include="System.Web.Mobile" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Ajx\TextFile1.txt" />
+    <Content Include="App_Data\CasaOficios.mdf" />
+    <Content Include="App_Data\CasaOficios_log.ldf">
+      <DependentUpon>CasaOficios.mdf</DependentUpon>
+    </Content>
     <Content Include="contactus.aspx" />
     <Content Include="css\animate.min.css" />
     <Content Include="css\bootstrap.min.css" />
@@ -160,6 +165,7 @@
     <Content Include="images\Verde.png" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\dom-drag.js" />
+    <Content Include="js\Funciones_Trabajador.js" />
     <Content Include="js\html5shiv.js" />
     <Content Include="js\jquery.isotope.min.js" />
     <Content Include="js\jquery.js" />
@@ -186,6 +192,7 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="contactus.aspx.cs">
@@ -233,10 +240,16 @@
     </Compile>
     <Compile Include="trabajadores.aspx.cs">
       <DependentUpon>trabajadores.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="trabajadores.aspx.designer.cs">
       <DependentUpon>trabajadores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -275,6 +288,9 @@
   <ItemGroup>
     <Content Include="images\404.xcf" />
     <Content Include="images\IS.S3.C4.D1-Introducción a Lumira V1.0.pdf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Ajx\AjaxControlToolkit.Binary.NET4.zip" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

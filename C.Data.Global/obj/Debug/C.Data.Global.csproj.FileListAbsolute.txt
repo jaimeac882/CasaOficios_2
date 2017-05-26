@@ -12,3 +12,12 @@ F:\CasaOficiosPyto\CasaOficios_2\C.Data.Global\bin\Debug\C.User.Code.pdb
 F:\CasaOficiosPyto\CasaOficios_2\C.Data.Global\obj\Debug\C.Data.Global.csprojResolveAssemblyReference.cache
 F:\CasaOficiosPyto\CasaOficios_2\C.Data.Global\obj\Debug\C.Data.Global.dll
 F:\CasaOficiosPyto\CasaOficios_2\C.Data.Global\obj\Debug\C.Data.Global.pdb
+D:\Worskpace-VisualStudio\CasaOficios_2\C.Data.Global\bin\Debug\C.Data.Global.dll
+D:\Worskpace-VisualStudio\CasaOficios_2\C.Data.Global\bin\Debug\C.Data.Global.pdb
+D:\Worskpace-VisualStudio\CasaOficios_2\C.Data.Global\bin\Debug\C.User.Code.dll
+D:\Worskpace-VisualStudio\CasaOficios_2\C.Data.Global\bin\Debug\C.User.Code.pdb
+D:\Worskpace-VisualStudio\CasaOficios_2\C.Data.Global\obj\Debug\C.Data.Global.csprojResolveAssemblyReference.cache
+D:\Worskpace-VisualStudio\CasaOficios_2\C.Data.Global\obj\Debug\C.Data.Global.dll
+D:\Worskpace-VisualStudio\CasaOficios_2\C.Data.Global\obj\Debug\C.Data.Global.pdb
+D:\Worskpace-VisualStudio\CasaOficios_2\C.Data.Global\bin\Debug\CasaOficios.Entities.dll
+D:\Worskpace-VisualStudio\CasaOficios_2\C.Data.Global\bin\Debug\CasaOficios.Entities.pdb

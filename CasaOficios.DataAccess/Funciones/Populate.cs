@@ -8,9 +8,9 @@ using CasaOficios.Entities;
 namespace CasaOficios.DataAccess.Funciones
 {
     class Populate
-    {       
-        
-        private UCMapeador ValidExistColumn= new UCMapeador();
+    {
+
+        private UCMapeador ValidExistColumn = new UCMapeador();
 
         //public BEVendedor setBEVendedor(IDataReader _dr)
         //{
@@ -66,16 +66,117 @@ namespace CasaOficios.DataAccess.Funciones
         //    return _Entity;
         //}
 
-        public BEPrueba setPrueba(IDataReader _dr)
+        public BETipoAveria setTipoAveria(IDataReader _dr)
         {
-            BEPrueba _Entity = new BEPrueba();
-            if (ValidExistColumn.HasColumn(_dr, "idPrueba")) { _Entity.idPrueba = Convert.ToInt32(_dr["idPrueba"]); }
-            if (ValidExistColumn.HasColumn(_dr, "descripcion")) { _Entity.descripcion = Convert.ToString(_dr["descripcion"]); }
-            if (ValidExistColumn.HasColumn(_dr, "idtipoprueba")) { _Entity.idtipoprueba.idTipoPrueba = Convert.ToInt32(_dr["idtipoprueba"]); }
+            BETipoAveria _Entity = new BETipoAveria();
+            if (ValidExistColumn.HasColumn(_dr, "COD_TIPAVERIA")) { _Entity.COD_TIPAVERIA = Convert.ToString(_dr["COD_TIPAVERIA"]); }
+            if (ValidExistColumn.HasColumn(_dr, "DES_TIPO_AVERIA")) { _Entity.DES_TIPO_AVERIA = Convert.ToString(_dr["DES_TIPO_AVERIA"]); }
+            if (ValidExistColumn.HasColumn(_dr, "FEC_MODIFICACION")) { _Entity.FEC_MODIFICACION = Convert.ToDateTime(_dr["FEC_MODIFICACION"]); }
+
+            if (ValidExistColumn.HasColumn(_dr, "COD_USUARIO_REGISTRO")) { _Entity.COD_USUARIO_REGISTRO = Convert.ToString(_dr["COD_USUARIO_REGISTRO"]); }
+
+
+
             //if (ValidExistColumn.HasColumn(_dr, "Abv")) { _Entity.idPrueba = Convert.ToString(_dr["Abv"]); }
             //if (ValidExistColumn.HasColumn(_dr, "Anulado")) { _Entity.Anulado = Convert.ToString(_dr["Anulado"]); }
             return _Entity;
         }
+
+
+        public BEMaestro_Tipo setMaestro_Tipo(IDataReader _dr)
+        {
+            BEMaestro_Tipo _Entity = new BEMaestro_Tipo();
+            if (ValidExistColumn.HasColumn(_dr, "COD_TIPO_MAESTRO")) { _Entity.COD_TIPO_MAESTRO = Convert.ToString(_dr["COD_TIPO_MAESTRO"]); }
+            if (ValidExistColumn.HasColumn(_dr, "DES_TIPO_MAESTRO")) { _Entity.DES_TIPO_MAESTRO = Convert.ToString(_dr["DES_TIPO_MAESTRO"]); }
+            if (ValidExistColumn.HasColumn(_dr, "FEC_REGISTRO")) { _Entity.FEC_REGISTRO = Convert.ToDateTime(_dr["FEC_REGISTRO"]); }
+            if (ValidExistColumn.HasColumn(_dr, "FEC_MODIFICACION")) { _Entity.FEC_MODIFICACION = Convert.ToDateTime(_dr["FEC_MODIFICACION"]); }
+            if (ValidExistColumn.HasColumn(_dr, "COD_USUARIO_REGISTRO")) { _Entity.COD_USUARIO_REGISTRO = Convert.ToString(_dr["COD_USUARIO_REGISTRO"]); }
+            //if (ValidExistColumn.HasColumn(_dr, "Abv")) { _Entity.idPrueba = Convert.ToString(_dr["Abv"]); }
+            //if (ValidExistColumn.HasColumn(_dr, "Anulado")) { _Entity.Anulado = Convert.ToString(_dr["Anulado"]); }
+            return _Entity;
+        }
+
+
+        public BEOficios setOficios(IDataReader _dr)
+        {
+            BEOficios _Entity = new BEOficios();
+            if (ValidExistColumn.HasColumn(_dr, "COD_OFICIO")) { _Entity.COD_OFICIO = Convert.ToString(_dr["COD_OFICIO"]); }
+            if (ValidExistColumn.HasColumn(_dr, "DES_OFICIO")) { _Entity.DES_OFICIO = Convert.ToString(_dr["DES_OFICIO"]); }
+            if (ValidExistColumn.HasColumn(_dr, "FEC_REGISTRO")) { _Entity.FEC_REGISTRO = Convert.ToDateTime(_dr["FEC_REGISTRO"]); }
+            if (ValidExistColumn.HasColumn(_dr, "FEC_MODIFICACION")) { _Entity.FEC_MODIFICACION = Convert.ToDateTime(_dr["FEC_MODIFICACION"]); }
+            if (ValidExistColumn.HasColumn(_dr, "COD_USUARIO_REGISTRO")) { _Entity.COD_USUARIO_REGISTRO = Convert.ToString(_dr["COD_USUARIO_REGISTRO"]); }
+            //if (ValidExistColumn.HasColumn(_dr, "Abv")) { _Entity.idPrueba = Convert.ToString(_dr["Abv"]); }
+            //if (ValidExistColumn.HasColumn(_dr, "Anulado")) { _Entity.Anulado = Convert.ToString(_dr["Anulado"]); }
+            return _Entity;
+        }
+
+
+
+
+
+        public BEUbigeo setUbigeo(IDataReader _dr)
+        {
+            BEUbigeo _Entity = new BEUbigeo();
+            if (ValidExistColumn.HasColumn(_dr, "COD_UBIGEO")) { _Entity.COD_UBIGEO = Convert.ToString(_dr["COD_UBIGEO"]); }
+            if (ValidExistColumn.HasColumn(_dr, "COD_PAIS")) { _Entity.COD_PAIS = Convert.ToString(_dr["COD_PAIS"]); }
+            if (ValidExistColumn.HasColumn(_dr, "COD_DEPARTAMENTO")) { _Entity.COD_DEPARTAMENTO = Convert.ToString(_dr["COD_DEPARTAMENTO"]); }
+
+            if (ValidExistColumn.HasColumn(_dr, "COD_PROVINCIA")) { _Entity.COD_PROVINCIA = Convert.ToString(_dr["COD_PROVINCIA"]); }
+
+
+            if (ValidExistColumn.HasColumn(_dr, "COD_DISTRITO")) { _Entity.COD_DISTRITO = Convert.ToString(_dr["COD_DISTRITO"]); }
+            if (ValidExistColumn.HasColumn(_dr, "DES_UBIGEO")) { _Entity.DES_UBIGEO = Convert.ToString(_dr["DES_UBIGEO"]); }
+            if (ValidExistColumn.HasColumn(_dr, "FEC_REGISTRO")) { _Entity.FEC_REGISTRO = Convert.ToDateTime(_dr["FEC_REGISTRO"]); }
+
+            if (ValidExistColumn.HasColumn(_dr, "FEC_MOD")) { _Entity.FEC_MOD = Convert.ToDateTime(_dr["FEC_MOD"]); }
+            if (ValidExistColumn.HasColumn(_dr, "USU_REGISTRO")) { _Entity.USU_REGISTRO = Convert.ToString(_dr["USU_REGISTRO"]); }
+
+
+            return _Entity;
+        }
+
+
+        public BESolicitud_Trabajo setSolicitud_Trabajo(IDataReader _dr)
+        {
+            BESolicitud_Trabajo _Entity = new BESolicitud_Trabajo();
+            if (ValidExistColumn.HasColumn(_dr, "COD_SOLICITUD")) { _Entity.COD_SOLICITUD = Convert.ToString(_dr["COD_SOLICITUD"]); }
+            if (ValidExistColumn.HasColumn(_dr, "COD_CLIENTE")) { _Entity.COD_CLIENTE = Convert.ToString(_dr["COD_CLIENTE"]); }
+            if (ValidExistColumn.HasColumn(_dr, "CORDENADAS_REGISTRO")) { _Entity.CORDENADAS_REGISTRO = Convert.ToString(_dr["CORDENADAS_REGISTRO"]); }
+
+            if (ValidExistColumn.HasColumn(_dr, "CORDENADAS_UBICACION")) { _Entity.CORDENADAS_UBICACION = Convert.ToString(_dr["CORDENADAS_UBICACION"]); }
+
+
+            if (ValidExistColumn.HasColumn(_dr, "COD_TIPO_AVERIA")) { _Entity.COD_TIPO_AVERIA = Convert.ToString(_dr["COD_TIPO_AVERIA"]); }
+            if (ValidExistColumn.HasColumn(_dr, "COD_TIPO_PRIORIDAD")) { _Entity.COD_TIPO_PRIORIDAD = Convert.ToString(_dr["COD_TIPO_PRIORIDAD"]); }
+            if (ValidExistColumn.HasColumn(_dr, "NOMBRE")) { _Entity.NOMBRE = Convert.ToString(_dr["NOMBRE"]); }
+
+            if (ValidExistColumn.HasColumn(_dr, "EMAIL")) { _Entity.EMAIL = Convert.ToString(_dr["EMAIL"]); }
+            if (ValidExistColumn.HasColumn(_dr, "TELEFONO")) { _Entity.TELEFONO = Convert.ToString(_dr["TELEFONO"]); }
+
+
+
+            if (ValidExistColumn.HasColumn(_dr, "DESCRIPCION")) { _Entity.DESCRIPCION = Convert.ToString(_dr["DESCRIPCION"]); }
+            if (ValidExistColumn.HasColumn(_dr, "ESTADO")) { _Entity.ESTADO = Convert.ToString(_dr["ESTADO"]); }
+            if (ValidExistColumn.HasColumn(_dr, "PRECIO_PRESUPUESTO")) { _Entity.PRECIO_PRESUPUESTO = Convert.ToDecimal(_dr["PRECIO_PRESUPUESTO"]); }
+
+            if (ValidExistColumn.HasColumn(_dr, "PRECIO_FINAL")) { _Entity.PRECIO_FINAL = Convert.ToDecimal(_dr["PRECIO_FINAL"]); }
+            if (ValidExistColumn.HasColumn(_dr, "COD_TIPO_REGISTRO")) { _Entity.COD_TIPO_REGISTRO = Convert.ToString(_dr["COD_TIPO_REGISTRO"]); }
+
+
+            if (ValidExistColumn.HasColumn(_dr, "FEC_REGISTRO")) { _Entity.FEC_REGISTRO = Convert.ToDateTime(_dr["FEC_REGISTRO"]); }
+            if (ValidExistColumn.HasColumn(_dr, "FEC_MODIFICACION")) { _Entity.FEC_MODIFICACION = Convert.ToDateTime(_dr["FEC_MODIFICACION"]); }
+            if (ValidExistColumn.HasColumn(_dr, "COD_USUARIO_REGISTRO")) { _Entity.COD_USUARIO_REGISTRO = Convert.ToString(_dr["COD_USUARIO_REGISTRO"]); }
+
+            if (ValidExistColumn.HasColumn(_dr, "COD_UBIGEO")) { _Entity.COD_UBIGEO = Convert.ToString(_dr["COD_UBIGEO"]); }
+
+
+
+
+
+            return _Entity;
+        }
+
+
 
         //public BEUsuario setBEUsuario(IDataReader _dr)
         //{
@@ -133,7 +234,7 @@ namespace CasaOficios.DataAccess.Funciones
         //    if (ValidExistColumn.HasColumn(_dr, "Tipo")) { _Entity.Tipo = Convert.ToString(_dr["Tipo"]); }
         //    if (ValidExistColumn.HasColumn(_dr, "CodigoLL")) { _Entity.CodigoLL = Convert.ToString(_dr["CodigoLL"]); }
         //    if (ValidExistColumn.HasColumn(_dr, "idPaisBase")) { _Entity.idPaisBase = Convert.ToInt32(_dr["idPaisBase"]); }
-            
+
         //    return _Entity;
         //}
 

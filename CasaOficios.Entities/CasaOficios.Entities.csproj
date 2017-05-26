@@ -39,7 +39,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BEPrueba.cs" />
+    <Compile Include="BESolicitud_Trabajo_Documento.cs" />
+    <Compile Include="BETMRH_Oficios_Extra.cs" />
+    <Compile Include="BETMRH_DOCUMENTOS_ADJUNTOS.cs" />
+    <Compile Include="BETMRH_Contacto.cs" />
+    <Compile Include="BESolicitud_Trabajo.cs" />
+    <Compile Include="BEMaestro_Tipo.cs" />
+    <Compile Include="BEOficios.cs" />
+    <Compile Include="BEUbigeo.cs" />
+    <Compile Include="BETipoAveria.cs" />
     <Compile Include="BETipoPrueba.cs" />
     <Compile Include="BETMRH.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -50,6 +50,10 @@
       <Project>{4335A713-BDEA-44C4-800A-2D2B18E1C40F}</Project>
       <Name>C.User.Code</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CasaOficios.Entities\CasaOficios.Entities.csproj">
+      <Project>{c11aa6b4-e4fa-47e5-95db-016a09beff20}</Project>
+      <Name>CasaOficios.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
