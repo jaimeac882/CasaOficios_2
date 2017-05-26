@@ -169,7 +169,9 @@ namespace CasaOficios.DataAccess.Funciones
 
             if (ValidExistColumn.HasColumn(_dr, "COD_UBIGEO")) { _Entity.COD_UBIGEO = Convert.ToString(_dr["COD_UBIGEO"]); }
 
+            if (ValidExistColumn.HasColumn(_dr, "COD_USUARIO_REGISTRO")) { _Entity.COD_USUARIO_REGISTRO = Convert.ToString(_dr["COD_USUARIO_REGISTRO"]); }
 
+            if (ValidExistColumn.HasColumn(_dr, "COD_UBIGEO")) { _Entity.COD_UBIGEO = Convert.ToString(_dr["COD_UBIGEO"]); }
 
 
 
