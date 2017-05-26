@@ -21,5 +21,3 @@ D:\Worskpace-VisualStudio\CasaOficios_2\C.Data.Global\obj\Debug\C.Data.Global.dl
 D:\Worskpace-VisualStudio\CasaOficios_2\C.Data.Global\obj\Debug\C.Data.Global.pdb
 D:\Worskpace-VisualStudio\CasaOficios_2\C.Data.Global\bin\Debug\CasaOficios.Entities.dll
 D:\Worskpace-VisualStudio\CasaOficios_2\C.Data.Global\bin\Debug\CasaOficios.Entities.pdb
-F:\CasaOficiosPyto\CasaOficios_2\C.Data.Global\bin\Debug\CasaOficios.Entities.dll
-F:\CasaOficiosPyto\CasaOficios_2\C.Data.Global\bin\Debug\CasaOficios.Entities.pdb
