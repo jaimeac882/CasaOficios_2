@@ -361,10 +361,10 @@
 
 <!-- Button -->
 <div class="form-group" style="padding-top:35px   "> 
-  <div class="col-md-8" >
+  <div class="col-md-11" >
     <p >
     
-    <asp:Button type="submit" runat="server" CssClass="btn btn-primary center-block" id="btnEnviar" Text="Enviar" OnClick="btnEnviar_Click"> 
+    <asp:Button type="submit" runat="server" CssClass="btn btn-primary btn-block" id="btnEnviar" Text="Enviar" OnClick="btnEnviar_Click"> 
 
     </asp:Button>
     <!--span  class="glyphicon glyphicon-send"></!--span-->
@@ -573,7 +573,7 @@
 
 
 
-
+    </p>
 
     <!--/#middle-->
     <section id="bottom">

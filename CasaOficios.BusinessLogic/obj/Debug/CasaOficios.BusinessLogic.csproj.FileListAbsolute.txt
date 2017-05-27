@@ -24,3 +24,16 @@ D:\Worskpace-VisualStudio\CasaOficios_2\CasaOficios.BusinessLogic\bin\Debug\C.Us
 D:\Worskpace-VisualStudio\CasaOficios_2\CasaOficios.BusinessLogic\obj\Debug\CasaOficios.BusinessLogic.csprojResolveAssemblyReference.cache
 D:\Worskpace-VisualStudio\CasaOficios_2\CasaOficios.BusinessLogic\obj\Debug\CasaOficios.BusinessLogic.dll
 D:\Worskpace-VisualStudio\CasaOficios_2\CasaOficios.BusinessLogic\obj\Debug\CasaOficios.BusinessLogic.pdb
+F:\CasaOficiosPyto\CasaOficios_2\CasaOficios.BusinessLogic\bin\Debug\CasaOficios.BusinessLogic.dll
+F:\CasaOficiosPyto\CasaOficios_2\CasaOficios.BusinessLogic\bin\Debug\CasaOficios.BusinessLogic.pdb
+F:\CasaOficiosPyto\CasaOficios_2\CasaOficios.BusinessLogic\bin\Debug\C.Data.Global.dll
+F:\CasaOficiosPyto\CasaOficios_2\CasaOficios.BusinessLogic\bin\Debug\CasaOficios.DataAccess.dll
+F:\CasaOficiosPyto\CasaOficios_2\CasaOficios.BusinessLogic\bin\Debug\CasaOficios.Entities.dll
+F:\CasaOficiosPyto\CasaOficios_2\CasaOficios.BusinessLogic\bin\Debug\C.User.Code.dll
+F:\CasaOficiosPyto\CasaOficios_2\CasaOficios.BusinessLogic\bin\Debug\C.Data.Global.pdb
+F:\CasaOficiosPyto\CasaOficios_2\CasaOficios.BusinessLogic\bin\Debug\CasaOficios.DataAccess.pdb
+F:\CasaOficiosPyto\CasaOficios_2\CasaOficios.BusinessLogic\bin\Debug\CasaOficios.Entities.pdb
+F:\CasaOficiosPyto\CasaOficios_2\CasaOficios.BusinessLogic\bin\Debug\C.User.Code.pdb
+F:\CasaOficiosPyto\CasaOficios_2\CasaOficios.BusinessLogic\obj\Debug\CasaOficios.BusinessLogic.csprojResolveAssemblyReference.cache
+F:\CasaOficiosPyto\CasaOficios_2\CasaOficios.BusinessLogic\obj\Debug\CasaOficios.BusinessLogic.dll
+F:\CasaOficiosPyto\CasaOficios_2\CasaOficios.BusinessLogic\obj\Debug\CasaOficios.BusinessLogic.pdb
