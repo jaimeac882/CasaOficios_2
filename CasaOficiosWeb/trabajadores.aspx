@@ -1,5 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="trabajadores.aspx.cs" Inherits="CasaOficiosWeb.trabajadores" %>
-
+﻿<%@ Page Language="C#" AutoEventWireup="true"  CodeBehind="trabajadores.aspx.cs" Inherits="CasaOficiosWeb.trabajadores"  EnableEventValidation="false" %>
+<%@ Implements Interface="System.Web.UI.ICallbackEventHandler" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -32,110 +32,174 @@
 
 
     <script language="javascript">
-
+      
 
         //variable global para fx AgregarItem
         var arrayFonos = [];
-        function agregarItemTelefono()
-        {
+        /*---------------------------------------------------------------------------*/
+                    function addCustomItem(id, text, val) {
+                        var vlist = document.getElementById(id);
+                        if (vlist != null) {
+                            if (navigator.appName == 'Microsoft Internet Explorer') {
+                                var newOption = document.createElement('OPTION');
+                                newOption.value = val;
+                                newOption.innerText = text;
+                                vlist.options.appendChild(newOption);
+                            }
+                            else {
+                                var newOption = new Option(text, val);
+                                vlist.options.add(newOption);
+                            }
+                        }
+                    }
 
-        //declaración de variables
 
-        telefono = $.trim($('#txtTelefono').val());
-        codigonItem = $.trim($('#cboProveedorTelf option:selected').val());
-        descripcionItem = $.trim($('#cboProveedorTelf option:selected').text());
+                    function selectAllElements(id) {
+                        var oList = document.getElementById(id);
+                        if (oList != null) {
+                            for (i = 0; i < oList.options.length; i++)
+                                oList.options[i].selected = true;
+                        }
+                    }
 
-        nuevoCodigo = codigonItem + '-' + telefono;
-        activarSalida = false;
+
+               function ReceiveServerData(arg, context)
+                 { 
+                   // arg contains the result of GetCallbackResult()
+                   // No se usa o no es importante para lo que se deseamos obtener
+                    var opts = arg.split(';');
+                    var opt;
+                    for (i=0; i< opts.length;i++)
+                    {
+                        opt = opts[i].split(',');
+                        addCustomItem('<%= lstTelefonoAgregados.ClientID %>', opt[0], opt[1]);
+                    }
+               }
 
 
-
-        //Seleccionar al menos un proveedor
-        if (codigonItem == '00') {
-            alert("Debe seleccionar un proveedor telefónico.");
-            return;
-        }
 
 
         
-        //Validación de Número de Telefono
-        if ($.isNumeric(telefono) == false) {
-            alert("El teléfono '" + telefono + "' no es númerico: .");
-            return;
-        }
 
-        //Validación de Longitud de Telefono
-        if (telefono.length == 9 && telefono.substring(0, 1) == 9) {
-            //alert("El número descrito es celular correcto.");
-        } else {            
-            if (telefono.length == 7 && (telefono.substring(0, 1) != 9 || telefono.substring(0, 1) != 0)) {
-                //alert("El número descrito es fono domicilio correcto.");
-            } else {                                
-                alert("El número telefónico '" + telefono + "' no es correcto.");
-                return;
-            }            
-        }
-
-
+        switch (tabName2) {
+            case 'home':
+               // ValidarElementosHome();
         
-        //Validacion Existencia de teléfono
-        for (var i = 0; i < arrayFonos.length; i++)
-        {
-            if (arrayFonos[i] == telefono)
-            {
-                alert("Ya existe este teléfono registrado.");
+            case '':
+                day = "Monday";
+                return
+            case '':
+                day = "Tuesday";
+                return
+
+            case '':
+                day = "Saturday";
+                return
+        }
+
+         
+            $('#Tabs a[href="#' + tab + '"]').tab('show');
+            $("#Tabs a").click(function () {
+                $("[id*=TabName]").val($(this).attr("href").replace("#", ""));
+            });
+
+
+        }
+
+        function AgregarItem(id) {
+            telefono = $.trim($('#txtTelefono').val());
+            codigonItem = $.trim($('#cboProveedorTelf option:selected').val());
+            descripcionItem = $.trim($('#cboProveedorTelf option:selected').text());
+            
+            nuevoCodigo = codigonItem + '-' + telefono;
+            descri = descripcionItem + '-' + telefono;
+        
+            //Validación de Número de Telefono
+            if ($.isNumeric(telefono) == false) {
+                alert("El teléfono '" + telefono + "' no es númerico: .");
                 return;
-            }            
-        }
-        arrayFonos.push(telefono);
+            }
+
+            //Validación de Longitud de Telefono
+            if (telefono.length == 9 && telefono.substring(0, 1) == 9) {
+                //alert("El número descrito es celular correcto.");
+            } else {            
+                if (telefono.length == 7 && (telefono.substring(0, 1) != 9 || telefono.substring(0, 1) != 0)) {
+                    //alert("El número descrito es fono domicilio correcto.");
+                } else {                                
+                    alert("El número telefónico '" + telefono + "' no es correcto.");
+                    return;
+                }            
+            }
 
 
-
-        //Validacion Existencia Con Proveedor de teléfono
-        $("#lstTelefonoAgregados option").each(function () {
-
-            if (nuevoCodigo == $(this).attr('value'))
+            //Validacion Existencia de teléfono
+            for (var i = 0; i < arrayFonos.length; i++)
             {
-                alert('Ya existe registrado el ' + telefono );
-                activarSalida=true;
-             }
+                if (arrayFonos[i] == telefono)
+                {
+                    alert("Ya existe este teléfono registrado.");
+                    return;
+                }            
+            }
+            arrayFonos.push(telefono);
 
-        });
-           
-           
-        if(activarSalida==true){
-            return;
+            document.getElementById('txtTelefono').value = '';
+
+            addCustomItem(id, descri, nuevoCodigo);
         }
 
 
-        //AgregarItem de Lista
-        $('#lstTelefonoAgregados').append($('<option>', {
-            value: nuevoCodigo,
-            text: descripcionItem +' : ' + telefono
-        }));
+        /*---------------------------------------------------------------------------*/
 
 
-        //Preparar los controles para la siguientes inserción.
-        //$('#txtTelefono').val() = "";
 
-        document.getElementById('txtTelefono').value = '';
-        //$("#lstProveedorFono").get(0).selectedIndex
+       
 
-        }
+
 
 
         function borrarItemTelefono()
         {
 
+            //if( confirm("¿Está seguro que desea eliminar el item seleccionado?") == true)
+            //{                
+            //    $('#lstTelefonoAgregados :selected').each(function (i, selected) {
+            //        if (arrayFonos[i] == telefono) {                        
+            //            $("#lstTelefonoAgregados option:selected").remove();
+            //            arrayFonos.splice(i);
+            //        }                    
+            //    });
+            //}
+
             if( confirm("¿Está seguro que desea eliminar el item seleccionado?") == true)
-            {                
-                $('#lstTelefonoAgregados :selected').each(function (i, selected) {
-                    if (arrayFonos[i] == telefono) {                        
-                        $("#lstTelefonoAgregados option:selected").remove();
-                        arrayFonos.splice(i);
-                    }                    
-                });
+            {  
+                var dropDownListRef = document.getElementById('<%= lstTelefonoAgregados.ClientID %>');
+               
+                var optionsList = '';
+                var itemIndex = dropDownListRef.selectedIndex;
+                if (itemIndex>=0){
+                    var txt= []
+                    txt = (document.getElementById('<%= lstTelefonoAgregados.ClientID %>').value).split("-");
+                   
+
+                
+             
+                    dropDownListRef.remove(itemIndex);
+                    for (var i=0; i<arrayFonos.length; i++){
+                        alert(arrayFonos[i]);
+                        alert(txt[1]);
+                        if (arrayFonos[i] == txt[1]){
+                            
+                            arrayFonos.splice(i,1);
+                        }
+                       
+                                    }
+
+               
+                }
             }
+
         }
 
 
@@ -222,11 +286,9 @@
 
 
 </head>
-<body>
-    
-<form id="form1" runat="server">
 
-    <header id="header">
+
+<header id="header">
     <div class="top-bar">
     <div class="container">
     <div class="row">
@@ -283,6 +345,41 @@
     </header>
 
 
+<body>
+    
+
+
+
+
+<form id="form1" runat="server">
+
+
+
+    <div>
+ 
+
+  
+    <div id="myModal" class=" modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Do ypu need change </h4>
+                </div>
+                <div class="modal-body">
+                    <p>Are u sure from </p>
+                    <label id="FromDate"></label>
+                    <p>To</p>
+                    <label id="ToDate"></label>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">no</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <section id="feature">
         <div class="container">
            <div class="fadeInDown">
@@ -293,8 +390,8 @@
 	<div class="row">
 		    <div class="col-md-8">
                                     <!-- Nav tabs -->
-                    <div class="card">
-                                    <ul class="nav nav-tabs" role="tablist">
+                    <div id="Tabs" role="tabpanel">
+                                    <ul  id="foo"  class="nav nav-tabs" role="tablist">
                                         <li role="presentation" class="active">
                                         <a href="#home" aria-controls="home" role="tab" data-toggle="tab"> 
                                         <i class="glyphicon glyphicon-user"></i> 
@@ -339,11 +436,11 @@
 
 
                                     </ul>
-
+        
                                     <!-- Tab panes -->
-                                    <div class="tab-content" class="col-md-8 inputGroupContainer">
+                                    <div  class="tab-content" class="col-md-8 inputGroupContainer" >
                         
-                                        
+                          
                                         
                                 <div role="tabpanel" class="tab-pane active" id="home">
                                     <!--inicio: Tab panes01 -->
@@ -383,7 +480,7 @@
                                                                  <label for="Apellidos">Genero: </label>
                                         <div class="input-group">
                                           <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                                                     <asp:DropDownList ID="cboTipoGenero" runat="server" CssClass="form-control selectpicker">
+                                                                     <asp:DropDownList  ID="cboTipoGenero" runat="server" CssClass="form-control selectpicker">
 
                                                 </asp:DropDownList>
                                                  </div>
@@ -469,12 +566,20 @@
 
                                     </div>
                                         
+
+                                    <button type="button"  onclick="openTab('profile');" class="btn btn-primary btn-lg">Siguiente Paso</button>
+
                                     <!--fin: Tab panes01 -->                                      
                                         
                           </div>
                            
-                                        
-                                        
+
+
+
+
+
+
+           
                           <div role="tabpanel" class="tab-pane" id="profile">
                                         <!--Inicio: Tab panes02-->
 
@@ -563,20 +668,27 @@
 
                                                         </div>
                                                         <input type="button" class="col-md-6" id="btnEliminar" value="Eliminar" onclick="borrarItemTelefono()">
-                                                        <input type="button" class="col-md-6" id="btnAgregar" value="Agregar" onclick="agregarItemTelefono()">  
+                                                   
+                                                        <input type="button" class="col-md-6" id="btnAgregar" value="Agregar" onclick="javascript:AgregarItem('<%= lstTelefonoAgregados.ClientID %>');">
+
+                                                        
   
 
                                                         <asp:ListBox ID="lstTelefonoAgregados" SelectionMode="Multiple"  runat="server" CssClass="form-control selectpicker" >
                                                         </asp:ListBox>
 
 
+                                                         <asp:ListBox ID="ListBox1" SelectionMode="Multiple"  CssClass="form-control selectpicker"  runat="server"></asp:ListBox>
+
+<asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button"></asp:Button>
+
                                                     </div>
 
                                       
                                 <!--Fin : Tab panes02-->
                                 </div>
-                                     
-                                        
+       
+                
                                    <div role="tabpanel" class="tab-pane" id="messages">
 
                                                     <!--inicio: Tab panes03 -->
@@ -734,7 +846,13 @@
 
 
                                   </div>
-                             </div>
+                             
+                          
+    
+                                    
+                                    </div>
+       
+                    <asp:HiddenField ID="TabName" runat="server" />
                      </div>
           </div>
 	</div>
@@ -749,15 +867,20 @@
 
 
 
+      
 
 
-            </div>
-
-
+</div>
         </div><!--/.container-->
     </section>
     <!--/#feature-->
+ 
 
+
+    
+
+
+</div>
 
 
 
@@ -846,7 +969,7 @@
             </div>
         </div>
         <a href="#" class="back-to-top"><i class="fa fa-2x fa-angle-up"></i></a>
-    </footer>
+    </footer
     <!--/#footer-->
     <!-- Back To Top -->
     <script type="text/javascript">
@@ -871,6 +994,7 @@
     <!-- /top-link-block -->
     <!-- Jscript -->
     <script src="js/jquery.js" type="text/javascript"></script>
+    <script src="js/Funciones_Val_TMRH.js" type="text/javascript"></script>
     <script src="js/bootstrap.min.js" type="text/javascript"></script>
     <script src="js/jquery.prettyPhoto.js" type="text/javascript"></script>
     <script src="js/jquery.isotope.min.js" type="text/javascript"></script>
@@ -890,7 +1014,19 @@
 
 <script type="text/javascript">
 //in this line of code, to display the datetimepicker,  we used â€˜form_datetimeâ€™ as an argument to be 
-//passed in javascript. This is for Date and Time.
+    //passed in javascript. This is for Date and Time.
+
+    // Esta función sirve para que despues de realizar el submit puedas mantenerte en tu panel
+
+
+    $(function () {
+        var tabName = $("[id*=TabName]").val() != "" ? $("[id*=TabName]").val() : "home";
+        $('#Tabs a[href="#' + tabName + '"]').tab('show');
+        $("#Tabs a").click(function () {
+            $("[id*=TabName]").val($(this).attr("href").replace("#", ""));
+        });
+    });
+
     $('.form_datetime').datetimepicker({
         language:  'es',
         weekStart: 1,

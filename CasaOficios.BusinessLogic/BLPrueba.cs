@@ -50,17 +50,35 @@ namespace CasaOficios.BusinessLogic
                 {
                     Cn.Open();
                     Tr = Cn.BeginTransaction();
-                    int P_out;
-                    P_out = _DAPrueba.insertTHMR(Cn, Tr, _BETMRH, _BETMRH_Contacto, _BETMRH_DOCUMENTOS_ADJUNTOS, _BETMRH_Oficios_Extra);
-                    //_DAPrueba.insertarPrueba(Cn, Tr, _BEPrueba);
+                    string P_out = "";
+                    int p_out_tmrh_con;
+                    P_out = _DAPrueba.insertTHMR(Cn, Tr, _BETMRH);
 
+
+
+                    foreach (BETMRH_Contacto itemB in _BETMRH_Contacto.ToArray())
+                    {
+                        itemB.COD_TMRH = P_out;
+                        p_out_tmrh_con = _DAPrueba.insertTHMR_CONTACTO(Cn, Tr, itemB);
+                    }
+
+                 
+
+
+                    if (P_out != "") {
+
+
+
+                    }
                     Tr.Commit();
-                    return P_out;
+
+                    return 1;
                 }
                 catch (Exception ex)
                 {
                     Tr.Rollback();
                     throw new Exception(ex.Message);
+                    return 0;
                 }
                 finally
                 {

@@ -135,9 +135,14 @@ namespace CasaOficios.DataAccess.Example
             return Convert.ToInt32(odaSQL.InsertaActualizaElimina(Cn, Tr, "SP_PRUEBA_INSERT", _BEPrueba, 0, "", true));
         }
 
-        public int insertTHMR(SqlConnection Cn, SqlTransaction Tr,BETMRH _BETMRH, List<BETMRH_Contacto> _BETMRH_Contacto, List<BETMRH_DOCUMENTOS_ADJUNTOS> _BETMRH_DOCUMENTOS_ADJUNTOS, List<BETMRH_Oficios_Extra> _BETMRH_Oficios_Extra)
+        public string insertTHMR(SqlConnection Cn, SqlTransaction Tr,BETMRH _BETMRH)
         {
-            return Convert.ToInt32(odaSQL.insertTHMR(Cn, Tr, "PA_TMRH_INS01", _BETMRH, _BETMRH_Contacto, _BETMRH_DOCUMENTOS_ADJUNTOS, _BETMRH_Oficios_Extra, 0, "", true));
+            return Convert.ToString(odaSQL.insertTHMR(Cn, Tr, "PA_TMRH_INS01", _BETMRH, 1, "COD_TMRH", true));
+        }
+
+        public int insertTHMR_CONTACTO(SqlConnection Cn, SqlTransaction Tr, BETMRH_Contacto _BETMRH)
+        {
+            return Convert.ToInt32(odaSQL.insertTHMR_CONTACTO(Cn, Tr, "PA_TMRH_CONTACTO_INS01", _BETMRH, 0, "", true));
         }
 
 

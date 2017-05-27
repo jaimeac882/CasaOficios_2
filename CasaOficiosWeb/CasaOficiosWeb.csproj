@@ -76,6 +76,7 @@
     <Content Include="css\prettyPhoto.css" />
     <Content Include="css\responsive.css" />
     <Content Include="Default.aspx" />
+    <Content Include="Default2.aspx" />
     <Content Include="Imagen\0focus2.png" />
     <Content Include="Imagen\0focus2AConfirmacion.png" />
     <Content Include="Imagen\0focus2AConfirmacionCambiarLocal.png" />
@@ -165,7 +166,7 @@
     <Content Include="images\Verde.png" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\dom-drag.js" />
-    <Content Include="js\Funciones_Trabajador.js" />
+    <Content Include="js\Funciones_Val_TMRH.js" />
     <Content Include="js\html5shiv.js" />
     <Content Include="js\jquery.isotope.min.js" />
     <Content Include="js\jquery.js" />
@@ -182,6 +183,7 @@
     <Content Include="Scripts\jquery-1.4.1.min.js" />
     <Content Include="Seguridad\Acceso.aspx" />
     <Content Include="services.aspx" />
+    <Content Include="trabajadoresCopia.aspx" />
     <Content Include="trabajadores.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -193,6 +195,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="WebForm1.aspx" />
+    <Content Include="WebForm2.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="contactus.aspx.cs">
@@ -201,6 +204,13 @@
     </Compile>
     <Compile Include="contactus.aspx.designer.cs">
       <DependentUpon>contactus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default2.aspx.cs">
+      <DependentUpon>Default2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default2.aspx.designer.cs">
+      <DependentUpon>Default2.aspx</DependentUpon>
     </Compile>
     <Compile Include="portfolio.aspx.cs">
       <DependentUpon>portfolio.aspx</DependentUpon>
@@ -238,6 +248,12 @@
     <Compile Include="services.aspx.designer.cs">
       <DependentUpon>services.aspx</DependentUpon>
     </Compile>
+    <Compile Include="trabajadoresCopia.aspx.cs">
+      <DependentUpon>trabajadoresCopia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="trabajadoresCopia.aspx.designer.cs">
+      <DependentUpon>trabajadoresCopia.aspx</DependentUpon>
+    </Compile>
     <Compile Include="trabajadores.aspx.cs">
       <DependentUpon>trabajadores.aspx</DependentUpon>
     </Compile>
@@ -250,6 +266,13 @@
     </Compile>
     <Compile Include="WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm2.aspx.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm2.aspx.designer.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

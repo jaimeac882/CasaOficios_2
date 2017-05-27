@@ -10,8 +10,6 @@ using CasaOficios.BusinessLogic;
 
 namespace CasaOficiosWeb
 {
-
-
     public static class MessageBox
     {
         public static void Show(this Page Page, String Message)
@@ -24,11 +22,29 @@ namespace CasaOficiosWeb
         }
     }
 
+
+
     public partial class trabajadores : System.Web.UI.Page
     {
 
+  
+
         BLPrueba blprueba = new BLPrueba();
 
+
+
+        // RaiseCallback Function
+        public void RaiseCallbackEvent(String eventArgument)
+        {
+            // Run some code before sending the callbackresult
+        }
+        // GetCallback result function
+        public string GetCallbackResult()
+        {
+            // get from databse a result or something 
+            // and supply the control with new items
+            return "item1-Text,Item1-val";
+        }
 
         protected void btnEnviar_Click(object sender, EventArgs e)
         {
@@ -37,7 +53,7 @@ namespace CasaOficiosWeb
             List<BETMRH_DOCUMENTOS_ADJUNTOS> _BETMRH_DOCUMENTOS_ADJUNTOS = new List<BETMRH_DOCUMENTOS_ADJUNTOS>();
             List<BETMRH_Oficios_Extra> _BETMRH_Oficios_Extra = new List<BETMRH_Oficios_Extra>();
 
-
+            
 
             betmrh.COD_TMRH = "";
             betmrh.NOM_TMRH = TxtNombres.Text;
@@ -60,6 +76,27 @@ namespace CasaOficiosWeb
             betmrh.NUM_CELU = txtTelfPrinci.Text;
             betmrh.COD_TIPO_OPERADORA = cboCompaniaPrincipal.SelectedValue.ToString();
 
+            BETMRH_Contacto betmrhc = new BETMRH_Contacto();
+
+            if (Request.Form[lstTelefonoAgregados.UniqueID] != null)
+            {
+                string[] items = Request.Form[lstTelefonoAgregados.UniqueID].Split(new char[] { ',' });
+                string[] values ;
+                for (int i = 0; i < items.Length; i++)
+                {
+
+                    values = (items[i]).ToString().Split('-');
+                    betmrhc.COD_TIPO_OPERADORA = values[0];
+                    betmrhc.TELEFONO = values[1];
+                    betmrhc.COD_TMRH = "";
+                    betmrhc.COD_TMRH_CONTACTO = "";
+
+                    _BETMRH_Contacto.Add(betmrhc);
+
+                }
+                //TextBox1.Text += "the ListBox control contains " + items.Length.ToString() + " items.";
+            }
+
 
             int d = blprueba.insertTMRH(betmrh, _BETMRH_Contacto, _BETMRH_DOCUMENTOS_ADJUNTOS, _BETMRH_Oficios_Extra);
             if (d == 0)
@@ -69,20 +106,32 @@ namespace CasaOficiosWeb
             else {
                 MessageBox.Show(this.Page, "Registro existoso");
             }
-                    
+
+
+          
+
         }
 
-
-
-
+        
+        
+        
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            /*Para mantener el listbox*/
+            Page.ClientScript.RegisterOnSubmitStatement(GetType(), "beforeSubmit",
+                "selectAllElements('" + lstTelefonoAgregados.ClientID + "');");
+                
 
             if (Page.IsPostBack)
             {
-                return;
+
+                TabName.Value = Request.Form[TabName.UniqueID];
+
+               return;
             }
+
+
 
 
             /*Llenando de Tipos de Tipos de Documentos*/
@@ -206,6 +255,8 @@ namespace CasaOficiosWeb
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+
+
 
         }
     }

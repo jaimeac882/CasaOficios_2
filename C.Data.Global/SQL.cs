@@ -138,12 +138,12 @@ namespace C.Data.Global
         
 
 
-    public int insertTHMR(SqlConnection vCon, SqlTransaction vTrx, string vSP, BETMRH _BETMRH, List<BETMRH_Contacto> _BETMRH_Contacto, List<BETMRH_DOCUMENTOS_ADJUNTOS> _BETMRH_DOCUMENTOS_ADJUNTOS, List<BETMRH_Oficios_Extra> _BETMRH_Oficios_Extra, int _out, string ParamOutPut, bool PermiteCadenasVacias)
+    public string insertTHMR(SqlConnection vCon, SqlTransaction vTrx, string vSP, BETMRH _BETMRH, int _out, string ParamOutPut, bool PermiteCadenasVacias)
         {
             using (SqlCommand cmd = new SqlCommand(vSP, vCon))
             {
                 int n;
-                String codigo;
+                String codigo="";
                 try
                 {
                     if (vTrx != null)
@@ -196,9 +196,73 @@ namespace C.Data.Global
                     if (n > 0)
                     {
 
-                       
+
                         codigo = Convert.ToString(cmd.Parameters["@P_COD_TMRH"].Value);
-                        
+                       
+                    }
+
+                    return codigo;
+
+
+                }
+                catch (SqlException ex)
+                {
+                    
+                    return "";
+                    throw new Exception(ex.Message);
+                }
+            }
+          
+        }
+
+
+        public int insertTHMR_CONTACTO(SqlConnection vCon, SqlTransaction vTrx, string vSP, BETMRH_Contacto _BETMRH, int _out, string ParamOutPut, bool PermiteCadenasVacias)
+        {
+            using (SqlCommand cmd = new SqlCommand(vSP, vCon))
+            {
+                int n;
+                String codigo;
+                try
+                {
+                    if (vTrx != null)
+                    {
+                        cmd.Transaction = vTrx;
+                    }
+
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                    //[Parámetro de salida del Procedimiento Almacenado]
+                    //SqlParameter COD_TMRH = new SqlParameter("@P_COD_TMRH", SqlDbType.VarChar);
+                    //COD_TMRH.Direction = ParameterDirection.Output;
+
+
+
+                    //GenerarParametrosObjetosRetornaValor(cmd, vObj, _out, ParamOutPut, PermiteCadenasVacias);
+                    //cmd.Parameters.Add("@P_COD_TMRH", SqlDbType.VarChar).Value = _BETMRH.COD_TMRH;
+
+                    //cmd.Parameters.Add("@P_COD_TMRH", SqlDbType.Char).Direction = ParameterDirection.Output;
+                    //SqlParameter code = new SqlParameter("@P_COD_TMRH", SqlDbType.Char);
+                    //code.Direction = ParameterDirection.Output;
+
+
+                    //cmd.Parameters.Add("@P_COD_TMRH", SqlDbType.Char).Value = "0000000002";
+                    //cmd.Parameters.Add("P_COD_TMRH", SqlDbType.Char, 10);
+                    //cmd.Parameters["@P_COD_TMRH"].Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("@P_COD_TMRH", SqlDbType.Char).Value = _BETMRH.COD_TMRH;
+                    cmd.Parameters.Add("@P_COD_TIPO_OPERADORA", SqlDbType.Char).Value = _BETMRH.COD_TIPO_OPERADORA;
+                    cmd.Parameters.Add("@P_TELEFONO", SqlDbType.VarChar).Value = _BETMRH.TELEFONO;
+
+
+                    n = cmd.ExecuteNonQuery();
+
+
+
+                    if (n > 0)
+                    {
+
+
+                        //codigo = Convert.ToString(cmd.Parameters["@P_COD_TMRH"].Value);
+
                     }
 
                     return 1;
@@ -207,12 +271,12 @@ namespace C.Data.Global
                 }
                 catch (SqlException ex)
                 {
-                    
+
                     return (-1);
                     throw new Exception(ex.Message);
                 }
             }
-          
+
         }
 
 
