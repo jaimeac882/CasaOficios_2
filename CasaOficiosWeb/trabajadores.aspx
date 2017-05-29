@@ -324,7 +324,7 @@
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li><a href="Default.aspx">Inicio</a></li>
-                       <li><a href="portfolio.aspx">Trabaje con nosotros</a></li>
+                       <li><a href="trabajadores.aspx">Trabaje con nosotros</a></li>
                         <li class="active"><a href="services.aspx">Servicios</a></li>                        
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down"></i></a>

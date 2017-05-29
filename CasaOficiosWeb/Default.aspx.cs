@@ -21,7 +21,8 @@ namespace CasaOficiosWeb
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            if (Page.IsPostBack) {
+            if (Page.IsPostBack)
+            {
                 return;
             }
 
@@ -29,10 +30,10 @@ namespace CasaOficiosWeb
             List<BETipoAveria> be = new List<BETipoAveria>();
             BETipoAveria bepru = new BETipoAveria();
 
-        
+
 
             be = blprueba.ListarPruebaXTipo(bepru);
-            
+
 
             cboTipAveria.DataTextField = "DES_TIPO_AVERIA";
             cboTipAveria.DataValueField = "COD_TIPAVERIA";
@@ -53,10 +54,6 @@ namespace CasaOficiosWeb
             cboDistrito.DataSource = beubig;
 
             cboDistrito.DataBind();
-        
-
-
-
 
 
         }
@@ -103,13 +100,14 @@ namespace CasaOficiosWeb
             be_sp.FEC_MODIFICACION = DateTime.Now;
             be_sp.COD_USUARIO_REGISTRO = "";
 
-            
+
 
 
             if (FileUpload1.HasFile)
             {
 
-                using (BinaryReader reader = new BinaryReader(FileUpload1.PostedFile.InputStream)) {
+                using (BinaryReader reader = new BinaryReader(FileUpload1.PostedFile.InputStream))
+                {
                     byte[] image = reader.ReadBytes(FileUpload1.PostedFile.ContentLength);
 
 
@@ -124,19 +122,36 @@ namespace CasaOficiosWeb
 
             }
 
-          
+
 
             RPTA = blprueba.insertarSolicitudTrabajo(be_sp, Be_ST);
 
-            MsgBox("Registro Ingresado", this.Page, this);
+
+            ClientScript.RegisterStartupScript(this.GetType(), "alert", "ShowPopup();", true);
+            this.lblMessage.Text = "Se registró exitosamente la avería. Nuestro equipo se contactará con Ud.";
+
+            //MsgBox("Registro Ingresado", this.Page, this);
+            //MsgBoxAlterno("Registro Ingresado", this.Page, this);
 
         }
-        public void MsgBox(String ex, Page pg, Object obj){
-        string s = "<SCRIPT language='javascript'>alert('" + ex.Replace("\r\n", "\\n").Replace("'", "") + "'); </SCRIPT>";
-        Type cstype = obj.GetType();
-        ClientScriptManager cs = pg.ClientScript;
-        cs.RegisterClientScriptBlock(cstype, s, s.ToString());
+        public void MsgBox(String ex, Page pg, Object obj)
+        {
+            string s = "<SCRIPT language='javascript'>alert('" + ex.Replace("\r\n", "\\n").Replace("'", "") + "'); </SCRIPT>";
+            Type cstype = obj.GetType();
+            ClientScriptManager cs = pg.ClientScript;
+            cs.RegisterClientScriptBlock(cstype, s, s.ToString());
         }
+
+
+        public void MsgBoxAlterno(String ex, Page pg, Object obj)
+        {
+            string s = "<script>$('#myModal').modal('show');</script>";
+            Type cstype = obj.GetType();
+            ClientScriptManager cs = pg.ClientScript;
+            cs.RegisterClientScriptBlock(cstype, s, s.ToString());
+        }
+
+
 
 
     }

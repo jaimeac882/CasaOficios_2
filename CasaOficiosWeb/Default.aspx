@@ -24,7 +24,10 @@
     <script src="js/respond.min.js"></script>
     <![endif]-->
     <link rel="shortcut icon" href="images/favicon.ico" />
+
 </head>
+
+
 <body>
 
 <form id="form1" runat="server">
@@ -689,7 +692,48 @@
     <script src="js/jquery.isotope.min.js" type="text/javascript"></script>
     <script src="js/main.js" type="text/javascript"></script>
     <script src="js/wow.min.js" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+        function ShowPopup() {
+            $("#btnShowPopup").click();
+        }
+    </script>  
            </header>
+
+
+
+             <div class="modal fade" id="myModal">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content modal-sm">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title">
+                                <b>Mensaje de Confirmación</b>
+                            </h4>
+                        </div>
+                        <div class="modal-body modal-sm">
+                            <asp:Label ID="lblMessage" runat="server" />
+                        </div>
+                        <div class="modal-footer modal-sm">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+            <!-- /.modal -->  
+
+<button type="button" style="display: none;" id="btnShowPopup" class="btn btn-primary btn-lg"
+                data-toggle="modal" data-target="#myModal">
+                Launch demo modal
+            </button>    
+
+
     </form>
+
+
 </body>
 </html>
