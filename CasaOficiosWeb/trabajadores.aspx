@@ -78,33 +78,45 @@
 
 
 
+        function openTab(tab){
+            //Obtiene el nombre del UL
+            //var tabName2 = $('.nav-tabs .active').text();
 
-        
+            // eSTE JAVA SCRIPT LLAMA EL BOTON SIGUIENTE PASO..
+            // AQUI CAPTURA EN ESTA VARIABLE CUAL ES EL TABPANEL ACTIVO...
+            // AQUI RECUPERA EL ID QUE LE HAYAS PUESTO AL TABPANEL
+            var tabName2 = $(".tab-content").find(".active").attr('id');
+            // CON ESTE SWITCH VALIDAS LOS DATOS POR CADA TAB
+            switch (tabName2) {
+                case 'home':
+                    // ValidarElementosHome();
+                    tabName2 = 'home';
+                //case '':
+                //    day = "Monday";
+                //    return;
+                //case '':
+                //    day = "Tuesday";
+                //    return;
 
-        switch (tabName2) {
-            case 'home':
-               // ValidarElementosHome();
-        
-            case '':
-                day = "Monday";
-                return
-            case '':
-                day = "Tuesday";
-                return
+                //case '':
+                //    day = "Saturday";
+                //    return;
+            }
 
-            case '':
-                day = "Saturday";
-                return
-        }
+            // LUEGO DE ESTO SI TODO ESTA BIEN PASA A EL TAB QUE REQUIERA EL BOTON..
 
-         
             $('#Tabs a[href="#' + tab + '"]').tab('show');
             $("#Tabs a").click(function () {
                 $("[id*=TabName]").val($(this).attr("href").replace("#", ""));
             });
 
-
+        
         }
+        
+
+        
+
+        
 
         function AgregarItem(id) {
             telefono = $.trim($('#txtTelefono').val());
@@ -669,7 +681,7 @@
                                                         </div>
                                                         <input type="button" class="col-md-6" id="btnEliminar" value="Eliminar" onclick="borrarItemTelefono()">
                                                    
-                                                        <input type="button" class="col-md-6" id="btnAgregar" value="Agregar" onclick="javascript:AgregarItem('<%= lstTelefonoAgregados.ClientID %>');">
+                                                        <input type="button" class="col-md-6" id="btnAgregar" value="Agregar" onclick="AgregarItem('<%= lstTelefonoAgregados.ClientID %>');">
 
                                                         
   
@@ -678,10 +690,7 @@
                                                         </asp:ListBox>
 
 
-                                                         <asp:ListBox ID="ListBox1" SelectionMode="Multiple"  CssClass="form-control selectpicker"  runat="server"></asp:ListBox>
-
-<asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button"></asp:Button>
-
+                               
                                                     </div>
 
                                       

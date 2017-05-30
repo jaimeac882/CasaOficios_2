@@ -23,3 +23,11 @@ F:\CasaOficiosPyto\CasaOficios_2\C.Data.Global\bin\Debug\CasaOficios.Entities.pd
 F:\CasaOficiosPyto\CasaOficios_2\C.Data.Global\obj\Debug\C.Data.Global.csprojResolveAssemblyReference.cache
 F:\CasaOficiosPyto\CasaOficios_2\C.Data.Global\obj\Debug\C.Data.Global.dll
 F:\CasaOficiosPyto\CasaOficios_2\C.Data.Global\obj\Debug\C.Data.Global.pdb
+F:\WorkspaceVisualStudio\CasaOficios_2\C.Data.Global\bin\Debug\C.Data.Global.dll
+F:\WorkspaceVisualStudio\CasaOficios_2\C.Data.Global\bin\Debug\C.Data.Global.pdb
+F:\WorkspaceVisualStudio\CasaOficios_2\C.Data.Global\bin\Debug\C.User.Code.dll
+F:\WorkspaceVisualStudio\CasaOficios_2\C.Data.Global\bin\Debug\CasaOficios.Entities.dll
+F:\WorkspaceVisualStudio\CasaOficios_2\C.Data.Global\bin\Debug\C.User.Code.pdb
+F:\WorkspaceVisualStudio\CasaOficios_2\C.Data.Global\bin\Debug\CasaOficios.Entities.pdb
+F:\WorkspaceVisualStudio\CasaOficios_2\C.Data.Global\obj\Debug\C.Data.Global.dll
+F:\WorkspaceVisualStudio\CasaOficios_2\C.Data.Global\obj\Debug\C.Data.Global.pdb
