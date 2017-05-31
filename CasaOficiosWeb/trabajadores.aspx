@@ -336,8 +336,8 @@
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li><a href="Default.aspx">Inicio</a></li>
-                       <li><a href="trabajadores.aspx">Trabaje con nosotros</a></li>
-                        <li class="active"><a href="services.aspx">Servicios</a></li>                        
+                       <li class="active"><a href="trabajadores.aspx">Trabaje con nosotros</a></li>
+                        <li ><a href="services.aspx">Servicios</a></li>                        
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
@@ -693,7 +693,7 @@
                                
                                                     </div>
 
-                                      
+                                      <button type="button"  onclick="openTab('messages');" class="btn btn-primary btn-lg">Siguiente Paso</button>
                                 <!--Fin : Tab panes02-->
                                 </div>
        
@@ -753,7 +753,7 @@
 
 
 
-
+                                                    <button type="button"  onclick="openTab('settings');" class="btn btn-primary btn-lg">Siguiente Paso</button>
 
 
 
@@ -851,7 +851,7 @@
 
                                             <!--Fin: Tab panes05-->
 
-                                        
+                                        <button type="button"  onclick="openTab('enviar');" class="btn btn-primary btn-lg">Siguiente Paso</button>
 
 
                                   </div>
