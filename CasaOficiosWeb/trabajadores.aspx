@@ -36,6 +36,7 @@
 
         //variable global para fx AgregarItem
         var arrayFonos = [];
+
         /*---------------------------------------------------------------------------*/
                     function addCustomItem(id, text, val) {
                         var vlist = document.getElementById(id);
@@ -54,16 +55,36 @@
                     }
 
 
-                    function selectAllElements(id) {
+                    function selectAllElements(id,id2) {
                         var oList = document.getElementById(id);
                         if (oList != null) {
                             for (i = 0; i < oList.options.length; i++)
                                 oList.options[i].selected = true;
                         }
+
+
+                        var oList2 = document.getElementById(id2);
+                        if (oList2 != null) {
+                            for (e = 0; e < oList2.options.length; i++)
+                                oList2.options[i].selected = true;
+                        }
+
+
+
+
                     }
 
 
-               function ReceiveServerData(arg, context)
+                    //function selectAllElements2(id) {
+                    //    var oList = document.getElementById(id);
+                    //    if (oList != null) {
+                    //        for (i = 0; i < oList.options.length; i++)
+                    //            oList.options[i].selected = true;
+                    //    }
+                    //}
+
+
+<%--               function ReceiveServerData(arg, context)
                  { 
                    // arg contains the result of GetCallbackResult()
                    // No se usa o no es importante para lo que se deseamos obtener
@@ -74,7 +95,7 @@
                         opt = opts[i].split(',');
                         addCustomItem('<%= lstTelefonoAgregados.ClientID %>', opt[0], opt[1]);
                     }
-               }
+               }--%>
 
 
 
@@ -199,8 +220,8 @@
              
                     dropDownListRef.remove(itemIndex);
                     for (var i=0; i<arrayFonos.length; i++){
-                        alert(arrayFonos[i]);
-                        alert(txt[1]);
+                        //alert(arrayFonos[i]);
+                        //alert(txt[1]);
                         if (arrayFonos[i] == txt[1]){
                             
                             arrayFonos.splice(i,1);
@@ -216,36 +237,82 @@
 
 
 
+        function borrarItemOficio()
+        {
+
+            //if( confirm("¿Está seguro que desea eliminar el item seleccionado?") == true)
+            //{                
+            //    $('#lstTelefonoAgregados :selected').each(function (i, selected) {
+            //        if (arrayFonos[i] == telefono) {                        
+            //            $("#lstTelefonoAgregados option:selected").remove();
+            //            arrayFonos.splice(i);
+            //        }                    
+            //    });
+            //}
+
+            if( confirm("¿Está seguro que desea eliminar el item seleccionado?") == true)
+            {  
+                var dropDownListRef = document.getElementById('<%= lstOficioExperienciAgregados.ClientID %>');
+               
+                var optionsList = '';
+                var itemIndex = dropDownListRef.selectedIndex;
+                if (itemIndex>=0){
+                    var txt= []
+                    txt = (document.getElementById('<%= lstOficioExperienciAgregados.ClientID %>').value).split("-");
+                   
+
+                
+             
+                    dropDownListRef.remove(itemIndex);
+                    for (var i=0; i<arrayOficios.length; i++){
+                        //alert(arrayOficios[i]);
+                        //alert(txt[0]);
+                        if (arrayOficios[i] == txt[0]){
+                            
+                            arrayOficios.splice(i,1);
+                        }
+                       
+                                    }
+
+               
+                }
+            }
+
+        }
+
+
+
         /////////////////////////
 
         var arrayOficios = [];
-        function agregarItemOficio() {
+        function agregarItemOficio(id) {
 
             //declaración de variables
 
             //telefono = $.trim($('#txtTelefono').val());
-            codigoPerfilLaboral = $.trim($('#lstPerfilLaboral option:selected').val());
-            codigoPeriodolLaboral = $.trim($('#listPeriodoExperiencia option:selected').val());
+            codigoPerfilLaboral = $.trim($('#cboOficiosOtros option:selected').val());
+            codigoPeriodolLaboral = $.trim($('#cboPeriodoExpeOtros option:selected').val());
 
-            descripPerfilLaboral = $.trim($('#lstPerfilLaboral option:selected').text());
-            descripPeriodoLaboral = $.trim($('#listPeriodoExperiencia option:selected').text());
+            descripPerfilLaboral = $.trim($('#cboOficiosOtros option:selected').text());
+            descripPeriodoLaboral = $.trim($('#cboPeriodoExpeOtros option:selected').text());
 
             nuevoCodigo = codigoPerfilLaboral + '-' + codigoPeriodolLaboral;
-            activarSalida = false;
+            //activarSalida = false;
 
 
 
             //Seleccionar al menos un Perfil Laboral
-            if (codigoPerfilLaboral == '00') {
-                alert("Debe seleciconar un perfil laboral.");
-                return;
-            }
 
-            //Seleccionar al menos un Perfil Laboral
-            if (codigoPeriodolLaboral == '00') {
-                alert("Debe seleciconar un periodo laboral.");
-                return;
-            }
+            //if (codigoPerfilLaboral == '00') {
+            //    alert("Debe seleciconar un perfil laboral.");
+            //    return;
+            //}
+
+            ////Seleccionar al menos un Perfil Laboral
+            //if (codigoPeriodolLaboral == '00') {
+            //    alert("Debe seleciconar un periodo laboral.");
+            //    return;
+            //}
 
 
 
@@ -262,34 +329,38 @@
 
 
             //AgregarItem de Lista
-            $('#lstOficioExperienciAgregados').append($('<option>', {
-                value: nuevoCodigo,
-                text: descripPerfilLaboral + ': ' + descripPeriodoLaboral
-            }));
+            //$('#lstOficioExperienciAgregados').append($('<option>', {
+            //    value: nuevoCodigo,
+            //    text: descripPerfilLaboral + ': ' + descripPeriodoLaboral
+            //}));
 
+
+            var descriptotal = descripPerfilLaboral + ': ' + descripPeriodoLaboral;
 
             //Preparar los controles para la siguientes inserción.
-            $("#lstPerfilLaboral ").get(0).selectedIndex
-            $("#listPeriodoExperiencia ").get(0).selectedIndex
+            //$("#lstPerfilLaboral ").get(0).selectedIndex
+            //$("#listPeriodoExperiencia ").get(0).selectedIndex
+
+            addCustomItem(id, descriptotal, nuevoCodigo);
 
         }
 
 
-        function borrarItemOficio() {
+        //function borrarItemOficio() {
 
-            if (confirm("¿Está seguro que desea eliminar el item seleccionado?") == true) {
+        //    if (confirm("¿Está seguro que desea eliminar el item seleccionado?") == true) {
 
-                $('#lstOficioExperienciAgregados :selected').each(function (i, selected) {
-                    if (arrayOficios[i] == codigoPerfilLaboral) {
-                        $("#lstOficioExperienciAgregados option:selected").remove();
-                        arrayOficios.splice(i);
-                    }
-                });
+        //        $('#lstOficioExperienciAgregados :selected').each(function (i, selected) {
+        //            if (arrayOficios[i] == codigoPerfilLaboral) {
+        //                $("#lstOficioExperienciAgregados option:selected").remove();
+        //                arrayOficios.splice(i);
+        //            }
+        //        });
 
 
 
-            }
-        }
+        //    }
+        //}
 
 
 
@@ -742,7 +813,7 @@
 
                                                         </div>
                                                         <input type="button" class="col-md-6" id="btnEliminarOficio" value="Eliminar" onclick="borrarItemOficio()">
-                                                        <input type="button" class="col-md-6" id="btnAgregarOficio" value="Agregar" onclick="agregarItemOficio()">  
+                                                        <input type="button" class="col-md-6" id="btnAgregarOficio" value="Agregar" onclick="agregarItemOficio('<%= lstOficioExperienciAgregados.ClientID %>');">  
   
 
                                                         <asp:ListBox ID="lstOficioExperienciAgregados" SelectionMode="Multiple"  runat="server" CssClass="form-control selectpicker" >

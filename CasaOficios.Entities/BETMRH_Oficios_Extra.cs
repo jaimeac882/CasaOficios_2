@@ -20,8 +20,9 @@ namespace CasaOficios.Entities
         public DateTime FEC_MODIFICACION { get; set; }
 
         public String COD_USUARIO_REGISTRO { get; set; }
+        public String COD_TIEMPO_EXPERIENCIA { get; set; }
 
-        
+
 
 
     }

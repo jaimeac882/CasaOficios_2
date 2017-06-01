@@ -77,6 +77,7 @@ namespace CasaOficiosWeb
             betmrh.COD_TIPO_OPERADORA = cboCompaniaPrincipal.SelectedValue.ToString();
 
             BETMRH_Contacto betmrhc = new BETMRH_Contacto();
+            BETMRH_Oficios_Extra betmrhoe = new BETMRH_Oficios_Extra();
 
             if (Request.Form[lstTelefonoAgregados.UniqueID] != null)
             {
@@ -96,6 +97,30 @@ namespace CasaOficiosWeb
                 }
                 //TextBox1.Text += "the ListBox control contains " + items.Length.ToString() + " items.";
             }
+
+
+
+
+            /*Obtenemos la lista lstTelefonosAgregados*/
+
+            if (Request.Form[lstOficioExperienciAgregados.UniqueID] != null)
+            {
+                string[] items2 = Request.Form[lstOficioExperienciAgregados.UniqueID].Split(new char[] { ',' });
+                string[] values2;
+                for (int i = 0; i < items2.Length; i++)
+                {
+
+                    values2 = (items2[i]).ToString().Split('-');
+                    betmrhoe.COD_OFICIO = values2[0];
+                    betmrhoe.COD_TIEMPO_EXPERIENCIA = values2[1];
+              
+
+                    _BETMRH_Oficios_Extra.Add(betmrhoe);
+
+                }
+                //TextBox1.Text += "the ListBox control contains " + items.Length.ToString() + " items.";
+            }
+
 
 
             int d = blprueba.insertTMRH(betmrh, _BETMRH_Contacto, _BETMRH_DOCUMENTOS_ADJUNTOS, _BETMRH_Oficios_Extra);
@@ -120,8 +145,12 @@ namespace CasaOficiosWeb
         {
             /*Para mantener el listbox*/
             Page.ClientScript.RegisterOnSubmitStatement(GetType(), "beforeSubmit",
-                "selectAllElements('" + lstTelefonoAgregados.ClientID + "');");
-                
+                "selectAllElements('" + lstTelefonoAgregados.ClientID + "','" + lstOficioExperienciAgregados.ClientID + "');");
+
+         //   Page.ClientScript.RegisterOnSubmitStatement(GetType(), "beforeSubmit",
+         //"selectAllElements('" + lstOficioExperienciAgregados.ClientID + "');");
+
+
 
             if (Page.IsPostBack)
             {

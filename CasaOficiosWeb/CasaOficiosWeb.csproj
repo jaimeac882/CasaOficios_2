@@ -76,7 +76,7 @@
     <Content Include="css\prettyPhoto.css" />
     <Content Include="css\responsive.css" />
     <Content Include="Default.aspx" />
-    <Content Include="Default2.aspx" />
+    <Content Include="Ejemplos\Default2.aspx" />
     <Content Include="Imagen\0focus2.png" />
     <Content Include="Imagen\0focus2AConfirmacion.png" />
     <Content Include="Imagen\0focus2AConfirmacionCambiarLocal.png" />
@@ -183,7 +183,7 @@
     <Content Include="Scripts\jquery-1.4.1.min.js" />
     <Content Include="Seguridad\Acceso.aspx" />
     <Content Include="services.aspx" />
-    <Content Include="trabajadoresCopia.aspx" />
+    <Content Include="Ejemplos\trabajadoresCopia.aspx" />
     <Content Include="trabajadores.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -194,8 +194,8 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="WebForm1.aspx" />
-    <Content Include="WebForm2.aspx" />
+    <Content Include="Ejemplos\WebForm1.aspx" />
+    <Content Include="Ejemplos\WebForm2.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="contactus.aspx.cs">
@@ -205,11 +205,11 @@
     <Compile Include="contactus.aspx.designer.cs">
       <DependentUpon>contactus.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Default2.aspx.cs">
+    <Compile Include="Ejemplos\Default2.aspx.cs">
       <DependentUpon>Default2.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Default2.aspx.designer.cs">
+    <Compile Include="Ejemplos\Default2.aspx.designer.cs">
       <DependentUpon>Default2.aspx</DependentUpon>
     </Compile>
     <Compile Include="portfolio.aspx.cs">
@@ -248,10 +248,10 @@
     <Compile Include="services.aspx.designer.cs">
       <DependentUpon>services.aspx</DependentUpon>
     </Compile>
-    <Compile Include="trabajadoresCopia.aspx.cs">
+    <Compile Include="Ejemplos\trabajadoresCopia.aspx.cs">
       <DependentUpon>trabajadoresCopia.aspx</DependentUpon>
     </Compile>
-    <Compile Include="trabajadoresCopia.aspx.designer.cs">
+    <Compile Include="Ejemplos\trabajadoresCopia.aspx.designer.cs">
       <DependentUpon>trabajadoresCopia.aspx</DependentUpon>
     </Compile>
     <Compile Include="trabajadores.aspx.cs">
@@ -260,18 +260,18 @@
     <Compile Include="trabajadores.aspx.designer.cs">
       <DependentUpon>trabajadores.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WebForm1.aspx.cs">
+    <Compile Include="Ejemplos\WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebForm1.aspx.designer.cs">
+    <Compile Include="Ejemplos\WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WebForm2.aspx.cs">
+    <Compile Include="Ejemplos\WebForm2.aspx.cs">
       <DependentUpon>WebForm2.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebForm2.aspx.designer.cs">
+    <Compile Include="Ejemplos\WebForm2.aspx.designer.cs">
       <DependentUpon>WebForm2.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
