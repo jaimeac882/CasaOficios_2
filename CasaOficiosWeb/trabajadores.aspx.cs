@@ -82,10 +82,11 @@ namespace CasaOficiosWeb
             if (Request.Form[lstTelefonoAgregados.UniqueID] != null)
             {
                 string[] items = Request.Form[lstTelefonoAgregados.UniqueID].Split(new char[] { ',' });
-                string[] values ;
+                
                 for (int i = 0; i < items.Length; i++)
                 {
-
+                    betmrhc = new BETMRH_Contacto();
+                    string[] values;
                     values = (items[i]).ToString().Split('-');
                     betmrhc.COD_TIPO_OPERADORA = values[0];
                     betmrhc.TELEFONO = values[1];
@@ -106,9 +107,11 @@ namespace CasaOficiosWeb
             if (Request.Form[lstOficioExperienciAgregados.UniqueID] != null)
             {
                 string[] items2 = Request.Form[lstOficioExperienciAgregados.UniqueID].Split(new char[] { ',' });
-                string[] values2;
+                
                 for (int i = 0; i < items2.Length; i++)
                 {
+                    betmrhoe = new BETMRH_Oficios_Extra();
+                    string[] values2;
 
                     values2 = (items2[i]).ToString().Split('-');
                     betmrhoe.COD_OFICIO = values2[0];
