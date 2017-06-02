@@ -108,13 +108,20 @@
             // AQUI RECUPERA EL ID QUE LE HAYAS PUESTO AL TABPANEL
             var tabName2 = $(".tab-content").find(".active").attr('id');
             // CON ESTE SWITCH VALIDAS LOS DATOS POR CADA TAB
+            var bol = true;
             switch (tabName2) {
                 case 'home':
-                    // ValidarElementosHome();
+                    //Este metodo esta en Funciones_Val_TMRH.js que esta en la Carpeta js....
+                    // Esto gracias a que lo he instanciado al ultimo y cuando lo instancias puedes llamar a metodos de ese javascript
+                   
+                    bol = ValidarElementosHome();
                     tabName2 = 'home';
-                //case '':
-                //    day = "Monday";
-                //    return;
+                    break;
+                    
+                case 'profile':
+                    ValidarElementosContacto();
+                    tabName2 = 'profile';
+                    break;
                 //case '':
                 //    day = "Tuesday";
                 //    return;
@@ -122,6 +129,11 @@
                 //case '':
                 //    day = "Saturday";
                 //    return;
+            }
+
+
+            if(bol == false){
+                return;           
             }
 
             // LUEGO DE ESTO SI TODO ESTA BIEN PASA A EL TAB QUE REQUIERA EL BOTON..
@@ -689,7 +701,7 @@
                                                         <label  for="Direccion">Dirección : </label>
                                                         <div class="input-group">
                                                                <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-                                                               <asp:TextBox  runat="server" Text="Calle Monterrey 341 - Chacarrilla - Santiago de Surco" id="txtDireccion" CssClass="form-control" PlaceHolder="Dirección"></asp:TextBox>
+                                                               <asp:TextBox  runat="server"  Text="Calle Monterrey 341 - Chacarrilla - Santiago de Surco" id="txtDireccion" CssClass="form-control" PlaceHolder="Dirección"></asp:TextBox>
                                                         </div>
 
                                                     </div>

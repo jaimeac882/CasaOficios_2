@@ -2,7 +2,3 @@ E:\CasaOficio\CasaOficio\CasaOficios.Entities\bin\Debug\CasaOficios.Entities.dll
 E:\CasaOficio\CasaOficio\CasaOficios.Entities\bin\Debug\CasaOficios.Entities.pdb
 E:\CasaOficio\CasaOficio\CasaOficios.Entities\obj\Debug\CasaOficios.Entities.dll
 E:\CasaOficio\CasaOficio\CasaOficios.Entities\obj\Debug\CasaOficios.Entities.pdb
-D:\Worskpace-VisualStudio\CasaOficios_2\CasaOficios.Entities\bin\Debug\CasaOficios.Entities.dll
-D:\Worskpace-VisualStudio\CasaOficios_2\CasaOficios.Entities\bin\Debug\CasaOficios.Entities.pdb
-D:\Worskpace-VisualStudio\CasaOficios_2\CasaOficios.Entities\obj\Debug\CasaOficios.Entities.dll
-D:\Worskpace-VisualStudio\CasaOficios_2\CasaOficios.Entities\obj\Debug\CasaOficios.Entities.pdb

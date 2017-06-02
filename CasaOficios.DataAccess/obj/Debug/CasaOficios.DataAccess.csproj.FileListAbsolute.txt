@@ -9,17 +9,6 @@ E:\CasaOficio\CasaOficio\CasaOficios.DataAccess\bin\Debug\C.User.Code.pdb
 E:\CasaOficio\CasaOficio\CasaOficios.DataAccess\obj\Debug\CasaOficios.DataAccess.csprojResolveAssemblyReference.cache
 E:\CasaOficio\CasaOficio\CasaOficios.DataAccess\obj\Debug\CasaOficios.DataAccess.dll
 E:\CasaOficio\CasaOficio\CasaOficios.DataAccess\obj\Debug\CasaOficios.DataAccess.pdb
-D:\Worskpace-VisualStudio\CasaOficios_2\CasaOficios.DataAccess\bin\Debug\CasaOficios.DataAccess.dll
-D:\Worskpace-VisualStudio\CasaOficios_2\CasaOficios.DataAccess\bin\Debug\CasaOficios.DataAccess.pdb
-D:\Worskpace-VisualStudio\CasaOficios_2\CasaOficios.DataAccess\bin\Debug\C.Data.Global.dll
-D:\Worskpace-VisualStudio\CasaOficios_2\CasaOficios.DataAccess\bin\Debug\CasaOficios.Entities.dll
-D:\Worskpace-VisualStudio\CasaOficios_2\CasaOficios.DataAccess\bin\Debug\C.User.Code.dll
-D:\Worskpace-VisualStudio\CasaOficios_2\CasaOficios.DataAccess\bin\Debug\C.Data.Global.pdb
-D:\Worskpace-VisualStudio\CasaOficios_2\CasaOficios.DataAccess\bin\Debug\CasaOficios.Entities.pdb
-D:\Worskpace-VisualStudio\CasaOficios_2\CasaOficios.DataAccess\bin\Debug\C.User.Code.pdb
-D:\Worskpace-VisualStudio\CasaOficios_2\CasaOficios.DataAccess\obj\Debug\CasaOficios.DataAccess.csprojResolveAssemblyReference.cache
-D:\Worskpace-VisualStudio\CasaOficios_2\CasaOficios.DataAccess\obj\Debug\CasaOficios.DataAccess.dll
-D:\Worskpace-VisualStudio\CasaOficios_2\CasaOficios.DataAccess\obj\Debug\CasaOficios.DataAccess.pdb
 F:\CasaOficiosPyto\CasaOficios_2\CasaOficios.DataAccess\bin\Debug\CasaOficios.DataAccess.dll
 F:\CasaOficiosPyto\CasaOficios_2\CasaOficios.DataAccess\bin\Debug\CasaOficios.DataAccess.pdb
 F:\CasaOficiosPyto\CasaOficios_2\CasaOficios.DataAccess\bin\Debug\C.Data.Global.dll
