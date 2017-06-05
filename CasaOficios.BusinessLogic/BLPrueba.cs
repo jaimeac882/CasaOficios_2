@@ -62,7 +62,14 @@ namespace CasaOficios.BusinessLogic
                         p_out_tmrh_con = _DAPrueba.insertTHMR_CONTACTO(Cn, Tr, itemB);
                     }
 
-                 
+
+
+                    //Nuevo para en caso de OFICIO EXTRA
+                    foreach (BETMRH_Oficios_Extra itemC in _BETMRH_Oficios_Extra.ToArray())
+                    {
+                        itemC.COD_TMRH = P_out;
+                        p_out_tmrh_con = _DAPrueba.insertTHM_OFICIO(Cn, Tr, itemC);
+                    }
 
 
                     if (P_out != "") {
@@ -73,6 +80,8 @@ namespace CasaOficios.BusinessLogic
                     Tr.Commit();
 
                     return 1;
+
+
                 }
                 catch (Exception ex)
                 {

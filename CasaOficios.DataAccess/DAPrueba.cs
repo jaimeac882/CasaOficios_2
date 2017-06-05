@@ -167,5 +167,14 @@ namespace CasaOficios.DataAccess.Example
         //    return Convert.ToInt32(odaSQL.InsertaActualizaElimina(Cn, Tr, "SP_PRUEBA_DELETE", _BEPrueba, 1, "", true));
         //}
 
+
+        //Cambios pora homologar en PRUEBA
+        public int insertTHM_OFICIO(SqlConnection Cn, SqlTransaction Tr, BETMRH_Oficios_Extra _BETMRH)
+        {
+            return Convert.ToInt32(odaSQL.insertTHMR_OFICIO(Cn, Tr, "PA_TMRH_OFICIOS_EXTRA_INS01", _BETMRH, 0, "", true));
+        }
+
+
+
     }
 }

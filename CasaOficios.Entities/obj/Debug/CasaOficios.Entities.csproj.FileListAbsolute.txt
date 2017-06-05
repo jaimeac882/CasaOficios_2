@@ -2,3 +2,8 @@ E:\CasaOficio\CasaOficio\CasaOficios.Entities\bin\Debug\CasaOficios.Entities.dll
 E:\CasaOficio\CasaOficio\CasaOficios.Entities\bin\Debug\CasaOficios.Entities.pdb
 E:\CasaOficio\CasaOficio\CasaOficios.Entities\obj\Debug\CasaOficios.Entities.dll
 E:\CasaOficio\CasaOficio\CasaOficios.Entities\obj\Debug\CasaOficios.Entities.pdb
+F:\CasaOficiosPyto\CasaOficios_2\CasaOficios.Entities\bin\Debug\CasaOficios.Entities.dll
+F:\CasaOficiosPyto\CasaOficios_2\CasaOficios.Entities\bin\Debug\CasaOficios.Entities.pdb
+F:\CasaOficiosPyto\CasaOficios_2\CasaOficios.Entities\obj\Debug\CasaOficios.Entities.csprojResolveAssemblyReference.cache
+F:\CasaOficiosPyto\CasaOficios_2\CasaOficios.Entities\obj\Debug\CasaOficios.Entities.dll
+F:\CasaOficiosPyto\CasaOficios_2\CasaOficios.Entities\obj\Debug\CasaOficios.Entities.pdb

@@ -280,6 +280,82 @@ namespace C.Data.Global
         }
 
 
+        //Nuevo Para agregar Oficios
+        public int insertTHMR_OFICIO(SqlConnection vCon, SqlTransaction vTrx, string vSP, BETMRH_Oficios_Extra _BETMRH, int _out, string ParamOutPut, bool PermiteCadenasVacias)
+        {
+            using (SqlCommand cmd = new SqlCommand(vSP, vCon))
+            {
+                int n;
+                //String codigo;
+                try
+                {
+                    if (vTrx != null)
+                    {
+                        cmd.Transaction = vTrx;
+                    }
+
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                    //[Parámetro de salida del Procedimiento Almacenado]
+                    //SqlParameter COD_TMRH = new SqlParameter("@P_COD_TMRH", SqlDbType.VarChar);
+                    //COD_TMRH.Direction = ParameterDirection.Output;
+
+
+
+                    //GenerarParametrosObjetosRetornaValor(cmd, vObj, _out, ParamOutPut, PermiteCadenasVacias);
+                    //cmd.Parameters.Add("@P_COD_TMRH", SqlDbType.VarChar).Value = _BETMRH.COD_TMRH;
+
+                    //cmd.Parameters.Add("@P_COD_TMRH", SqlDbType.Char).Direction = ParameterDirection.Output;
+                    //SqlParameter code = new SqlParameter("@P_COD_TMRH", SqlDbType.Char);
+                    //code.Direction = ParameterDirection.Output;
+
+
+                    //@P_COD_TMRH CHAR(10),
+                    //@P_COD_OFICIO CHAR(10),
+                    //@P_FEC_REGISTRO DATETIME,
+                    //@P_FEC_MODIFICACION DATETIME,
+                    //@P_COD_USUARIO_REGISTRO CHAR(10),
+                    //@P_COD_TIEMPO_EXPERIENCIA CHAR(10)
+                    
+
+                    //cmd.Parameters.Add("@P_COD_TMRH", SqlDbType.Char).Value = "0000000002";
+                    //cmd.Parameters.Add("P_COD_TMRH", SqlDbType.Char, 10);
+                    //cmd.Parameters["@P_COD_TMRH"].Direction = ParameterDirection.Output;
+
+                    cmd.Parameters.Add("@P_COD_TMRH", SqlDbType.Char).Value = _BETMRH.COD_TMRH;
+                    cmd.Parameters.Add("@P_COD_OFICIO", SqlDbType.Char).Value = _BETMRH.COD_OFICIO;
+                    cmd.Parameters.Add("@P_FEC_REGISTRO", SqlDbType.DateTime).Value = _BETMRH.FEC_REGISTRO;
+                    cmd.Parameters.Add("@P_FEC_MODIFICACION", SqlDbType.DateTime).Value = _BETMRH.FEC_MODIFICACION;
+                    cmd.Parameters.Add("@P_COD_USUARIO_REGISTRO", SqlDbType.Char).Value = _BETMRH.COD_USUARIO_REGISTRO;
+                    cmd.Parameters.Add("@P_COD_TIEMPO_EXPERIENCIA", SqlDbType.Char).Value = _BETMRH.COD_TIEMPO_EXPERIENCIA;
+
+                    n = cmd.ExecuteNonQuery();
+
+
+
+                    if (n > 0)
+                    {
+
+
+                        //codigo = Convert.ToString(cmd.Parameters["@P_COD_TMRH"].Value);
+
+                    }
+
+                    return 1;
+
+
+                }
+                catch (SqlException ex)
+                {
+
+                    return (-1);
+                    throw new Exception(ex.Message);
+                }
+            }
+
+        }
+
+
 
         public int insertarSolicitudTrabajo_DOC(SqlConnection vCon, SqlTransaction vTrx, string vSP, BESolicitud_Trabajo_Documento BE, int _out, string ParamOutPut, bool PermiteCadenasVacias)
         {
