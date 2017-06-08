@@ -146,6 +146,13 @@ namespace CasaOficios.DataAccess.Example
         }
 
 
+        //Cambios pora homologar en PRUEBA
+        public int insertTHMR_OFICIO(SqlConnection Cn, SqlTransaction Tr, BETMRH_Oficios_Extra _BETMRH)
+        {
+            return Convert.ToInt32(odaSQL.insertTHMR_OFICIO(Cn, Tr, "PA_TMRH_OFICIOS_EXTRA_INS01", _BETMRH, 0, "", true));
+        }
+
+
 
         public String insertarSolicitudTrabajo(SqlConnection Cn, SqlTransaction Tr, BESolicitud_Trabajo _BEPrueba)
         {
@@ -168,11 +175,7 @@ namespace CasaOficios.DataAccess.Example
         //}
 
 
-        //Cambios pora homologar en PRUEBA
-        public int insertTHM_OFICIO(SqlConnection Cn, SqlTransaction Tr, BETMRH_Oficios_Extra _BETMRH)
-        {
-            return Convert.ToInt32(odaSQL.insertTHMR_OFICIO(Cn, Tr, "PA_TMRH_OFICIOS_EXTRA_INS01", _BETMRH, 0, "", true));
-        }
+
 
 
 

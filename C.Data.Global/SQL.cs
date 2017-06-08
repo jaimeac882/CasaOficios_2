@@ -331,14 +331,10 @@ namespace C.Data.Global
 
                     n = cmd.ExecuteNonQuery();
 
-
-
                     if (n > 0)
                     {
 
-
                         //codigo = Convert.ToString(cmd.Parameters["@P_COD_TMRH"].Value);
-
                     }
 
                     return 1;

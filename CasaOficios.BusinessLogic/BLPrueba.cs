@@ -65,14 +65,18 @@ namespace CasaOficios.BusinessLogic
 
 
                     //Nuevo para en caso de OFICIO EXTRA
-                    foreach (BETMRH_Oficios_Extra itemC in _BETMRH_Oficios_Extra.ToArray())
+
+                    string P_out_ofi = "";
+                    int p_out_tmrh_ofi;
+
+                    foreach (BETMRH_Oficios_Extra itemB in _BETMRH_Oficios_Extra.ToArray())
                     {
-                        itemC.COD_TMRH = P_out;
-                        p_out_tmrh_con = _DAPrueba.insertTHM_OFICIO(Cn, Tr, itemC);
+                        itemB.COD_TMRH = P_out_ofi;
+                        p_out_tmrh_ofi = _DAPrueba.insertTHMR_OFICIO(Cn, Tr, itemB);
                     }
 
-
-                    if (P_out != "") {
+                    //extendí con un "AND" para cuando no cumpla respecto a oficios
+                    if (P_out != "" && P_out_ofi != "") {
 
 
 

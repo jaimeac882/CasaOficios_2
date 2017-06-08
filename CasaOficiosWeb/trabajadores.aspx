@@ -66,7 +66,7 @@
                         var oList2 = document.getElementById(id2);
                         if (oList2 != null) {
                             for (e = 0; e < oList2.options.length; i++)
-                                oList2.options[i].selected = true;
+                                oList2.options[e].selected = true;
                         }
 
 

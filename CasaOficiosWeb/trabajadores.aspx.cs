@@ -116,8 +116,8 @@ namespace CasaOficiosWeb
                     values2 = (items2[i]).ToString().Split('-');
                     betmrhoe.COD_OFICIO = values2[0];
                     betmrhoe.COD_TIEMPO_EXPERIENCIA = values2[1];
-              
-
+                    betmrhoe.FEC_REGISTRO = DateTime.Now;
+                   
                     _BETMRH_Oficios_Extra.Add(betmrhoe);
 
                 }
