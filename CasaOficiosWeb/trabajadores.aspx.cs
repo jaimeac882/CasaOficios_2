@@ -117,7 +117,8 @@ namespace CasaOficiosWeb
                     betmrhoe.COD_OFICIO = values2[0];
                     betmrhoe.COD_TIEMPO_EXPERIENCIA = values2[1];
                     betmrhoe.FEC_REGISTRO = DateTime.Now;
-                   
+                    betmrhoe.FEC_MODIFICACION = DateTime.Now;
+                    betmrhoe.COD_TMRH = null;
                     _BETMRH_Oficios_Extra.Add(betmrhoe);
 
                 }
@@ -129,10 +130,17 @@ namespace CasaOficiosWeb
             int d = blprueba.insertTMRH(betmrh, _BETMRH_Contacto, _BETMRH_DOCUMENTOS_ADJUNTOS, _BETMRH_Oficios_Extra);
             if (d == 0)
             {
-                MessageBox.Show(this.Page, "Error");
+
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "ShowPopup();", true);
+                this.lblMessage.Text = "Se ecnontró un error en la inserción de datos. Por favor, revisar cuidadosamente.";
+               // MessageBox.Show(this.Page, "Error");
             }
             else {
-                MessageBox.Show(this.Page, "Registro existoso");
+
+
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "ShowPopup();", true);
+                this.lblMessage.Text = "Se registró exitosamente. Nuestro equipo se contactará con Ud.";
+                //MessageBox.Show(this.Page, "Registro existoso");
             }
 
 
@@ -283,6 +291,14 @@ namespace CasaOficiosWeb
             cboPerioDomin.DataBind();
 
 
+        }
+
+        public void MsgBoxAlterno(String ex, Page pg, Object obj)
+        {
+            string s = "<script>$('#myModal').modal('show');</script>";
+            Type cstype = obj.GetType();
+            ClientScriptManager cs = pg.ClientScript;
+            cs.RegisterClientScriptBlock(cstype, s, s.ToString());
         }
 
 

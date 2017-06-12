@@ -24,10 +24,12 @@
     <script src="js/respond.min.js"></script>
     <![endif]-->
     <link rel="shortcut icon" href="images/favicon.ico" />
-
+
+
 </head>
 
-
+
+
 <body>
 
 <form id="form1" runat="server">
@@ -726,7 +728,7 @@
             </div>
             <!-- /.modal -->  
 
-<button type="button" style="display: none;" id="btnShowPopup" class="btn btn-primary btn-lg"
+            <button type="button" style="display: none;" id="btnShowPopup" class="btn btn-primary btn-lg"
                 data-toggle="modal" data-target="#myModal">
                 Launch demo modal
             </button>    

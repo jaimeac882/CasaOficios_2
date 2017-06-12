@@ -65,7 +65,7 @@
 
                         var oList2 = document.getElementById(id2);
                         if (oList2 != null) {
-                            for (e = 0; e < oList2.options.length; i++)
+                            for (e = 0; e < oList2.options.length; e++)
                                 oList2.options[e].selected = true;
                         }
 
@@ -454,26 +454,7 @@
  
 
   
-    <div id="myModal" class=" modal fade" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Do ypu need change </h4>
-                </div>
-                <div class="modal-body">
-                    <p>Are u sure from </p>
-                    <label id="FromDate"></label>
-                    <p>To</p>
-                    <label id="ToDate"></label>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">no</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">yes</button>
-                </div>
-            </div>
-        </div>
-    </div>
+
 
     <section id="feature">
         <div class="container">
@@ -1092,6 +1073,43 @@
     <script src="js/jquery.isotope.min.js" type="text/javascript"></script>
     <script src="js/main.js" type="text/javascript"></script>
     <script src="js/wow.min.js" type="text/javascript"></script>
+
+
+    <script type="text/javascript">
+        function ShowPopup() {
+            $("#btnShowPopup").click();
+        }
+    </script>  
+
+
+
+             <div class="modal fade" id="myModal">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content modal-sm">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title">
+                                <b>Mensaje de Confirmación</b>
+                            </h4>
+                        </div>
+                        <div class="modal-body modal-sm">
+                            <asp:Label ID="lblMessage" runat="server" />
+                        </div>
+                        <div class="modal-footer modal-sm">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+            <!-- /.modal -->  
+
+            <button type="button" style="display: none;" id="btnShowPopup" class="btn btn-primary btn-lg"
+                data-toggle="modal" data-target="#myModal">
+                Launch demo modal
+            </button>    
 </form>
 
 
