@@ -53,7 +53,7 @@ namespace CasaOficiosWeb
             List<BETMRH_DOCUMENTOS_ADJUNTOS> _BETMRH_DOCUMENTOS_ADJUNTOS = new List<BETMRH_DOCUMENTOS_ADJUNTOS>();
             List<BETMRH_Oficios_Extra> _BETMRH_Oficios_Extra = new List<BETMRH_Oficios_Extra>();
 
-            
+
 
             betmrh.COD_TMRH = "";
             betmrh.NOM_TMRH = TxtNombres.Text;
@@ -82,7 +82,7 @@ namespace CasaOficiosWeb
             if (Request.Form[lstTelefonoAgregados.UniqueID] != null)
             {
                 string[] items = Request.Form[lstTelefonoAgregados.UniqueID].Split(new char[] { ',' });
-                
+
                 for (int i = 0; i < items.Length; i++)
                 {
                     betmrhc = new BETMRH_Contacto();
@@ -107,7 +107,7 @@ namespace CasaOficiosWeb
             if (Request.Form[lstOficioExperienciAgregados.UniqueID] != null)
             {
                 string[] items2 = Request.Form[lstOficioExperienciAgregados.UniqueID].Split(new char[] { ',' });
-                
+
                 for (int i = 0; i < items2.Length; i++)
                 {
                     betmrhoe = new BETMRH_Oficios_Extra();
@@ -118,7 +118,8 @@ namespace CasaOficiosWeb
                     betmrhoe.COD_TIEMPO_EXPERIENCIA = values2[1];
                     betmrhoe.FEC_REGISTRO = DateTime.Now;
                     betmrhoe.FEC_MODIFICACION = DateTime.Now;
-                    betmrhoe.COD_TMRH = null;
+                    betmrhoe.COD_TMRH = "";
+                    betmrhoe.COD_USUARIO_REGISTRO = "0000000002";
                     _BETMRH_Oficios_Extra.Add(betmrhoe);
 
                 }
@@ -133,9 +134,10 @@ namespace CasaOficiosWeb
 
                 ClientScript.RegisterStartupScript(this.GetType(), "alert", "ShowPopup();", true);
                 this.lblMessage.Text = "Se ecnontró un error en la inserción de datos. Por favor, revisar cuidadosamente.";
-               // MessageBox.Show(this.Page, "Error");
+                // MessageBox.Show(this.Page, "Error");
             }
-            else {
+            else
+            {
 
 
                 ClientScript.RegisterStartupScript(this.GetType(), "alert", "ShowPopup();", true);
@@ -144,13 +146,14 @@ namespace CasaOficiosWeb
             }
 
 
-          
+
 
         }
 
-        
-        
-        
+
+
+
+
 
         protected void Page_Load(object sender, EventArgs e)
         {

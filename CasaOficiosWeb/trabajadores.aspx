@@ -856,7 +856,7 @@
                                             <!-- Text input-->                         
                                             <div class="form-group">
 
-                                                <label for="ReciboResidencia">Recibo Luz o Agua : </label>
+                                                <label for="fileReciboResidencia">Recibo Luz o Agua : </label>
                                                 <div class="input-group">
 
                                                     <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i></span>
@@ -864,7 +864,7 @@
 
 
                                                     <asp:FileUpload ID="ReciboResidencia" runat="server" CssClass="form-control" placeholder="Foto"></asp:FileUpload>
-
+file
                                                 </div>
 
                                             </div>
@@ -872,13 +872,13 @@
                                             <!-- Text input-->
                                             <div class="form-group">
 
-                                                <label for="AntecedentePenales">Antecendentes Penales Escaneado : </label>
+                                                <label for="fileAntecedentePenales">Antecendentes Penales Escaneado : </label>
                                                 <div class="input-group">
 
 
                                                     <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i></span>
 
-                                                    <asp:FileUpload ID="AntecedentePenales" runat="server" CssClass="form-control" placeholder="Foto"></asp:FileUpload>
+                                                    <asp:FileUpload ID="fileAntecedentePenales" runat="server" CssClass="form-control" placeholder="Foto"></asp:FileUpload>
 
                                                 </div>
 
@@ -887,12 +887,12 @@
                                             <!-- Text input-->                         
                                             <div class="form-group">
 
-                                                 <label for="AntecendentesPoliciales">Antecedentes Policiales Escaneado : </label>
+                                                 <label for="fileAntecendentesPoliciales">Antecedentes Policiales Escaneado : </label>
                                                 <div class="input-group">
 
 
                                                     <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i></span>
-                                                    <asp:FileUpload ID="AntecendentesPoliciales" runat="server" CssClass="form-control" placeholder="Foto"></asp:FileUpload>
+                                                    <asp:FileUpload ID="fileAntecendentesPoliciales" runat="server" CssClass="form-control" placeholder="Foto"></asp:FileUpload>
 
                                                 </div>
 
@@ -902,12 +902,12 @@
                                             <div class="form-group">
 
 
-                                                <label for="DocumentoIdentidad">Documento de Identidad Escaneado : </label>
+                                                <label for="fileDocumentoIdentidad">Documento de Identidad Escaneado : </label>
                                                 <div class="input-group">
 
                                                     <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i></span>
 
-                                                    <asp:FileUpload ID="DocumentoIdentidad" runat="server" CssClass="form-control" placeholder="Foto"></asp:FileUpload>
+                                                    <asp:FileUpload ID="fileDocumentoIdentidad" runat="server" CssClass="form-control" placeholder="Foto"></asp:FileUpload>
 
                                                 </div>
 

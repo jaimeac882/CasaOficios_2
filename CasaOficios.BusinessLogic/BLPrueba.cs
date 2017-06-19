@@ -38,8 +38,7 @@ namespace CasaOficios.BusinessLogic
 
 
 
-
-        public int insertTMRH(BETMRH _BETMRH, List<BETMRH_Contacto> _BETMRH_Contacto, List<BETMRH_DOCUMENTOS_ADJUNTOS> _BETMRH_DOCUMENTOS_ADJUNTOS  ,List<BETMRH_Oficios_Extra> _BETMRH_Oficios_Extra)
+        public int insertTMRH(BETMRH _BETMRH, List<BETMRH_Contacto> _BETMRH_Contacto, List<BETMRH_DOCUMENTOS_ADJUNTOS> _BETMRH_DOCUMENTOS_ADJUNTOS, List<BETMRH_Oficios_Extra> _BETMRH_Oficios_Extra)
         {
 
             SqlConnection Cn = new SqlConnection(); Cn = _Connection.ConexionBDPrueba();
@@ -51,7 +50,7 @@ namespace CasaOficios.BusinessLogic
                     Cn.Open();
                     Tr = Cn.BeginTransaction();
                     string P_out = "";
-                    int p_out_tmrh_con;
+                    int p_out_tmrh_con = 0;
                     P_out = _DAPrueba.insertTHMR(Cn, Tr, _BETMRH);
 
 
@@ -66,19 +65,20 @@ namespace CasaOficios.BusinessLogic
 
                     //Nuevo para en caso de OFICIO EXTRA
 
-                    string P_out_ofi = "";
-                    int p_out_tmrh_ofi;
+                    int p_out_tmrh_ofi = 0;
 
                     foreach (BETMRH_Oficios_Extra itemC in _BETMRH_Oficios_Extra.ToArray())
                     {
-                        itemC.COD_TMRH = P_out_ofi;
+                        itemC.COD_TMRH = "";
                         p_out_tmrh_ofi = _DAPrueba.insertTHMR_OFICIO(Cn, Tr, itemC);
                     }
 
                     //extendí con un "AND" para cuando no cumpla respecto a oficios
-                    if (P_out != "" && P_out_ofi != "") {
+                    if (P_out != "" && p_out_tmrh_ofi < 0 && p_out_tmrh_con < 0)
+                    {
 
-
+                        Tr.Rollback();
+                        return 0;
 
                     }
                     Tr.Commit();
@@ -100,10 +100,11 @@ namespace CasaOficios.BusinessLogic
             }
 
 
-       
+
 
 
         }
+
 
 
         public List<BEUbigeo> ListarDistritosUbigeo(BEUbigeo _BEubigeo)

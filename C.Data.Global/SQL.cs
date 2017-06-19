@@ -310,7 +310,7 @@ namespace C.Data.Global
                     //code.Direction = ParameterDirection.Output;
 
 
-                    cmd.Parameters.Add("@P_COD_TMRH", SqlDbType.Char).Value = _BETMRH.COD_TMRH;
+                    cmd.Parameters.Add("@P_COD_TMRH", SqlDbType.Char).Value =  _BETMRH.COD_TMRH;
                     cmd.Parameters.Add("@P_COD_OFICIO", SqlDbType.Char).Value = _BETMRH.COD_OFICIO;
                     cmd.Parameters.Add("@P_FEC_REGISTRO", SqlDbType.DateTime).Value = _BETMRH.FEC_REGISTRO;
                     cmd.Parameters.Add("@P_FEC_MODIFICACION", SqlDbType.DateTime).Value = _BETMRH.FEC_MODIFICACION;

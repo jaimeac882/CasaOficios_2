@@ -229,31 +229,31 @@ namespace CasaOficiosWeb {
         protected global::System.Web.UI.WebControls.FileUpload ReciboResidencia;
         
         /// <summary>
-        /// Control AntecedentePenales.
+        /// Control fileAntecedentePenales.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload AntecedentePenales;
+        protected global::System.Web.UI.WebControls.FileUpload fileAntecedentePenales;
         
         /// <summary>
-        /// Control AntecendentesPoliciales.
+        /// Control fileAntecendentesPoliciales.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload AntecendentesPoliciales;
+        protected global::System.Web.UI.WebControls.FileUpload fileAntecendentesPoliciales;
         
         /// <summary>
-        /// Control DocumentoIdentidad.
+        /// Control fileDocumentoIdentidad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload DocumentoIdentidad;
+        protected global::System.Web.UI.WebControls.FileUpload fileDocumentoIdentidad;
         
         /// <summary>
         /// Control TabName.
