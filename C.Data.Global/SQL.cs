@@ -341,6 +341,56 @@ namespace C.Data.Global
 
 
 
+
+        public int insertTHMR_DOC_ADJ(SqlConnection vCon, SqlTransaction vTrx, string vSP, BETMRH_DOCUMENTOS_ADJUNTOS _BETMRH, int _out, string ParamOutPut, bool PermiteCadenasVacias)
+        {
+            using (SqlCommand cmd = new SqlCommand(vSP, vCon))
+            {
+                int n;
+                //String codigo;
+                try
+                {
+                    if (vTrx != null)
+                    {
+                        cmd.Transaction = vTrx;
+                    }
+
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+
+
+                    cmd.Parameters.Add("@P_COD_TMRH", SqlDbType.Char).Value = _BETMRH.COD_TMRH;
+                    cmd.Parameters.Add("@P_COD_TIPO_ADJUNTO_TMRH", SqlDbType.Char).Value = _BETMRH.COD_TIPO_ADJUNTO_TMRH;
+                    cmd.Parameters.Add("@P_DESCRIPCION", SqlDbType.DateTime).Value = _BETMRH.DESCRIPCION;
+                    cmd.Parameters.Add("@P_RUTA_FOTO", SqlDbType.DateTime).Value = _BETMRH.RUTA_FOTO;
+                    //cmd.Parameters.Add("@P_IMAGEN", SqlDbType.Char).Value = _BETMRH.COD_USUARIO_REGISTRO;
+                    //cmd.Parameters.Add("@P_LENGHT_D", SqlDbType.Char).Value = _BETMRH.COD_TIEMPO_EXPERIENCIA;
+
+                    n = cmd.ExecuteNonQuery();
+
+                    if (n > 0)
+                    {
+
+                        //codigo = Convert.ToString(cmd.Parameters["@P_COD_TMRH"].Value);
+                    }
+
+                    return 1;
+
+
+                }
+                catch (SqlException ex)
+                {
+
+                    return (-1);
+                    throw new Exception(ex.Message);
+                }
+            }
+
+        }
+
+
+
+
         public int insertarSolicitudTrabajo_DOC(SqlConnection vCon, SqlTransaction vTrx, string vSP, BESolicitud_Trabajo_Documento BE, int _out, string ParamOutPut, bool PermiteCadenasVacias)
         {
             using (SqlCommand cmd = new SqlCommand(vSP, vCon))

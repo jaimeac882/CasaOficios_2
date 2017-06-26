@@ -863,8 +863,8 @@
                                                     <!--input  name="file" placeholder="Fotos" class="form-control" type="file"-->
 
 
-                                                    <asp:FileUpload ID="ReciboResidencia" runat="server" CssClass="form-control" placeholder="Foto"></asp:FileUpload>
-file
+                                                    <asp:FileUpload ID="fileReciboResidencia" runat="server" CssClass="form-control" placeholder="Foto"></asp:FileUpload>
+
                                                 </div>
 
                                             </div>

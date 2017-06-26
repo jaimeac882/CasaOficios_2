@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Runtime.Serialization;
 
+
 namespace CasaOficios.Entities
 {
 
@@ -24,7 +25,11 @@ namespace CasaOficios.Entities
         public String COD_TMRH { get; set; }
         public String COD_TIPO_ADJUNTO_TMRH { get; set; }
         public String DESCRIPCION { get; set; }
+
+        public Byte IMAGEN { get; set; }
         public String RUTA_FOTO { get; set; }
+
+
 
 
 

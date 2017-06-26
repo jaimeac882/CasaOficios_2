@@ -69,12 +69,27 @@ namespace CasaOficios.BusinessLogic
 
                     foreach (BETMRH_Oficios_Extra itemC in _BETMRH_Oficios_Extra.ToArray())
                     {
-                        itemC.COD_TMRH = "";
+                        itemC.COD_TMRH = P_out;
                         p_out_tmrh_ofi = _DAPrueba.insertTHMR_OFICIO(Cn, Tr, itemC);
                     }
 
+
+
+                    int p_out_tmrh_adj = 0;
+
+                    foreach (BETMRH_DOCUMENTOS_ADJUNTOS itemD in _BETMRH_DOCUMENTOS_ADJUNTOS.ToArray())
+                    {
+                        itemD.COD_TMRH = P_out;
+                        p_out_tmrh_adj = _DAPrueba.insertTHMR_DOC_ADJ(Cn, Tr, itemD);
+                    }
+                    ///aqui!!!
+
+
+
+
+
                     //extendí con un "AND" para cuando no cumpla respecto a oficios
-                    if (P_out != "" && p_out_tmrh_ofi < 0 && p_out_tmrh_con < 0)
+                    if (P_out != "" && p_out_tmrh_ofi < 0 && p_out_tmrh_con < 0 && p_out_tmrh_adj <0)
                     {
 
                         Tr.Rollback();

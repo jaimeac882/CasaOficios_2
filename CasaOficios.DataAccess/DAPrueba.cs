@@ -164,6 +164,12 @@ namespace CasaOficios.DataAccess.Example
             return Convert.ToInt16(odaSQL.insertarSolicitudTrabajo_DOC(Cn, Tr, "PA_SOLICITUD_TRABAJO_DOCUMENTO_INS01", _BESTD, 0, "", true));
         }
 
+
+        public int insertTHMR_DOC_ADJ(SqlConnection Cn, SqlTransaction Tr, BETMRH_DOCUMENTOS_ADJUNTOS _BESTD)
+        {
+            return Convert.ToInt16(odaSQL.insertTHMR_DOC_ADJ(Cn, Tr, "PA_TMRH_DOCUMENTOS_ADJUNTOS_INS01", _BESTD, 0, "", true));
+        }
+
         //public int modificarPrueba(SqlConnection Cn, SqlTransaction Tr, BEPrueba _BEPrueba)
         //{
         //    return Convert.ToInt32(odaSQL.InsertaActualizaElimina(Cn, Tr, "SP_PRUEBA_UPDATE", _BEPrueba, 1, "", true));

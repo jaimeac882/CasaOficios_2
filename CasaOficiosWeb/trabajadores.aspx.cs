@@ -78,6 +78,7 @@ namespace CasaOficiosWeb
 
             BETMRH_Contacto betmrhc = new BETMRH_Contacto();
             BETMRH_Oficios_Extra betmrhoe = new BETMRH_Oficios_Extra();
+            BETMRH_DOCUMENTOS_ADJUNTOS betmrhoad = new BETMRH_DOCUMENTOS_ADJUNTOS();
 
             if (Request.Form[lstTelefonoAgregados.UniqueID] != null)
             {
@@ -128,12 +129,76 @@ namespace CasaOficiosWeb
 
 
 
+
+
+
+
+            if (fileDocumentoIdentidad.HasFile)
+            {
+
+
+                betmrhoad.COD_TIPO_ADJUNTO_TMRH = "ADJ0000002";
+                betmrhoad.COD_TMRH= "";
+                betmrhoad.RUTA_FOTO= fileDocumentoIdentidad.FileName;
+
+                _BETMRH_DOCUMENTOS_ADJUNTOS.Add(betmrhoad);
+
+            }
+
+
+            if (fileAntecendentesPoliciales.HasFile)
+            {
+
+
+                betmrhoad.COD_TIPO_ADJUNTO_TMRH = "ADJ0000006";
+                betmrhoad.COD_TMRH = "";
+                betmrhoad.RUTA_FOTO = fileAntecendentesPoliciales.FileName;
+
+                _BETMRH_DOCUMENTOS_ADJUNTOS.Add(betmrhoad);
+
+            }
+
+
+            if (fileAntecedentePenales.HasFile)
+            {
+
+
+                betmrhoad.COD_TIPO_ADJUNTO_TMRH = "ADJ0000005";
+                betmrhoad.COD_TMRH = "";
+                betmrhoad.RUTA_FOTO = fileAntecedentePenales.FileName;
+
+                _BETMRH_DOCUMENTOS_ADJUNTOS.Add(betmrhoad);
+
+            }
+
+
+
+
+            if (fileReciboResidencia.HasFile)
+            {
+
+
+                betmrhoad.COD_TIPO_ADJUNTO_TMRH = "ADJ0000004";
+                betmrhoad.COD_TMRH = "";
+                betmrhoad.RUTA_FOTO = fileReciboResidencia.FileName;
+
+                _BETMRH_DOCUMENTOS_ADJUNTOS.Add(betmrhoad);
+
+            }
+
+
+
+
+
+
+
+
             int d = blprueba.insertTMRH(betmrh, _BETMRH_Contacto, _BETMRH_DOCUMENTOS_ADJUNTOS, _BETMRH_Oficios_Extra);
             if (d == 0)
             {
 
                 ClientScript.RegisterStartupScript(this.GetType(), "alert", "ShowPopup();", true);
-                this.lblMessage.Text = "Se ecnontró un error en la inserción de datos. Por favor, revisar cuidadosamente.";
+                this.lblMessage.Text = "Se encontró un error en la inserción de datos. Por favor, revisar cuidadosamente.";
                 // MessageBox.Show(this.Page, "Error");
             }
             else
