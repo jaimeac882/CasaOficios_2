@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using CasaOficios.Entities;
 using CasaOficios.BusinessLogic;
+using System.IO;
 
 
 namespace CasaOficiosWeb
@@ -216,7 +217,38 @@ namespace CasaOficiosWeb
         }
 
 
+        private Byte[] imagen_a_bytes(System.Drawing.Image foto) 
+        {
+            if (!(foto==null)) {
 
+                MemoryStream codi = new MemoryStream();
+                foto.Save(codi, System.Drawing.Imaging.ImageFormat.Png);
+                return codi.GetBuffer();
+            }else {
+            
+                return null;
+            }
+
+
+        }
+
+        private System.Drawing.Image bytes_a_imagen(Byte[] foto)
+        {
+            if (!(foto == null))
+            {
+
+                MemoryStream codi = new MemoryStream(foto);
+                System.Drawing.Image resultado = System.Drawing.Image.FromStream(codi);
+                return resultado;
+            }
+            else
+            {
+
+                return null;
+            }
+
+
+        }
 
 
 
