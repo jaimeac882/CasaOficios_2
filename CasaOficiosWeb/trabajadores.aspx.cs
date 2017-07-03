@@ -130,9 +130,11 @@ namespace CasaOficiosWeb
 
 
 
+            //inicio: nuevo code filre up
 
+            
 
-
+            //fin: nuevo code file up
 
             if (fileDocumentoIdentidad.HasFile)
             {
@@ -247,10 +249,50 @@ namespace CasaOficiosWeb
                 return null;
             }
 
-
         }
 
+        private Boolean validarExtension(System.Web.UI.WebControls.FileUpload FileUpload1)
+        {
 
+            Boolean fileOK = false;
+            String path = Server.MapPath("~/UploadedImages/");
+            if (FileUpload1.HasFile)
+            {
+                String fileExtension =
+                System.IO.Path.GetExtension(FileUpload1.FileName).ToLower();
+                String[] allowedExtensions =
+                    {".gif", ".png", ".jpeg", ".jpg"};
+                for (int i = 0; i < allowedExtensions.Length; i++)
+                {
+                    if (fileExtension == allowedExtensions[i])
+                    {
+                        //return true;
+                    }
+                }
+            }
+
+            if (fileOK)
+            {
+                try
+                {
+                    FileUpload1.PostedFile.SaveAs(path + FileUpload1.FileName);
+                    //Label1.Text = "File uploaded!";
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    //Label1.Text = "File could not be uploaded.";
+                    return false;
+                }
+            }
+            else
+            {
+                //Label1.Text = "Cannot accept files of this type.";
+                return false;
+            }
+
+
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
