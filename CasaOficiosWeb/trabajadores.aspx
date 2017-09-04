@@ -860,12 +860,13 @@
                                                 <div class="input-group">
 
                                                     <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i></span>
-                                                    <!--input  name="file" placeholder="Fotos" class="form-control" type="file"-->
-
-
                                                     <asp:FileUpload ID="fileReciboResidencia" runat="server" CssClass="form-control" placeholder="Foto"></asp:FileUpload>
+                                                    
 
                                                 </div>
+                                                <input type="button" class="form-control"  id="btnfileReciboResidencia"  value="Subir" />
+                                                
+
 
                                             </div>
 
@@ -875,12 +876,11 @@
                                                 <label for="fileAntecedentePenales">Antecendentes Penales Escaneado : </label>
                                                 <div class="input-group">
 
-
                                                     <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i></span>
-
-                                                    <asp:FileUpload ID="fileAntecedentePenales" runat="server" CssClass="form-control" placeholder="Foto"></asp:FileUpload>
+                                                    <asp:FileUpload ID="fileAntecedentePenales" runat="server" CssClass="form-control" placeholder="Foto"></asp:FileUpload>                                                                                                        
 
                                                 </div>
+                                                    <input type="button" class="form-control"  id="btnfileAntecedentePenales"  value="Subir" />
 
                                             </div>
 
@@ -888,13 +888,15 @@
                                             <div class="form-group">
 
                                                  <label for="fileAntecendentesPoliciales">Antecedentes Policiales Escaneado : </label>
-                                                <div class="input-group">
-
+                                                 <div class="input-group">
 
                                                     <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i></span>
-                                                    <asp:FileUpload ID="fileAntecendentesPoliciales" runat="server" CssClass="form-control" placeholder="Foto"></asp:FileUpload>
-
+                                                    <asp:FileUpload ID="fileAntecendentesPoliciales"  runat="server" CssClass="form-control" placeholder="Foto"></asp:FileUpload>
+                                                    
                                                 </div>
+                                                
+                                                <input type="button" class="form-control"  id="btnfileAntecendentesPoliciales"  value="Subir" />
+                                                
 
                                             </div>
 
@@ -906,10 +908,11 @@
                                                 <div class="input-group">
 
                                                     <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i></span>
-
                                                     <asp:FileUpload ID="fileDocumentoIdentidad" runat="server" CssClass="form-control" placeholder="Foto"></asp:FileUpload>
-
+                                                    
                                                 </div>
+                                                <input type="button" class="form-control"  id="btnfileDocumentoIdentidad"  value="Subir" />
+                                                
 
                                             </div>
 

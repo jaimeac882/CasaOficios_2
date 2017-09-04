@@ -361,8 +361,8 @@ namespace C.Data.Global
 
                     cmd.Parameters.Add("@P_COD_TMRH", SqlDbType.Char).Value = _BETMRH.COD_TMRH;
                     cmd.Parameters.Add("@P_COD_TIPO_ADJUNTO_TMRH", SqlDbType.Char).Value = _BETMRH.COD_TIPO_ADJUNTO_TMRH;
-                    cmd.Parameters.Add("@P_DESCRIPCION", SqlDbType.DateTime).Value = _BETMRH.DESCRIPCION;
-                    cmd.Parameters.Add("@P_RUTA_FOTO", SqlDbType.DateTime).Value = _BETMRH.RUTA_FOTO;
+                    cmd.Parameters.Add("@P_DESCRIPCION", SqlDbType.VarChar).Value = _BETMRH.DESCRIPCION;
+                    cmd.Parameters.Add("@P_RUTA_FOTO", SqlDbType.VarChar).Value = _BETMRH.RUTA_FOTO;
                     //cmd.Parameters.Add("@P_IMAGEN", SqlDbType.Char).Value = _BETMRH.COD_USUARIO_REGISTRO;
                     //cmd.Parameters.Add("@P_LENGHT_D", SqlDbType.Char).Value = _BETMRH.COD_TIEMPO_EXPERIENCIA;
 
